@@ -20,7 +20,6 @@ Managers in the Layout Tree
 
    managers_align
    managers_box
-   managers_clip
    managers_directional
    managers_fixed
    managers_grid   
