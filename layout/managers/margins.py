@@ -128,13 +128,13 @@ class PaddedMarginsLM(root.LayoutManager):
         if self.element is None: return
         
         size = self.element.get_minimum_size(data)
-        extra_width = rect.w - size.x
-        extra_height = rect.h - size.y
+        extra_width = max(0, rect.w - size.x)
+        extra_height = max(0, rect.h - size.y)
         
         self.element.render(datatypes.Rectangle(
                 rect.x + self.left*extra_width,
                 rect.y + self.bottom*extra_height,
-                size.x + self.width*extra_width,
-                size.y + self.height*extra_height
+                rect.w - extra_width,
+                rect.h - extra_height
                 ), data)
     
