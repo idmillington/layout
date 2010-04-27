@@ -170,7 +170,7 @@ class ScaleLM(root.LayoutManager):
             )
         extra_width = rect.w - size.x * scale
         extra_height = rect.h - size.y * scale
-
+        
         # Apply the scaling and render the output.
         c = data['output']
         c.saveState()

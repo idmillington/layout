@@ -81,6 +81,7 @@ class Paragraph(TextBase):
             
             x = rect.x
             y -= self.font_size * self.leading
+        c.restoreState()
         
     
 class TextLine(TextBase):

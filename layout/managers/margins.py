@@ -95,7 +95,7 @@ class VanDeGraafCanonLM(ProportionalMarginsLM):
                 _NINETH, 2.0*_NINETH, 2.0*_NINETH, _NINETH, element
                 )
 
-class PaddedMarginLM(root.LayoutManager):
+class PaddedMarginsLM(root.LayoutManager):
     """A layout manager that surrounds its single element by margins
     that grow with the available space. The margins grow with the available
     space in the given proportions. If the proportions for a pair of margins 
