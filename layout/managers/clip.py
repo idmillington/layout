@@ -1,8 +1,8 @@
 import root
 
 class ClipLM(root.LayoutManager):
-    """A layout manager that establishes a clipping box around its
-    child element's content before rendering it. 
+    """A ReportLab-specific layout manager that establishes a clipping
+    box around its child element's content before rendering it.
     
     Because most elements and managers reserve the minimum amount of space
     they need to draw, this manager would have no effect. In some cases,

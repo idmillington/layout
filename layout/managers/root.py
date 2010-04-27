@@ -12,7 +12,8 @@ class LayoutElement(object):
         
 class LayoutManager(LayoutElement):
     """Layout managers position and size content to fit some container,
-    based on some algorithm."""
+    based on some algorithm. This class is an empty subclass used for
+    clearer naming when used as a parent class."""
 
 class SpecificFieldsLMMetaclass(type):
     """A meta-class that creates layout managers with a set of named
