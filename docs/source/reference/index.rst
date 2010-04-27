@@ -1,8 +1,8 @@
 Reference and API Documentation
 ===============================
 
-Fundamental Data Types and Constants
-------------------------------------
+Fundamental Data Types and Constants (:mod:`layout.datatypes`)
+--------------------------------------------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -12,14 +12,15 @@ Fundamental Data Types and Constants
    datatypes_position
 
 
-Managers in the Layout Tree
----------------------------
+Managers in the Layout Tree (:mod:`layout.managers`)
+----------------------------------------------------
 
 .. toctree::
    :maxdepth: 1
 
    managers_align
    managers_box
+   managers_clip
    managers_directional
    managers_fixed
    managers_grid   
@@ -31,8 +32,8 @@ Managers in the Layout Tree
    managers_root
 
 
-Elements that Output Somthing
------------------------------
+Elements that Output Somthing (:mod:`layout.elements`)
+------------------------------------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -43,8 +44,8 @@ Elements that Output Somthing
    elements_mark
    elements_space
 
-Batching Elements into Pages
-----------------------------
+Batching Elements into Pages (:mod:`layout.pages`)
+--------------------------------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -52,3 +53,10 @@ Batching Elements into Pages
    pages_imposition
    pages_output
 
+Utility Methods
+---------------
+
+.. toctree::
+   :maxdepth: 1
+
+   rl_utils
