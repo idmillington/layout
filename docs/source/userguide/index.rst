@@ -121,6 +121,4 @@ module::
 
 or even shorter::
 
-    rl_utils.render_to_reportlab_document(
-        filename, papersize, top_level_manager
-        )
+   rl_utils.render_to_reportlab_document(filename, papersize, top_level_manager)
