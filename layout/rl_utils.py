@@ -4,7 +4,7 @@ from reportlab.pdfgen.canvas import Canvas
 def render_to_reportlab_canvas(rl_canvas, manager, papersize_tuple):
     """Renders the given manager full size on a page of the given canvas."""
     manager.render(
-        datatypes.Rectangle(0, 0, papersize_tuple),
+        datatypes.Rectangle(0, 0, *papersize_tuple),
         dict(output=rl_canvas)
         )
 
