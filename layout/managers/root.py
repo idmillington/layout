@@ -5,11 +5,11 @@ class LayoutElement(object):
     def get_minimum_size(self, data):
         """How small can the element be? Should return a Point."""
         return datatypes.Point(0, 0)
-        
+
     def render(self, rectangle, data):
         """Asks the element to render itself."""
         pass
-        
+
 class LayoutManager(LayoutElement):
     """Layout managers position and size content to fit some container,
     based on some algorithm. This class is an empty subclass used for
@@ -26,22 +26,22 @@ class SpecificFieldsLMMetaclass(type):
 
         field_names = cls._fields
         store_name = cls._store_name
-        
+
         def _add(index, name):
             def _set_dir(self, value): getattr(self, store_name)[index] = value
             def _get_dir(self): return getattr(self, store_name)[index]
             setattr(cls, name, property(_get_dir, _set_dir))
-            
+
         for index, field_name in enumerate(field_names):
             _add(index, field_name)
 
 class GroupLayoutManager(LayoutManager):
     """A base class for layout managers that can have any number of
     elements."""
-    
+
     def __init__(self, elements=[]):
         self.elements = elements[:]
-        
+
     def add_element(self, element):
         self.elements.append(element)
 

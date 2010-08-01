@@ -11,7 +11,7 @@ class SimpleGridLM(root.GroupLayoutManager):
         self.rows = rows
         self.cols = columns
         self.margin = margin
-        
+
     def calculate_columns(self):
         """Assuming the number of rows is constant, work out the best
         number of columns to use."""
@@ -53,7 +53,7 @@ class SimpleGridLM(root.GroupLayoutManager):
 
 class GridLM(root.LayoutManager):
     """Lays out elements in a grid with flexible sized rows and columns."""
-    
+
     def __init__(self, margin=0, outside_margin=0):
         self.rows = 1
         self.cols = 1
@@ -68,16 +68,16 @@ class GridLM(root.LayoutManager):
         self.scaling_row = None
         # And the column that gets all additional width
         self.scaling_col = None
-        
+
     def add_element(self, element, col, row, cols=1, rows=1):
         """Adds the given element to the given position in the grid,
         with the given size. There is no limit to the number of elements
         that can be assigned to the same cell(s)."""
-        
+
         # Update the number of rows and colums
         self.rows = max(self.rows, row+rows)
         self.cols = max(self.cols, col+cols)
-        
+
         # Add the raw element record
         self.elements.append((col, row, cols, rows, element))
 
@@ -104,50 +104,50 @@ class GridLM(root.LayoutManager):
             start, end = element_data[base_index], element_data[sort_index]
             end += start
             element, size = element_data[4:6]
-            
+
             # Find the total current size of the set
             set_size = sum(array[start:end]) + (end-start-1)*self.margin
-            
+
             # Work out the extra space we need
             extra_space_needed = getattr(size, property) - set_size
             if extra_space_needed < 0: continue
-            
+
             # Distribute it among the entries
             extra_space_each = extra_space_needed / (end-start)
             for index in range(start, end):
                 array[index] += extra_space_each
-        
+
     def get_minimum_size(self, data):
         """Finds the minimum size of the grid."""
-                
+
         # Gat a list of elements with their sizes, so we don't have to
         # recalculate that each time.
         sized_elements = [
             (col, row, cols, rows, element, element.get_minimum_size(data))
             for col, row, cols, rows, element in self.elements
             ]
-        
+
         # Create the heights and widths for each cell.
         self.col_widths = [0] * self.cols
         self.row_heights = [0] * self.rows
         self._compile_dimension_size(0, self.col_widths, 'x', sized_elements)
         self._compile_dimension_size(1, self.row_heights, 'y', sized_elements)
-        
+
         # The final size is the total width and height
         om = 2*self.outside_margin
         return datatypes.Point(
             sum(self.col_widths) + (self.cols-1)*self.margin + om,
             sum(self.row_heights) + (self.rows-1)*self.margin + om
             )
-        
+
     def render(self, rect, data):
         """Draws the cells in grid."""
         size = self.get_minimum_size(data)
-        
+
         # Find how much extra space we have.
         extra_width = rect.w - size.x
         extra_height = rect.h - size.y
-        
+
         # Distribute the extra space into the correct rows and columns.
         if self.scaling_col is None or not 0 <= self.scaling_col < self.cols:
             width_per_col = extra_width / float(self.cols)
@@ -168,19 +168,19 @@ class GridLM(root.LayoutManager):
         else:
             row_heights = self.row_heights[:]
             row_heights[self.scaling_row] += extra_height
-        
+
         # Find the (start, end) positions of each row and column.
         col_xs = []
         last_x = rect.left + self.outside_margin
-        for width in col_widths: 
+        for width in col_widths:
             col_xs.append((last_x, last_x + width))
             last_x += width + self.margin
         row_ys = []
         last_y = rect.top - self.outside_margin
-        for height in row_heights: 
+        for height in row_heights:
             row_ys.append((last_y, last_y - height))
             last_y -= height + self.margin
-        
+
         # Now we can loop over the elements and have them rendered.
         for col, row, cols, rows, element in self.elements:
             x_start = col_xs[col][0]
@@ -217,5 +217,5 @@ class GridLM(root.LayoutManager):
             c.setStrokeColorRGB(*color)
             c.line(x_start, y_start, x_end, y_end)
             c.restoreState()
-            
-            
+
+

@@ -19,7 +19,7 @@ class SignatureMark(root.LayoutElement):
     you by the page imposition system in :mod:`layout.pages.imposition`.
 
     Historically signature marks were not placed in the spine, but in the
-    foot of the first page of each signature and were numbered. 
+    foot of the first page of each signature and were numbered.
     """
     def __init__(self, index, total, width=1, color=(0,0,0), margin=0.1):
         """

@@ -39,7 +39,7 @@ class ISO269Series(object):
         self.cache = {initial_number:initial_in_mm}
         self.min_cached = initial_number
         self.max_cached = initial_number
-        
+
     def __getitem__(self, size):
         if size not in self.cache:
             # Calculate afresh from the initial size.
@@ -59,7 +59,7 @@ class ISO269Series(object):
                     self.cache[s] = next
                     last = next
                 self.min_cached = size
-                
+
         # Pull the data from the cache and convert to points.
         width, height = self.cache[size]
         return width*mm, height*mm
@@ -73,7 +73,7 @@ def portrait(paper_size):
     """Ensures the paper is in portrait orientation. If it already is,
     no change is made."""
     return min(*paper_size), max(*paper_size)
-    
+
 def flip(paper_size):
     """Reverses the orientation of the given paper size."""
     return paper_size[1], paper_size[0]
@@ -83,13 +83,13 @@ def small_square(paper_size):
     given paper size."""
     size = portrait(paper_size)[0]
     return size, size
-    
+
 def large_square(paper_size):
     """Makes a square paper size using the larger dimension of the given
     paper size."""
     size = landscape(paper_size)[0]
     return size, size
-    
+
 def is_landscape(paper_size):
     """"Checks if the given paper is landscape oriented."""
     return paper_size[0] > paper_size[1]
@@ -97,16 +97,16 @@ def is_landscape(paper_size):
 def is_portrait(paper_size):
     """Checks if the given paper is portrait oriented."""
     return paper_size[0] < paper_size[1]
-    
+
 def is_square(paper_size):
     """Checks if the given paper is square."""
-    return paper_size[0] == paper_size[1]    
+    return paper_size[0] == paper_size[1]
 
 def bleed(paper_size, bleed):
     """Adds the given bleed to the given paper size. Standard sizes
     are 3mm internationally and 1/8" US. Large images and die cuts have
     a larger bleed."""
-    return (paper_size[0] + bleed*2.0, paper_size[1] + bleed*2.0) 
+    return (paper_size[0] + bleed*2.0, paper_size[1] + bleed*2.0)
 
 def calculate_up(paper_size, page_size, page_bleed, separation, margin):
     """Calculates how many pages of the given page size can be fit
@@ -127,12 +127,12 @@ def calculate_up(paper_size, page_size, page_bleed, separation, margin):
     things tiled rectangularly so that a cutter can use a minimal set
     of dimensions.
     """
-    
+
     # Calculate the margin after separation. This allows us to combine
     # the separation into the paper size.
     margin2 = margin - separation
     actual_page_size = (
-        page_size[0] + 2.0 * page_bleed + separation, 
+        page_size[0] + 2.0 * page_bleed + separation,
         page_size[1] + 2.0 * page_bleed + separation
         )
     content_size = paper_size[0] - margin2, paper_size[1] - margin2
@@ -153,7 +153,7 @@ def calculate_up(paper_size, page_size, page_bleed, separation, margin):
     else:
         return (xwr, ywr, True)
 
-    
+
 # CONSTANTS for specific paper sizes.
 # ----------------------------------------------------------------------------
 

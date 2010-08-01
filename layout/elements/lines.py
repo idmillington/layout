@@ -41,7 +41,7 @@ class VerticalLine(LineBase):
         c.setDash(self.dash)
         c.line(rect.center, rect.bottom, rect.center, rect.top)
         c.restoreState()
-        
+
 class Border(LineBase):
     """Draws a line surrounding the space, with an optional additional
     color for fill."""
@@ -88,6 +88,6 @@ class Border(LineBase):
                     _line(rect.bottom_right, rect.bottom_left)
                 if self.directions[3]:
                     _line(rect.bottom_left, rect.top_left)
-                
+
         c.restoreState()
-        
+
