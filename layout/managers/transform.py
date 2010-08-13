@@ -148,6 +148,34 @@ class AnyRotationLM(root.LayoutManager):
         self.element.render(datatypes.Rectangle(-hw, -hh, hw*2.0, hh*2.0), data)
         c.restoreState()
         
+class FixedScaleLM(root.LayoutManager):
+    """
+    A layout manager that scales its one element by a fixed amount.
+    """
+    
+    def __init__(self, scale=1.0, element=None):
+        super(FixedScaleLM, self).__init__()
+        self.scale = scale
+        self.element = element
+        
+    def get_minimum_size(self, data):
+        child_size = self.element.get_minimum_size(data)
+        return datatypes.Point(
+            child_size.x*self.scale, child_size.y*self.scale
+            )
+        
+    def render(self, rect, data):
+        scale = self.scale
+        c = data['output']
+        c.saveState()
+        c.translate(rect.x, rect.y)
+        c.scale(scale, scale)
+        self.element.render(
+            datatypes.Rectangle(0, 0, rect.x/scale, rect.y/scale), 
+            data
+            )
+        c.restoreState()
+        
 class ScaleLM(root.LayoutManager):
     """A layout manager that holds one element, and scales it down
     with isotropic scaling if it is too large to fit."""
