@@ -33,7 +33,7 @@ class RotateLM(root.LayoutManager):
 
     #: Rotates 90 decrees clockwise, or 270 degrees clockwise.
     ANGLE_270 = 3
-    
+
     def __init__(self, angle, element=None):
         super(RotateLM, self).__init__()
         self.element = element
@@ -66,7 +66,7 @@ class RotateLM(root.LayoutManager):
             else:
                 assert (self.angle in (RotateLM.ANGLE_90, RotateLM.ANGLE_270))
                 self.element.render(
-                    datatypes.Rectangle(-h*0.5, -w*0.5, w, h), data
+                    datatypes.Rectangle(-h*0.5, -w*0.5, h, w), data
                     )
         c.restoreState()
 
@@ -100,7 +100,9 @@ class AnyRotationLM(root.LayoutManager):
         rectangle when rotated. This can dramatically overstate the
         actual size needed to fit the rotated element if the original
         element is not rectangular."""
-        return self._calculate_ms_from_base(self.element.get_minimum_size(data))
+        return self._calculate_ms_from_base(
+            self.element.get_minimum_size(data)
+            )
 
     def _calculate_ms_from_base(self, size):
         """Calculates the rotated minimum size from the given base minimum
@@ -138,7 +140,7 @@ class AnyRotationLM(root.LayoutManager):
         # Transform the base size by this scale
         hw = base_ms.x * 0.5 * scale
         hh = base_ms.y * 0.5 * scale
-        
+
         # Thats the space we give to our child element.
         center = rect.center_middle
         c = data['output']
@@ -147,23 +149,23 @@ class AnyRotationLM(root.LayoutManager):
         c.rotate(self.angle / math.pi * 180.0)
         self.element.render(datatypes.Rectangle(-hw, -hh, hw*2.0, hh*2.0), data)
         c.restoreState()
-        
+
 class FixedScaleLM(root.LayoutManager):
     """
     A layout manager that scales its one element by a fixed amount.
     """
-    
+
     def __init__(self, scale=1.0, element=None):
         super(FixedScaleLM, self).__init__()
         self.scale = scale
         self.element = element
-        
+
     def get_minimum_size(self, data):
         child_size = self.element.get_minimum_size(data)
         return datatypes.Point(
             child_size.x*self.scale, child_size.y*self.scale
             )
-        
+
     def render(self, rect, data):
         scale = self.scale
         c = data['output']
@@ -171,11 +173,11 @@ class FixedScaleLM(root.LayoutManager):
         c.translate(rect.x, rect.y)
         c.scale(scale, scale)
         self.element.render(
-            datatypes.Rectangle(0, 0, rect.x/scale, rect.y/scale), 
+            datatypes.Rectangle(0, 0, rect.x/scale, rect.y/scale),
             data
             )
         c.restoreState()
-        
+
 class ScaleLM(root.LayoutManager):
     """A layout manager that holds one element, and scales it down
     with isotropic scaling if it is too large to fit."""
@@ -183,7 +185,7 @@ class ScaleLM(root.LayoutManager):
     def __init__(self, element=None):
         super(ScaleLM, self).__init__()
         self.element = element
-        
+
     def get_minimum_size(self, data):
         return self.element.get_minimum_size(data)
 
@@ -198,7 +200,7 @@ class ScaleLM(root.LayoutManager):
             )
         extra_width = rect.w - size.x * scale
         extra_height = rect.h - size.y * scale
-        
+
         # Apply the scaling and render the output.
         c = data['output']
         c.saveState()
@@ -217,7 +219,7 @@ class FlexScaleLM(root.LayoutManager):
     def __init__(self, element=None):
         super(FlexScaleLM, self).__init__()
         self.element = element
-        
+
     def get_minimum_size(self, data):
         return self.element.get_minimum_size(data)
 
@@ -229,7 +231,7 @@ class FlexScaleLM(root.LayoutManager):
                 float(rect.w) / float(size.x),
                 float(rect.h) / float(size.y)
                 )
-            
+
             # Apply the scaling and render the output.
             c = data['output']
             c.saveState()

@@ -26,8 +26,9 @@ FORMAT_12_PAGE = (2,3, [12,1,9,4,8,5,2,11,3,10,6,7])
 #: Format sixteen pages so that the two folds will be perpendicular.
 FORMAT_16_PAGE_UPRIGHT = (4,2, [13,4,1,16,12,5,8,9,15,2,3,14,10,7,6,11])
 
-#: Format sixteen pages so the sheet is folded twice along its long
-#: edge. This is needed for landscape-oriented output.
+#: Format sixteen pages so the sheet is concertina folded twice along
+#: its long direction before being folded the other way. This is often used
+#: for landscape-oriented output.
 FORMAT_16_PAGE_OBLONG = (2,4, [9,8,12,5,13,4,16,1,7,10,6,11,3,14,2,15])
 
 #: A convenience name for the more normal 16-page-upright format.
@@ -48,7 +49,7 @@ def get_page_impositions(imposition_type,
                          elements=[]):
     """Calculates impositions for the elements in the content list and
     returns a set of page-layouts for each as manager instances.
-    
+
     An imposition is a way of laying out pages on a larger sheet, such
     that they can be folded and cut to form a booklet.
     The signature size of an imposition controls how many of these
@@ -60,7 +61,7 @@ def get_page_impositions(imposition_type,
     ``imposition_type``
         One of the FORMAT_* constants defined in this module: controls
         the kind of imposition to make.
-                       
+
     ``sheets_per_sig``
         How many sheets of paper will be folded, cut and bind
         together. This is often 1 for commercial presses, but DIY
@@ -109,7 +110,7 @@ def get_page_impositions(imposition_type,
     assert len(s) == imposition_type[0] * imposition_type[1] * 2
     assert max(*list(s)) == imposition_type[0] * imposition_type[1] * 2
     assert min(*list(s)) == 1
-    
+
     # Calculate the sheets per signature.
     if sheets_per_sig is None:
         if imposition_type == FORMAT_4_PAGE:
@@ -137,7 +138,7 @@ def get_page_impositions(imposition_type,
             index_in_sig = index % pages_per_signature
             if (index_in_sig >= pages_per_signature / 2):
                 index_in_sig = pages_per_signature - 1 - index_in_sig
-            
+
             # How many thicknesses are we from the outside of the sig
             out_d = (index_in_sig + 1) // 2
 
@@ -227,15 +228,15 @@ def get_page_impositions(imposition_type,
             # Add all the elements for this signature to the whole
             output_elements.extend(sig_elements)
 
-            
-                    
+
+
     # Invert the relevant pages
     for index, element in enumerate(output_elements):
         # Check if it needs to be upside down.
         row_from_bottom = rows - 1 - (index % pages_per_side) // cols
         if element is not None and row_from_bottom % 2 > 0:
             output_elements[index] = transform.RotateLM(2, element)
-            
+
     # Split them into simple grids and pages.
     pages = []
     for index in range(0, len(output_elements), pages_per_side):
@@ -245,7 +246,7 @@ def get_page_impositions(imposition_type,
                 ))
     return pages
 
-        
+
 
 def get_pocketmod_pages(elements,
                         page_edge_bottom=True,
