@@ -253,7 +253,9 @@ def get_pocketmod_pages(elements,
                         first_page_vertical=True):
     """Creates one or more managers that wraps the given elements into
     one or more Pocket Mod-style page sets. Each manager in the list
-    that is returned corresponds to one page.
+    that is returned corresponds to one page. This imposer is designed
+    to work with portrait oriented content pages, laid out onto a
+    landscape oriented page.
 
     Arguments:
 
