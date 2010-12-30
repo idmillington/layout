@@ -384,6 +384,21 @@ ELEPHANT = (23*inch, 28*inch)
 DOUBLE_DEMY = (22.5*inch, 35*inch)
 QUAD_DEMY = (35*inch, 45*inch)
 
+# Book page sizes
+A_FORMAT_PAPERBACK = (110*mm, 178*mm)
+B_FORMAT_PAPERBACK = (130*mm, 198*mm)
+C_FORMAT_PAPERBACK = (135*mm, 216*mm)
+TRADE_PAPERBACK = C_FORMAT_PAPERBACK
+
+LULU_US_TRADE_PAPERBACK = (6*inch, 9*inch)
+LULU_COMIC_BOOK = (6.625*inch, 10.25*inch)
+LULU_POCKET_BOOK = (4.25*inch, 6.875*inch)
+LULU_LANDSCAPE_BOOK = (9*inch, 7*inch)
+LULU_SMALL_SQUARE_BOOK = (7.5*inch, 7.5*inch)
+LULU_ROYAL_BOOK = (6.139*inch, 9.21*inch)
+LULU_CROWN_QUARTO_BOOK = (7.444*inch, 9.681*inch)
+LULU_SQUARE_BOOK = (8.5*inch, 8.5*inch)
+
 # Interesting ratios for constructive page sizes.
 FOUR_THIRDS = 4.0 / 3.0 # Old quarto ratio
 ISO_RATIO = 1.4142135623730951 # Sqrt 2 - A, B and C paper sizes
