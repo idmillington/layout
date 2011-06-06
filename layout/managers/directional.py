@@ -17,7 +17,7 @@ class VerticalLM(root.GroupLayoutManager):
     #: Align the elements so they sit at the bottom of the available
     #: space.
     ALIGN_BOTTOM = 2
-    
+
     #: Align the elements vertcially so that any extra space is
     #: distributed equally between the elements.
     ALIGN_EQUAL_SPACING = 3
@@ -40,7 +40,7 @@ class VerticalLM(root.GroupLayoutManager):
     #: the layout.
     ALIGN_GROW = 13
 
-    
+
     # A tuple of align type values so we can distinguish between the
     # simple an complex cases.
     _ALIGN_SIMPLE_SET = (ALIGN_TOP, ALIGN_MIDDLE, ALIGN_BOTTOM)
@@ -48,11 +48,11 @@ class VerticalLM(root.GroupLayoutManager):
     _VALID_ALIGN_HORIZONTAL = (
         ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT, ALIGN_GROW
         )
-    
+
     _VALID_ALIGN_VERTICAL = _ALIGN_SIMPLE_SET + (
         ALIGN_EQUAL_SPACING, ALIGN_EQUAL_GROWTH
         )
-    
+
     def __init__(self, margin=0,
                  horizontal_align=ALIGN_GROW,
                  vertical_align=ALIGN_EQUAL_GROWTH,
@@ -62,7 +62,7 @@ class VerticalLM(root.GroupLayoutManager):
 
         ``margin``
             The amount of space to place between elements.
-        
+
         ``horizontal_align``
             How elements should be aligned horizontally within the
             stack (default: :data:`ALIGN_GROW`).
@@ -72,7 +72,7 @@ class VerticalLM(root.GroupLayoutManager):
             and how extra space should be distributed between them
             (default: :data:`ALIGN_EQUAL_GROWTH`).
         """
-        
+
         super(VerticalLM, self).__init__(elements)
         self.margin = margin
         self.vertical_align = vertical_align
@@ -149,7 +149,7 @@ class VerticalLM(root.GroupLayoutManager):
             # Render and move on.
             element.render(datatypes.Rectangle(x, y, w, h), data)
             y = next_y
-            
+
 class HorizontalLM(root.GroupLayoutManager):
     """Keeps a set of elements alongside one another. We can control
     how they are distributed horizontally, as well as their vertical
@@ -166,7 +166,7 @@ class HorizontalLM(root.GroupLayoutManager):
     #: Align the elements so they sit at the right of the available
     #: space.
     ALIGN_RIGHT = 12
-    
+
     #: Align the elements horizontally so that any additional space is
     #: distributed equally between the elements.
     ALIGN_EQUAL_SPACING = 13
@@ -189,7 +189,7 @@ class HorizontalLM(root.GroupLayoutManager):
     #: the layout.
     ALIGN_GROW = 3
 
-    
+
     # A tuple of align type values so we can distinguish between the
     # simple and complex cases.
     _ALIGN_SIMPLE_SET = (ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT)
@@ -208,7 +208,7 @@ class HorizontalLM(root.GroupLayoutManager):
 
         ``margin``
             The amount of space to place between elements.
-        
+
         ``vertical_align``
             How elements should be aligned vertically in the layout
             (default: :data:`ALIGN_GROW`).
@@ -218,7 +218,7 @@ class HorizontalLM(root.GroupLayoutManager):
             layout, and how extra space should be distributed between
             them (default: :data:`ALIGN_EQUAL_GROWTH`).
         """
-       
+
         super(HorizontalLM, self).__init__(elements)
         self.margin = margin
         self.vertical_align = vertical_align
@@ -296,14 +296,14 @@ class HorizontalLM(root.GroupLayoutManager):
             element.render(datatypes.Rectangle(x, y, w, h), data)
             x = next_x
 
-            
+
 class EqualColumnsLM(root.GroupLayoutManager):
     """Arranges a set of elements into equally sized columns."""
-    
+
     def __init__(self, margin=0, elements=[]):
         super(EqualColumnsLM, self).__init__(elements)
         self.margin = margin
-        
+
     def get_minimum_size(self, data):
         """The minimum width is the number of columns multiplied by
         the widest element."""
@@ -316,11 +316,11 @@ class EqualColumnsLM(root.GroupLayoutManager):
                 )
             min_height = max(min_height, size.y)
             min_width = max(min_width, size.x)
-            
+
         num_elements = len(self.elements)
         width = min_width * num_elements + self.margin * (num_elements-1)
         return datatypes.Point(width, min_height)
-        
+
     def render(self, rect, data):
         """Draws the columns."""
         num_elements = len(self.elements)
@@ -358,7 +358,8 @@ class EqualRowsLM(root.GroupLayoutManager):
 
     def render(self, rect, data):
         num_elements = len(self.elements)
-        row_height = (rect.h-self.margin*(num_elements-1)) / float(num_elements)
+        row_height = \
+            (rect.h-self.margin*(num_elements-1)) / float(num_elements)
         y = rect.y
         for element in reversed(self.elements):
             if element is not None:
@@ -366,6 +367,6 @@ class EqualRowsLM(root.GroupLayoutManager):
                         rect.x, y, rect.w, row_height
                         ), data)
             y += row_height + self.margin
-                
 
-            
+
+

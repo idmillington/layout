@@ -1,4 +1,9 @@
-"""This module holds page sizes and various mechanisms for manipulating them."""
+"""
+This module holds page sizes and various mechanisms for manipulating them.
+
+Part of Ian Millington's Page Construction Library.
+(c) 2006-2011 All Rights Reserved.
+"""
 import math
 import sys
 from units import mm, inch
