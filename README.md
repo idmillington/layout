@@ -1,5 +1,6 @@
-Layout is a high-level Python package for laying out content, primarily for
-print. It is well documented, tested and commented.
+Layout is a high-level Python package for laying out content,
+primarily for print. It is well documented, tested and commented and
+has been used in anger for several years.
 
 * Documentation is found in the "docs" directory.
 
@@ -18,8 +19,13 @@ the Python Sphinx package (which in turn has a few dependencies).
 To test the system, I recommend you use Nose.
 
 A full set of dependencies, including optional dependencies are in the
-requirements.txt file. The docs and testing dependencies aren't
-included in the setup.py file.
+requirements.txt file. Please note that this was created by doing a
+`pip freeze` and then editing the == to >= for each requirement, which
+encodes the versions of libraries I happened to have, earlier versions
+of the same libraries may also work.
+
+The docs and testing dependencies aren't included in the setup.py
+file.
 
 
 # Tests
