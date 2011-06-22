@@ -30,22 +30,22 @@ sure everything is working.
 It is useful normally to install dependencies into a virtualenv, so
 the workflow would be:
 
-$ virtualenv ve
-$ source ve/bin/activate
-$ pip install -U -r requirements.txt
-$ nosetests
+    $ virtualenv ve
+    $ source ve/bin/activate
+    $ pip install -U -r requirements.txt
+    $ nosetests
 
 
 # Installing
 
 Once you've tested the system, deactivate the virtualenv
 
-$ deactivate
+    $ deactivate
 
 Then active the virtualenv of the project you're working on (or don't
 bother if you're installing globally), and do:
 
-$ python setup.py install
+    $ python setup.py install
 
 
 # Compiling Documentation
@@ -53,10 +53,10 @@ $ python setup.py install
 The documentation is built with Sphinx, and is created with a Makefile
 in the docs directory. For example
 
-$ cd docs
-$ make html
-$ cd build/html
-$ python -m SimpleHTTPServer 8080
+    $ cd docs
+    $ make html
+    $ cd build/html
+    $ python -m SimpleHTTPServer 8080
 
 Will serve the documentation at http://localhost:8000
 
