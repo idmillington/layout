@@ -1,6 +1,13 @@
 """
 This module holds page sizes and various mechanisms for manipulating
 them.
+
+It is intended to be also useful as a drop-in replacement for the
+ReportLab ``lib.pagesizes`` module, and so all the definitions in that
+file are duplicated here (although this module is considerably more
+comprehensive). The A-size paper sizes of ReportLab are slightly
+different to those here, because here we use the conventional purchase
+page sizes.
 """
 import math
 import sys
@@ -92,6 +99,47 @@ def large_square(paper_size):
     paper size."""
     size = landscape(paper_size)[0]
     return size, size
+
+def subdivide(paper_size, long_axis_strips=1, short_axis_strips=1):
+    """
+    The paper that you get from cutting the given paper into the given
+    number of equal strips along each of its axes. The resulting paper
+    will be rotated so it is in the same landscape or portrait
+    orientation as its parent (if the input is square and the result
+    is not, the result will be landscape). Unlike the ISO 269 series
+    papers, the resulting size isn't rounded down, so this can be used
+    to find the A5 you get from cutting A4 in half (for example).
+    """
+    w, h = paper_size
+    long_factor = 1.0 / long_axis_strips
+    short_factor = 1.0 / short_axis_strips
+    if w >= h:
+        w, h = w*long_factor, h*short_factor
+        return landscape((w, h))
+    else:
+        w, h = w*short_factor, h*long_factor
+        return portrait((w, h))
+
+def half(paper_size):
+    """
+    The paper that you get from cutting the given paper in half along
+    its long axis. A convenience for ``subdivide(paper_size, 2, 1)``
+    """
+    return subdivide(paper_size, 2)
+
+def quarter(paper_size):
+    """
+    The paper that you get from cutting the given paper in half along
+    both its axes. A convenience for ``subdivide(paper_size, 2, 2)``
+    """
+    return subdivide(paper_size, 2, 2)
+
+def half_short(paper_size):
+    """
+    The paper that you get from cutting the given paper in half along
+    its short axis. A convenience for ``subdivide(paper_size, 1, 2)``
+    """
+    return subdivide_short(paper_size, 1, 2)
 
 def is_landscape(paper_size):
     """Checks if the given paper is landscape oriented."""
@@ -214,14 +262,14 @@ A3_PLUS = (329*mm, 483*mm)
 on some inkjet printers."""
 
 # Additional Japanese paper sizes
-JIS_A = A
+JIS_A = __build_series('JIS_A', A[0])
 """Japan doesn't strictly use the ISO 269 page sizes, it has its own
 national standard (JIS P 0138). The A-size paper in that standard
 conforms to the ISO A-size paper (the two standards mandate different
 tolerances, however). For the purposes of this module, the two are
 synonymous."""
 
-JIS_B = __build_series('JAPANESE_B', (1030*mm, 1456*mm))
+JIS_B = __build_series('JIS_B', (1030*mm, 1456*mm))
 """Japan has its own national standard B size paper (JIS P 0138) that
 follows the ISO 269 page proportions, but has a different reference
 size. This object represents that series. The Japanese B size is
@@ -286,6 +334,11 @@ ELEVEN_BY_SEVENTEEN = TABLOID
 :data:`LETTER` sheets. This is a more modern synonym for
 :data:`TABLOID`), and the :data:`ANSI_B` US national standard paper
 size."""
+
+ELEVENSEVENTEEN = TABLOID
+"""Another alias for :data:`ELEVEN_BY_SEVENTEEN`. This alias is
+included because it the name used in the ReportLab library for this
+paper size."""
 
 LEDGER = (17*inch, 11*inch) # landscape version of TABLOID
 """A standard size for old accounding ledgers. This is the same paper
@@ -361,7 +414,8 @@ SCRAPBOOK_8 = (8*inch, 8*inch)
 SMALL_SCRAPBOOK = SCRAPBOOK_8
 LARGE_SCRAPBOOK = (12*inch, 12*inch)
 SCRAPBOOK = LARGE_SCRAPBOOK
-MOO_CARD = (28*mm, 70*mm)
+MOO_MINI_CARD = (28*mm, 70*mm)
+MOO_BUSINESS_CARD = (55*mm, 84*mm)
 
 # Other miscellaneous paper sizes
 GOVERNMENT_LEGAL = (8.0*inch, 10.5*inch)
