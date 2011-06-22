@@ -3,12 +3,12 @@ import layout.datatypes as datatypes
 import layout.managers.directional as directional
 
 class TextBase(root.LayoutElement):
-    """Base class of things with fonts."""
-    
+    """Base class of things that track their font, color and alignment."""
+
     ALIGN_LEFT = 0
     ALIGN_RIGHT = 1
     ALIGN_CENTER = 2
-    
+
     def __init__(self, font_name="Helvetica", font_size=11,
                  color=(0,0,0), align=ALIGN_LEFT):
         self.color = color
@@ -17,12 +17,13 @@ class TextBase(root.LayoutElement):
         self.align = align
 
 class Paragraph(TextBase):
-    """Represents a paragraph of text that will be fit in the given width.
+    """
+    A paragraph of text that will be fit in the given width.
 
     Because this class has a specific width it does not scale to fit
     with the room it is given. It may therefore overlap surrounding
-    content unless it is wrapped in a scaling layout manager."""
-
+    content unless it is wrapped in a scaling layout manager.
+    """
     def __init__(self, text, width, font_name='Helvetica',
                  font_size=11, color=(0,0,0),
                  leading=1.3, paragraph_indent=True):
@@ -37,8 +38,10 @@ class Paragraph(TextBase):
         self.height = 0
 
     def _do_layout(self, data):
-        """Lays the text out into separate lines and calculates their total
-        height."""
+        """
+        Lays the text out into separate lines and calculates their
+        total height.
+        """
         c = data['output']
         word_space = c.stringWidth(' ', self.font_name, self.font_size)
 
@@ -60,7 +63,7 @@ class Paragraph(TextBase):
             num_lines * self.font_size +
             (num_lines-1)*(self.font_size * (self.leading - 1.0))
             )
-        
+
     def get_minimum_size(self, data):
         if not self._layout:
             self._do_layout(data)
@@ -73,21 +76,21 @@ class Paragraph(TextBase):
         c.saveState()
         c.setFont(self.font_name, self.font_size)
         c.setFillColorRGB(*self.color)
-        
+
         y = rect.y + rect.h - self.font_size
         x = rect.x + (self.font_size if self.paragraph_indent else 0)
         for line in self._layout:
             c.drawString(x, y, ' '.join(line))
-            
+
             x = rect.x
             y -= self.font_size * self.leading
         c.restoreState()
-        
-    
-class TextLine(TextBase):
-    """Represents an unsplittable line of text formatted in a single font
-    and size."""
 
+
+class TextLine(TextBase):
+    """
+    An unsplittable line of text formatted in a single font and size.
+    """
     def __init__(self, text,
                  font_name="Helvetica", font_size=11,
                  color=(0,0,0), align=TextBase.ALIGN_LEFT):
@@ -102,7 +105,7 @@ class TextLine(TextBase):
     def render(self, rect, data):
         # Calculate the y coordinate including the descender (so we fit in
         # the box rather than resting on the bottom edge of it).
-        y = rect.y + self.font_size*0.2 
+        y = rect.y + self.font_size*0.2
 
         # Draw the text at the appropriate alignment
         c = data['output']
@@ -118,16 +121,17 @@ class TextLine(TextBase):
         c.restoreState()
 
 class TextBlock(TextBase):
-    """Represents a set of simple text lines. Each line in the list
-    can be prepended with a + sign to make it bold."""
-
+    """
+    A set of simple text lines. Each line in the list can be prepended
+    with a + sign to make it bold.
+    """
     def __init__(self, lines,
                  font_name="Helvetica", font_size=11,
                  color=(0,0,0), align=TextBase.ALIGN_LEFT, gap=5):
         super(TextBlock, self).__init__(font_name, font_size, color, align)
         self.gap = gap
         self.lines = lines
-        
+
         self.vertical = directional.VerticalLM(
             gap,
             vertical_align = directional.VerticalLM.ALIGN_TOP
@@ -140,11 +144,11 @@ class TextBlock(TextBase):
             self.vertical.add_element(TextLine(
                     text, font_name, self.font_size, self.color, self.align
                     ))
-            
+
     def get_minimum_size(self, data):
         return self.vertical.get_minimum_size(data)
 
     def render(self, rect, data):
         return self.vertical.render(rect, data)
-        
-                 
+
+

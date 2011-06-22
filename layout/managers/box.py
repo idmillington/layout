@@ -2,14 +2,15 @@ from layout import datatypes
 import root
 
 class BoxLM(root.LayoutManager):
-    """A layout manager in the style of Java's BoxLayout, with a central space
-    that gobbles up as much size as possible and surrounding spaces that
-    are at minimum size."""    
-    
+    """
+    A layout manager in the style of Java's BoxLayout, with a central
+    space that gobbles up as much size as possible and surrounding
+    spaces that are at minimum size.
+    """
     __metaclass__ = root.SpecificFieldsLMMetaclass
     _fields = ['top', 'right', 'bottom', 'left', 'center']
     _store_name = '_elements'
-    
+
     def __init__(self, margin=0,
                  top=None, right=None, bottom=None, left=None, center=None
                  ):
@@ -79,7 +80,7 @@ class BoxLM(root.LayoutManager):
             +------+-------------+-------+
 
         Inner :class:`BoxLM`:
-        
+
 
             +----------+
             |   Top    |
@@ -88,7 +89,7 @@ class BoxLM(root.LayoutManager):
             +----------+
             |  Bottom  |
             +----------+
-        
+
         """
         super(BoxLM, self).__init__()
         self._elements = [None] * len(BoxLM._fields)
@@ -98,13 +99,13 @@ class BoxLM(root.LayoutManager):
         self.bottom = bottom
         self.left = left
         self.center = center
-    
+
     def get_minimum_size(self, data):
         # Find the sizes for each component
         item_sizes = [
             (
-                datatypes.Point(0, 0) 
-                if getattr(self, direction) is None 
+                datatypes.Point(0, 0)
+                if getattr(self, direction) is None
                 else getattr(self, direction).get_minimum_size(data)
             ) for direction in BoxLM._fields
         ]
@@ -113,11 +114,11 @@ class BoxLM(root.LayoutManager):
         w_margins = 0
         if self.right is not None: w_margins += self.margin
         if self.left is not None: w_margins += self.margin
-        
+
         h_margins = 0
         if self.top is not None: h_margins += self.margin
         if self.bottom is not None: h_margins += self.margin
-        
+
         # Work out the result
         min_width = max(
             item_sizes[0].x, item_sizes[2].x,
@@ -128,11 +129,11 @@ class BoxLM(root.LayoutManager):
             item_sizes[1].y, item_sizes[4].y, item_sizes[3].y
             )
         return datatypes.Point(min_width, min_height)
-            
+
     def render(self, rect, data):
         x, y, w, h = rect.get_data()
-        
-        if self.top is not None: 
+
+        if self.top is not None:
             size = self.top.get_minimum_size(data)
             self.top.render(datatypes.Rectangle(x,y+h-size.y,w,size.y), data)
             h -= size.y + self.margin

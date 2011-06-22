@@ -44,18 +44,22 @@ rendering, and should perform the necessary drawing.
 Both of these methods additionally take a data dictionary, which can
 contain any additional information about the render that is required.
 
-Note: Use with Report Lab
+Note: Use with ReportLab
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The library was designed to be used with the Report Lab PDF generation
-library. The layout managers are renderer agnostic, but the elements
-provided in :mod:`layout.elements` render with Report Lab. Although
-the data dictionary passed to
+library. Most of the layout managers are renderer agnostic
+(:class:`layout.elements.clip.ClipLM` being the exception), but the
+elements provided in :mod:`layout.elements` render with ReportLab,
+and :class:`layout.pages.outputPagesLM` outputs pages to ReportLab.
+
+Although the data dictionary passed to
 :meth:`layout.managers.root.LayoutElement.get_minimum_size` and
-:meth:`layout.managers.root.LayoutElement.render` can contain any data that
-your rendering classes require, by convention, when you are rendering
-with Report Lab, they will contain a `output` field containing a
-:class:`reportlab.pdfgen.canvas.Canvas` instance, for rendering.
+:meth:`layout.managers.root.LayoutElement.render` can contain any data
+that your rendering classes require, by convention, when you are
+rendering with ReportLab, they will contain a `output` field
+containing a :class:`reportlab.pdfgen.canvas.Canvas` instance, for
+rendering.
 
 
 Compose Your Layout

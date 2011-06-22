@@ -11,7 +11,7 @@ setup(
     author='Ian Millington',
     author_email='idmillington@googlemail.com',
     packages=[
-        'layout', 'layout.datatypes', 'layout.elements', 
+        'layout', 'layout.datatypes', 'layout.elements',
         'layout.managers', 'layout.pages'
         ],
     requires=['reportlab(>=2.0)']

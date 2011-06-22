@@ -19,69 +19,8 @@ def parse_dimension(text):
     The units may be inches (", in, ins, inch, inchs, inches),
     millimeters (mm), points (pt, pts, point, points, or nothing), or
     centimeters (cm). Because this module is intended for use with
-    paper-size dimensions, no larger or smaller units are supported.
-
-    # Dimensionless values are in points.
-    >>> parse_dimension('1')
-    1
-    >>> parse_dimension('14')
-    14
-    >>> parse_dimension('2.5')
-    2.5
-    >>> parse_dimension('.25')
-    0.25
-    >>> parse_dimension('2.')
-    2.0
-    >>> parse_dimension('-16')
-    -16
-
-    # Points can also be explicit.
-    >>> parse_dimension('1pt')
-    1
-    >>> parse_dimension('1 pt')
-    1
-    >>> parse_dimension('1pts')
-    1
-    >>> parse_dimension('1 pts')
-    1
-    >>> parse_dimension('1point')
-    1
-    >>> parse_dimension('1 point')
-    1
-    >>> parse_dimension('1points')
-    1
-    >>> parse_dimension('1 points')
-    1
-
-    # Inches are 72 points
-    >>> parse_dimension('1in')
-    72
-    >>> parse_dimension('1inch')
-    72
-    >>> parse_dimension('1inches')
-    72
-    >>> parse_dimension('1 in')
-    72
-    >>> parse_dimension('1"')
-    72
-    >>> parse_dimension('1.25"')
-    90.0
-
-    # Millimeters are c. 2.835 points
-    >>> parse_dimension('1mm')
-    2.8346456692913389
-    >>> parse_dimension('1 mm')
-    2.8346456692913389
-    >>> parse_dimension('1.25mm')
-    3.5433070866141736
-
-    # Centimeters are c. 28.35 points
-    >>> parse_dimension('1cm')
-    28.346456692913385
-    >>> parse_dimension('1 cm')
-    28.346456692913385
-    >>> parse_dimension('1.25cm')
-    35.433070866141733
+    paper-size dimensions, no larger or smaller units are currently
+    supported.
     """
     size, unit = _split_dimension(text)
     factor = _unit_lookup[unit]
@@ -102,42 +41,6 @@ def parse_dimensions(text):
     points: i.e. the 2 in "1in, 2, 3mm" will be treated as 2 points,
     where as the 1 and 2 in "1, 2, 3mm" will be treated as
     millimeters.
-
-    # Separators
-    >>> parse_dimensions('1x2')
-    (1, 2)
-    >>> parse_dimensions('1inx2in')
-    (72, 144)
-    >>> parse_dimensions('1in x 2in')
-    (72, 144)
-    >>> parse_dimensions('1in x2in')
-    (72, 144)
-    >>> parse_dimensions('1inx 2in')
-    (72, 144)
-    >>> parse_dimensions('1in 2in')
-    (72, 144)
-    >>> parse_dimensions('1in, 2in')
-    (72, 144)
-    >>> parse_dimensions('1in,2in')
-    (72, 144)
-    >>> parse_dimensions('1in; 2in')
-    (72, 144)
-    >>> parse_dimensions('1in;2in')
-    (72, 144)
-    >>> parse_dimensions('1in-2in')
-    (72, 144)
-
-    # Positional inferrence
-    >>> parse_dimensions('1in, 2in')
-    (72, 144)
-    >>> parse_dimensions('1, 2in')
-    (72, 144)
-    >>> parse_dimensions('1, 2')
-    (1, 2)
-    >>> parse_dimensions('1in, 2, 3in')
-    (72, 2, 216)
-    >>> parse_dimensions('1, 2, 3in')
-    (72, 144, 216)
     """
     components = _dimension_separator.split(text)
     if len(components) == 0:

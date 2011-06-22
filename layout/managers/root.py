@@ -1,7 +1,9 @@
 from layout import datatypes
 
 class LayoutElement(object):
-    """A layout element has size data and can be asked to draw itself."""
+    """
+    A layout element has size data and can be asked to draw itself.
+    """
     def get_minimum_size(self, data):
         """How small can the element be? Should return a Point."""
         return datatypes.Point(0, 0)
@@ -11,14 +13,17 @@ class LayoutElement(object):
         pass
 
 class LayoutManager(LayoutElement):
-    """Layout managers position and size content to fit some container,
+    """
+    Layout managers position and size content to fit some container,
     based on some algorithm. This class is an empty subclass used for
-    clearer naming when used as a parent class."""
+    clearer naming when used as a parent class.
+    """
 
 class SpecificFieldsLMMetaclass(type):
-    """A meta-class that creates layout managers with a set of named
-    fields."""
-
+    """
+    A meta-class that creates layout managers with a set of named
+    fields.
+    """
     def __init__(cls, name, bases, dict):
         """Creates a new class with a set of fields defined by its
         _fields and _store_name class properties."""
@@ -36,9 +41,10 @@ class SpecificFieldsLMMetaclass(type):
             _add(index, field_name)
 
 class GroupLayoutManager(LayoutManager):
-    """A base class for layout managers that can have any number of
-    elements."""
-
+    """
+    A base class for layout managers that can have any number of
+    elements.
+    """
     def __init__(self, elements=[]):
         self.elements = elements[:]
 

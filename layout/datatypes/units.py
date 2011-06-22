@@ -1,6 +1,6 @@
 # These units are expressed in postcript points
 
-#: One international inch.
+#: One International inch (defined as 25.4mm).
 inch = 72.0
 
 #: One ISO-standard millimeter.

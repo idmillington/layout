@@ -2,10 +2,11 @@ from layout import datatypes
 import root
 
 class VerticalLM(root.GroupLayoutManager):
-    """Keeps a set of elements above one another. We can control
+    """
+    Keeps a set of elements above one another. We can control
     how they are distributed vertically, as well as their horizontal
-    alignment."""
-
+    alignment.
+    """
     #: Align the elements so they are bunched at the top of the
     #: available space.
     ALIGN_TOP = 0
@@ -79,8 +80,10 @@ class VerticalLM(root.GroupLayoutManager):
         self.horizontal_align = horizontal_align
 
     def get_minimum_size(self, data):
-        """Minimum height is the total height + margins, minimum width
-        is the largest width."""
+        """
+        Minimum height is the total height + margins, minimum width
+        is the largest width.
+        """
         min_width = 0
         height = 0
         for element in self.elements:
@@ -91,8 +94,9 @@ class VerticalLM(root.GroupLayoutManager):
         return datatypes.Point(min_width, height)
 
     def render(self, rect, data):
-        """Displays the elements according to the align properties."""
-
+        """
+        Displays the elements according to the align properties.
+        """
         # Make sure we're aligned correctly
         if self.horizontal_align not in VerticalLM._VALID_ALIGN_HORIZONTAL:
             raise ValueError('Horizontal align is not valid.')
@@ -151,10 +155,11 @@ class VerticalLM(root.GroupLayoutManager):
             y = next_y
 
 class HorizontalLM(root.GroupLayoutManager):
-    """Keeps a set of elements alongside one another. We can control
+    """
+    Keeps a set of elements alongside one another. We can control
     how they are distributed horizontally, as well as their vertical
-    alignment."""
-
+    alignment.
+    """
     #: Align the elements so they are bunched at the left of the
     #: available space.
     ALIGN_LEFT = 10

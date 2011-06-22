@@ -47,7 +47,8 @@ def get_page_impositions(imposition_type,
                          sheets_per_sig=None, fold_then_collate=False,
                          thickness=0.2835, signature_mark=0,
                          elements=[]):
-    """Calculates impositions for the elements in the content list and
+    """
+    Calculates impositions for the elements in the content list and
     returns a set of page-layouts for each as manager instances.
 
     An imposition is a way of laying out pages on a larger sheet, such
@@ -100,8 +101,8 @@ def get_page_impositions(imposition_type,
 
     The returned page layouts can be given to a PageLM for rendering
     onto individual pages of output. This method isn't a layout
-    manager in its own right."""
-
+    manager in its own right.
+    """
     # Take a copy of the elements list so we can mess with it.
     elements = elements[:]
 
@@ -251,7 +252,8 @@ def get_page_impositions(imposition_type,
 def get_pocketmod_pages(elements,
                         page_edge_bottom=True,
                         first_page_vertical=True):
-    """Creates one or more managers that wraps the given elements into
+    """
+    Creates one or more managers that wraps the given elements into
     one or more Pocket Mod-style page sets. Each manager in the list
     that is returned corresponds to one page. This imposer is designed
     to work with portrait oriented content pages, laid out onto a
@@ -283,8 +285,8 @@ def get_pocketmod_pages(elements,
 
     The returned page layouts can be given to a PageLM for rendering
     onto individual pages of output. This method isn't a layout
-    manager in its own right."""
-
+    manager in its own right.
+    """
     pages = {
         (False, False):[2,3,4,5,1,8,7,6],
         (False, True):[4,5,6,7,3,2,1,8],

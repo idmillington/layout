@@ -4,7 +4,7 @@ import math
 class Point(object):
     """A single point in space, or a vector in 2D."""
     __slots__ = ('x', 'y')
-    
+
     def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
@@ -119,7 +119,7 @@ class Point(object):
         ca = math.cos(angle)
         sa = math.sin(angle)
         self.x, self.y = self.x*ca-self.y*sa, self.x*sa+self.y*ca
-        
+
     def get_rotated(self, angle):
         """Returns the vector generated from this vector rotated by
         the given amount anti-clockwise."""
@@ -130,7 +130,7 @@ class Point(object):
     def get_magnitude(self):
         """Returns the magnitude of this vector."""
         return math.sqrt(self.x*self.x + self.y*self.y)
-    
+
     def get_magnitude_squared(self):
         """Returns the square of the magnitude of this vector."""
         return self.x*self.x + self.y*self.y
@@ -175,7 +175,7 @@ class Point(object):
         current components and those of the given other value."""
         self.x = max(self.x, other.x)
         self.y = max(self.y, other.y)
-        
+
     @staticmethod
     def get_random(min_pt, max_pt):
         """Returns a random vector in the given range."""
@@ -189,7 +189,7 @@ class Point(object):
 
 class _RectangleMetaclass(type):
     """Adds all combinations of directional properties to the rectangle, such
-    as ``Rectangle.top_left``, ``Rectangle.left_top``, ``Rectangle.tl`` and 
+    as ``Rectangle.top_left``, ``Rectangle.left_top``, ``Rectangle.tl`` and
     ``Rectangle.center``."""
     def __init__(cls, name, base, dict):
         super(_RectangleMetaclass, cls).__init__(name, base, dict)
@@ -207,22 +207,22 @@ class _RectangleMetaclass(type):
             setattr(cls, "%s_%s" % (y, x), property(_get))
             setattr(cls, x[0]+y[0], property(_get))
             setattr(cls, "%s_%s" % (x, y), property(_get))
-            
+
         for x in xs:
             for y in ys:
                 _make_method(x, y)
-            
+
         def _make_method(name, base, addition, amount):
             def _get(self):
                 return getattr(self, base) + getattr(self, addition) * amount
-            
+
             setattr(cls, name[0], property(_get))
             setattr(cls, name, property(_get))
-            
+
         for i, (x, y) in enumerate(zip(xs, ys)):
             _make_method(x, 'x', 'w', i/2.0)
             _make_method(y, 'y', 'h', i/2.0)
-                
+
 class Rectangle(object):
     """A rectangle in two dimensional space.
 
@@ -250,7 +250,7 @@ class Rectangle(object):
     """
     __slots__ = ('x', 'y', 'w', 'h')
     __metaclass__ = _RectangleMetaclass
-    
+
     def __init__(self, x, y, w, h):
         self.x = x
         self.y = y
@@ -269,5 +269,5 @@ class Rectangle(object):
     def get_data(self):
         """Returns the x, y, w, h, data as a tuple."""
         return self.x, self.y, self.w, self.h
-            
+
 

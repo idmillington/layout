@@ -1,10 +1,10 @@
-.. Icosagon Layout documentation master file, created by
+.. Layout documentation master file, created by
    sphinx-quickstart on Thu Jul 30 14:35:59 2009.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Icosagon Layout
-===============
+Layout
+======
 
 This package lays out content using a hierarchy of fitting
 algorithms. It is used to construct pages or UI output with complex

@@ -1,8 +1,6 @@
 """
-This module holds page sizes and various mechanisms for manipulating them.
-
-Part of Ian Millington's Page Construction Library.
-(c) 2006-2011 All Rights Reserved.
+This module holds page sizes and various mechanisms for manipulating
+them.
 """
 import math
 import sys
@@ -96,7 +94,7 @@ def large_square(paper_size):
     return size, size
 
 def is_landscape(paper_size):
-    """"Checks if the given paper is landscape oriented."""
+    """Checks if the given paper is landscape oriented."""
     return paper_size[0] > paper_size[1]
 
 def is_portrait(paper_size):

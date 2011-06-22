@@ -2,19 +2,19 @@ from layout import datatypes
 import root
 
 class FixedSizeLM(root.LayoutManager):
-    """A layout manager that always renders its children at a specific
+    """
+    A layout manager that always renders its children at a specific
     size, regardless of whether it is given enough room or not.
 
     This layout manager is useful for displaying illustrations of a page
     within another page. It draws the inner page at a specific size.
-    
+
     Because this layout manager basically ignores the size of the
     rectangle that it is given, it may draw content overlapping into
     surrounding content. It is common, therefore, to place this layout
     manager into one of the scaling layout managers in
     :mod:`layout.managers.transform`, to make sure it fits.
     """
-
     def __init__(self, size, element=None):
         self.size = size
         self.element = element
@@ -24,13 +24,14 @@ class FixedSizeLM(root.LayoutManager):
 
     def render(self, rectangle, data):
         rect = datatypes.Rectangle(
-            rectangle.x, rectangle.y, 
+            rectangle.x, rectangle.y,
             self.size.x, self.size.y
             )
         self.element.render(rect, data)
-        
+
 class AbsolutePositionLM(root.LayoutManager):
-    """A layout manager that positions it children at specific
+    """
+    A layout manager that positions it children at specific
     positions.
 
     Because this layout manager basically ignores the size of the
@@ -39,7 +40,6 @@ class AbsolutePositionLM(root.LayoutManager):
     manager into one of the scaling layout managers in
     :mod:`layout.managers.transform`, to make sure it fits.
     """
-
     def __init__(self):
         self.elements = []
 

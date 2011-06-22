@@ -3,9 +3,10 @@ from layout import datatypes
 import root
 
 class SimpleGridLM(root.GroupLayoutManager):
-    """A simple grid takes a number of elements and arranges them
-    in rows and columns so that each element is the same size."""
-
+    """
+    A simple grid takes a number of elements and arranges them
+    in rows and columns so that each element is the same size.
+    """
     def __init__(self, columns=1, rows=1, margin=0, elements=[]):
         super(SimpleGridLM, self).__init__(elements)
         self.rows = rows
@@ -52,8 +53,9 @@ class SimpleGridLM(root.GroupLayoutManager):
                         ), data)
 
 class GridLM(root.LayoutManager):
-    """Lays out elements in a grid with flexible sized rows and columns."""
-
+    """
+    Lays out elements in a grid with flexible sized rows and columns.
+    """
     def __init__(self, margin=0, outside_margin=0):
         self.rows = 1
         self.cols = 1

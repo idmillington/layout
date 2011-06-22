@@ -4,7 +4,7 @@ import Image as PIL
 
 class Image(root.LayoutElement):
     """Represents an image to be displayed at a fixed aspect ratio."""
-    
+
     ALIGN_LEFT = 0
     ALIGN_RIGHT = 1
     ALIGN_CENTER = 2
@@ -50,7 +50,7 @@ class Image(root.LayoutElement):
         extra_height = rect.h - height
         x = rect.x
         y = rect.y
-        
+
         if self.horizontal_align == Image.ALIGN_CENTER:
             x += extra_width * 0.5
         elif self.horizontal_align == Image.ALIGN_RIGHT:
@@ -63,4 +63,4 @@ class Image(root.LayoutElement):
 
         # Draw the image
         data['output'].drawImage(self.filename, x, y, width, height)
-            
+

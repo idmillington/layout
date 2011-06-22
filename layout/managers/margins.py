@@ -2,9 +2,10 @@ from layout import datatypes
 import root
 
 class MarginsLM(root.LayoutManager):
-    """A layout manager that has only one element, surrounded by the given
-    absolute margins."""
-
+    """
+    A layout manager that has only one element, surrounded by the given
+    absolute margins.
+    """
     __metaclass__ = root.SpecificFieldsLMMetaclass
     _fields = ['top', 'right', 'bottom', 'left']
     _store_name = '_margins'
@@ -28,7 +29,8 @@ class MarginsLM(root.LayoutManager):
             ), data)
 
 class ProportionalMarginsLM(root.LayoutManager):
-    """A layout manager that has only one element, surrounded by the given
+    """
+    A layout manager that has only one element, surrounded by the given
     margins that are proportional to total size of this manager.
 
     For example, if we specify that the left margin is at 0.2 and the right
@@ -36,8 +38,8 @@ class ProportionalMarginsLM(root.LayoutManager):
     of this manager.
 
     Pairs of margins (left & right or top & bottom) must sum to at least zero,
-    and strictly less than 1."""
-
+    and strictly less than 1.
+    """
     __metaclass__ = root.SpecificFieldsLMMetaclass
     _fields = ['top', 'right', 'bottom', 'left']
     _store_name = '_margins'
@@ -71,7 +73,8 @@ class ProportionalMarginsLM(root.LayoutManager):
 
 _NINETH = 1.0 / 9.0
 class VanDeGraafCanonLM(ProportionalMarginsLM):
-    """Wraps its child element in margins calculated according to the
+    """
+    Wraps its child element in margins calculated according to the
     Van de Graaf page construction canon.
 
     Using this canon the proportions of the child
@@ -96,7 +99,8 @@ class VanDeGraafCanonLM(ProportionalMarginsLM):
                 )
 
 class PaddedMarginsLM(root.LayoutManager):
-    """A layout manager that surrounds its single element by margins
+    """
+    A layout manager that surrounds its single element by margins
     that grow with the available space. The margins grow with the available
     space in the given proportions. If the proportions for a pair of margins
     don't add up to 1.0, then any additional proportion will be given to the
@@ -105,8 +109,8 @@ class PaddedMarginsLM(root.LayoutManager):
     Using this layout manager with the correct proportions, you can
     duplicate the behavior of the
     :class:`layout.managers.align.AlignLM`. This class provides more
-    flexibility, however."""
-
+    flexibility, however.
+    """
     __metaclass__ = root.SpecificFieldsLMMetaclass
     _fields = ['top', 'right', 'bottom', 'left', 'width', 'height']
     _store_name = '_margins'

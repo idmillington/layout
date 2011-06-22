@@ -6,10 +6,11 @@ Fundamental Data Types and Constants (:mod:`layout.datatypes`)
 
 .. toctree::
    :maxdepth: 1
-    
+
    datatypes_units
    datatypes_papersizes
    datatypes_position
+   datatypes_parse_dimensions
 
 
 Managers in the Layout Tree (:mod:`layout.managers`)
@@ -23,7 +24,7 @@ Managers in the Layout Tree (:mod:`layout.managers`)
    managers_clip
    managers_directional
    managers_fixed
-   managers_grid   
+   managers_grid
    managers_jitter
    managers_margins
    managers_overlay
@@ -37,7 +38,7 @@ Elements that Output Somthing (:mod:`layout.elements`)
 
 .. toctree::
    :maxdepth: 1
-        
+
    elements_lines
    elements_image
    elements_text

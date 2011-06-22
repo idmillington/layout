@@ -15,7 +15,7 @@ corresponding series name (i.e. see :data:`A` for information on
 ``A4``, ``A0`` and so on).
 
 Common formats in other countries, as well as more unusual sizes, such
-as Japanese Shiroku papers, are included. 
+as Japanese Shiroku papers, are included.
 
 As well as common paper sizes, the module also includes useful sizes
 for things like printer's oversizes (e.g. ``SRA2`` -- see

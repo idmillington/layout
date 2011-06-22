@@ -3,13 +3,14 @@ from layout import datatypes
 import root
 
 class RotateLM(root.LayoutManager):
-    """A layout manager that holds one element and rotates it by the given
-    number of right angles.
+    """
+    A layout manager that holds one element and rotates it by the
+    given number of right angles.
 
     The right angle value given can't be fractional, it must be an
     integer. Convenience constants are provided in this class for code
-    readability."""
-
+    readability.
+    """
     #: No rotation
     NORMAL = 0
 
@@ -71,7 +72,8 @@ class RotateLM(root.LayoutManager):
         c.restoreState()
 
 class AnyRotationLM(root.LayoutManager):
-    """A layout manager that allows its child element to be rotated to
+    """
+    A layout manager that allows its child element to be rotated to
     any angle. The rotated element is always given space that is of
     the same aspect ratio as the minimum size it requested, even if
     extra space is available.
@@ -81,8 +83,8 @@ class AnyRotationLM(root.LayoutManager):
     :class:`RotateLM` if you are rotating through a multiple of
     PI/2. Because of the aspect ratio feature of this algorithm, the
     results of this class with a right-angle rotation will also differ
-    from that of :class:`RotateLM`."""
-
+    from that of :class:`RotateLM`.
+    """
     def __init__(self, angle, element=None):
         """
         Arguments:
@@ -154,7 +156,6 @@ class FixedScaleLM(root.LayoutManager):
     """
     A layout manager that scales its one element by a fixed amount.
     """
-
     def __init__(self, scale=1.0, element=None):
         super(FixedScaleLM, self).__init__()
         self.scale = scale
@@ -179,9 +180,10 @@ class FixedScaleLM(root.LayoutManager):
         c.restoreState()
 
 class ScaleLM(root.LayoutManager):
-    """A layout manager that holds one element, and scales it down
-    with isotropic scaling if it is too large to fit."""
-
+    """
+    A layout manager that holds one element, and scales it down with
+    isotropic scaling if it is too large to fit.
+    """
     def __init__(self, element=None):
         super(ScaleLM, self).__init__()
         self.element = element
@@ -210,12 +212,13 @@ class ScaleLM(root.LayoutManager):
         c.restoreState()
 
 class FlexScaleLM(root.LayoutManager):
-    """A layout manager that holds one element, and scales it down
-    with anisotropic scaling, if it is too large to fit. Unlike the
-    regular :class:`ScaleLM`, this class gives the scaled object any
+    """
+    A layout manager that holds one element, and scales it down with
+    anisotropic scaling, if it is too large to fit. Unlike the regular
+    :class:`ScaleLM`, this class gives the scaled object any
     additional room it has to fit, rather than preserving its aspect
-    ratio."""
-
+    ratio.
+    """
     def __init__(self, element=None):
         super(FlexScaleLM, self).__init__()
         self.element = element
