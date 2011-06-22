@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.12. Superclasses for Elements in the Layout Tree (layout.managers.root) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="next" title="2.3.1. Lines and Borders (layout.elements.lines)" href="elements_lines.html" />
+    <link rel="prev" title="2.2.11. Limiting Recursion in Trees with Loops (layout.managers.recursion)" href="managers_recursion.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="elements_lines.html" title="2.3.1. Lines and Borders (layout.elements.lines)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="managers_recursion.html" title="2.2.11. Limiting Recursion in Trees with Loops (layout.managers.recursion)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.managers.root">
+<span id="superclasses-for-elements-in-the-layout-tree-layout-managers-root"></span><h1>2.2.12. Superclasses for Elements in the Layout Tree (<a class="reference internal" href="#module-layout.managers.root" title="layout.managers.root"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.root</span></tt></a>)<a class="headerlink" href="#module-layout.managers.root" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="layout.managers.root.GroupLayoutManager">
+<em class="property">class </em><tt class="descclassname">layout.managers.root.</tt><tt class="descname">GroupLayoutManager</tt><big>(</big><em>elements=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#layout.managers.root.GroupLayoutManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<p>A base class for layout managers that can have any number of
+elements.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.root.LayoutElement">
+<em class="property">class </em><tt class="descclassname">layout.managers.root.</tt><tt class="descname">LayoutElement</tt><a class="headerlink" href="#layout.managers.root.LayoutElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>A layout element has size data and can be asked to draw itself.</p>
+<dl class="method">
+<dt id="layout.managers.root.LayoutElement.get_minimum_size">
+<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.root.LayoutElement.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>How small can the element be? Should return a Point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.root.LayoutElement.render">
+<tt class="descname">render</tt><big>(</big><em>rectangle</em>, <em>data</em><big>)</big><a class="headerlink" href="#layout.managers.root.LayoutElement.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the element to render itself.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.root.LayoutManager">
+<em class="property">class </em><tt class="descclassname">layout.managers.root.</tt><tt class="descname">LayoutManager</tt><a class="headerlink" href="#layout.managers.root.LayoutManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#layout.managers.root.LayoutElement" title="layout.managers.root.LayoutElement"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutElement</span></tt></a></p>
+<p>Layout managers position and size content to fit some container,
+based on some algorithm. This class is an empty subclass used for
+clearer naming when used as a parent class.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.root.SpecificFieldsLMMetaclass">
+<em class="property">class </em><tt class="descclassname">layout.managers.root.</tt><tt class="descname">SpecificFieldsLMMetaclass</tt><big>(</big><em>name</em>, <em>bases</em>, <em>dict</em><big>)</big><a class="headerlink" href="#layout.managers.root.SpecificFieldsLMMetaclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">type</span></tt></p>
+<p>A meta-class that creates layout managers with a set of named
+fields.</p>
+<p>Creates a new class with a set of fields defined by its
+_fields and _store_name class properties.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="managers_recursion.html"
+                        title="previous chapter">2.2.11. Limiting Recursion in Trees with Loops (<tt class="docutils literal docutils literal"><span class="pre">layout.managers.recursion</span></tt>)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="elements_lines.html"
+                        title="next chapter">2.3.1. Lines and Borders (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.elements.lines</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/managers_root.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="elements_lines.html" title="2.3.1. Lines and Borders (layout.elements.lines)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="managers_recursion.html" title="2.2.11. Limiting Recursion in Trees with Loops (layout.managers.recursion)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

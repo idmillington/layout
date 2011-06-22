@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.9. Multiple Elements in the Same Space (layout.managers.overlay) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="next" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)" href="managers_transform.html" />
+    <link rel="prev" title="2.2.8. Add Margins to an Element (layout.managers.margins)" href="managers_margins.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_transform.html" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="managers_margins.html" title="2.2.8. Add Margins to an Element (layout.managers.margins)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.managers.overlay">
+<span id="multiple-elements-in-the-same-space-layout-managers-overlay"></span><h1>2.2.9. Multiple Elements in the Same Space (<a class="reference internal" href="#module-layout.managers.overlay" title="layout.managers.overlay"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.overlay</span></tt></a>)<a class="headerlink" href="#module-layout.managers.overlay" title="Permalink to this headline">¶</a></h1>
+<p>Overlaying is the process of having more than one element in the same
+space. In this module is a simple layout manager to achieve this, but
+other layout managers may also provide this facility.  The
+<a class="reference internal" href="managers_grid.html#layout.managers.grid.GridLM" title="layout.managers.grid.GridLM"><tt class="xref py py-class docutils literal"><span class="pre">GridLM</span></tt></a>, for example, allows you to
+overlay many elements in each grid cell.</p>
+<dl class="class">
+<dt id="layout.managers.overlay.OverlayLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.overlay.</tt><tt class="descname">OverlayLM</tt><big>(</big><em>elements=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#layout.managers.overlay.OverlayLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.GroupLayoutManager" title="layout.managers.root.GroupLayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.GroupLayoutManager</span></tt></a></p>
+<p>A layout manager that has any number of elements, all occupying the
+same area. The elements are drawn in strictly the same order
+that they are added to the manager, so early items form a back
+ground for later items.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="managers_margins.html"
+                        title="previous chapter">2.2.8. Add Margins to an Element (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.managers.margins</span></tt>)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="managers_transform.html"
+                        title="next chapter">2.2.10. Rotation and Scaling of Elements (<tt class="docutils literal"><span class="pre">layout.managers.transform</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/managers_overlay.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_transform.html" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="managers_margins.html" title="2.2.8. Add Margins to an Element (layout.managers.margins)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

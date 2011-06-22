@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.11. Limiting Recursion in Trees with Loops (layout.managers.recursion) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="next" title="2.2.12. Superclasses for Elements in the Layout Tree (layout.managers.root)" href="managers_root.html" />
+    <link rel="prev" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)" href="managers_transform.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_root.html" title="2.2.12. Superclasses for Elements in the Layout Tree (layout.managers.root)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="managers_transform.html" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.managers.recursion">
+<span id="limiting-recursion-in-trees-with-loops-layout-managers-recursion"></span><h1>2.2.11. Limiting Recursion in Trees with Loops (<a class="reference internal" href="#module-layout.managers.recursion" title="layout.managers.recursion"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.recursion</span></tt></a>)<a class="headerlink" href="#module-layout.managers.recursion" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="layout.managers.recursion.RecursionStopperLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.recursion.</tt><tt class="descname">RecursionStopperLM</tt><big>(</big><em>recursion_limit=2</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.recursion.RecursionStopperLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<p>Because you can arrange the layout tree in any way you choose,
+it is possible to create circular loops in the tree which would
+lead to infinite loops in the code. Loops normally indicate that your
+code has a bug, but sometimes you do want the loop. In this case, adding
+this class somewhere in the loop prevents the loop from
+recursing more than a specified number of times.</p>
+<p>If the loop hasn&#8217;t reached its maximum number of iterations, this
+class acts as if it isn&#8217;t there: it passes all calls onto its child
+element. Otherwise it will act as if it were a zero sized element
+that has no visual effect.</p>
+<p>Note that this class uses the data object passed in to hold its
+recursion count, in particular in a field called &#8216;recusion_stopper_count&#8217;.
+It cleans up after itself, so you shouldn&#8217;t need to worry about clearing
+the value after you&#8217;ve run the layout (if you want to render again
+using the same data object, for example). But you shouldn&#8217;t mess with
+that value yourself.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="managers_transform.html"
+                        title="previous chapter">2.2.10. Rotation and Scaling of Elements (<tt class="docutils literal docutils literal"><span class="pre">layout.managers.transform</span></tt>)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="managers_root.html"
+                        title="next chapter">2.2.12. Superclasses for Elements in the Layout Tree (<tt class="docutils literal docutils literal"><span class="pre">layout.managers.root</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/managers_recursion.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_root.html" title="2.2.12. Superclasses for Elements in the Layout Tree (layout.managers.root)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="managers_transform.html" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

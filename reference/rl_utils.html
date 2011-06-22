@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.5.1. Reportlab Wrappers (layout.rl_utils) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="prev" title="2.4.2. Page Output (layout.pages.output)" href="pages_output.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pages_output.html" title="2.4.2. Page Output (layout.pages.output)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.rl_utils">
+<span id="reportlab-wrappers-layout-rl-utils"></span><h1>2.5.1. Reportlab Wrappers (<a class="reference internal" href="#module-layout.rl_utils" title="layout.rl_utils"><tt class="xref py py-mod docutils literal"><span class="pre">layout.rl_utils</span></tt></a>)<a class="headerlink" href="#module-layout.rl_utils" title="Permalink to this headline">¶</a></h1>
+<p>This module provides helper functions to render managers to one or
+more pages of a reportlab canvas. To create multi-page documents, use
+the <a class="reference internal" href="pages_output.html#layout.pages.output.PagesLM" title="layout.pages.output.PagesLM"><tt class="xref py py-class docutils literal"><span class="pre">layout.pages.output.PagesLM</span></tt></a> class to wrap a series of
+single-page managers.</p>
+<dl class="function">
+<dt id="layout.rl_utils.render_to_reportlab_canvas">
+<tt class="descclassname">layout.rl_utils.</tt><tt class="descname">render_to_reportlab_canvas</tt><big>(</big><em>rl_canvas</em>, <em>papersize_tuple</em>, <em>manager</em><big>)</big><a class="headerlink" href="#layout.rl_utils.render_to_reportlab_canvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the given manager full size on a page of the given canvas.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="layout.rl_utils.render_to_reportlab_document">
+<tt class="descclassname">layout.rl_utils.</tt><tt class="descname">render_to_reportlab_document</tt><big>(</big><em>output_filename</em>, <em>papersize_tuple</em>, <em>manager</em><big>)</big><a class="headerlink" href="#layout.rl_utils.render_to_reportlab_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a complete document in which to render the given manager.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pages_output.html"
+                        title="previous chapter">2.4.2. Page Output (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.pages.output</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/rl_utils.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pages_output.html" title="2.4.2. Page Output (layout.pages.output)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

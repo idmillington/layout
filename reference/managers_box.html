@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.2. Java-Style Box Layout (layout.managers.box) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="next" title="2.2.3. Clipping Portions of the Layout (layout.elements.clip)" href="managers_clip.html" />
+    <link rel="prev" title="2.2.1. Aligning Elements in Larger Spaces (layout.managers.align)" href="managers_align.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_clip.html" title="2.2.3. Clipping Portions of the Layout (layout.elements.clip)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="managers_align.html" title="2.2.1. Aligning Elements in Larger Spaces (layout.managers.align)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.managers.box">
+<span id="java-style-box-layout-layout-managers-box"></span><h1>2.2.2. Java-Style Box Layout (<a class="reference internal" href="#module-layout.managers.box" title="layout.managers.box"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.box</span></tt></a>)<a class="headerlink" href="#module-layout.managers.box" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="layout.managers.box.BoxLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.box.</tt><tt class="descname">BoxLM</tt><big>(</big><em>margin=0</em>, <em>top=None</em>, <em>right=None</em>, <em>bottom=None</em>, <em>left=None</em>, <em>center=None</em><big>)</big><a class="headerlink" href="#layout.managers.box.BoxLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<p>A layout manager in the style of Java&#8217;s BoxLayout, with a central
+space that gobbles up as much size as possible and surrounding
+spaces that are at minimum size.</p>
+<p>Arguments:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">margin</span></tt></dt>
+<dd>The gap to place between elements.</dd>
+<dt><tt class="docutils literal"><span class="pre">top</span></tt></dt>
+<dd>The element to place at the top of the layout. This
+element will be at its minimum height, but may have extra
+width.</dd>
+<dt><tt class="docutils literal"><span class="pre">right</span></tt></dt>
+<dd>The element to place at the right of the layout. This
+element will be at its minimum width, but may have extra
+height.</dd>
+<dt><tt class="docutils literal"><span class="pre">bottom</span></tt></dt>
+<dd>The element to place at the bottom of the layout. This
+element will be at its minimum height, but may have extra
+width.</dd>
+<dt><tt class="docutils literal"><span class="pre">left</span></tt></dt>
+<dd>The element to place at the left of the layout. This
+element will be at its minimum width, but may have extra
+height.</dd>
+<dt><tt class="docutils literal"><span class="pre">center</span></tt></dt>
+<dd>The element to place in the center of the layout, this
+element may be stretched in both directions to fill all
+remaining room in the layout.</dd>
+</dl>
+<p>Each of these arguments is placed in a data member with the
+same name, so the elements can later be overridden. If any
+element isn&#8217;t provided, then that portion of the layout will
+be missed. Margins only apply between elements that have been
+given, they are not used for missed slots.</p>
+<p>If you have left/right elements and top/bottom elements, note
+that the algorithm lays out the contents so the top and bottom
+elements are at full-width, while the left and right elements
+extend from the bottom of the top element to the top of the
+bottom element. The left/right and top/bottom elements are
+therefore not treated in the same way &#8211; top/bottom elements
+have priority:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="38%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr><td colspan="3">Top Element</td>
+</tr>
+<tr><td>Left</td>
+<td>Center</td>
+<td>Right</td>
+</tr>
+<tr><td colspan="3">Bottom Element</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>If you want to reverse this, you&#8217;ll need to use
+two instances of this class inside one another: the outer one
+with the left/right elements set, and the inner one (in the
+&#8216;center&#8217; slot of the outer manager), with the top/bottom and
+center elements set.</p>
+<p>Outer <a class="reference internal" href="#layout.managers.box.BoxLM" title="layout.managers.box.BoxLM"><tt class="xref py py-class docutils literal"><span class="pre">BoxLM</span></tt></a>:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="50%" />
+<col width="27%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Left</td>
+<td>Inner BoxLM</td>
+<td>Right</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Inner <a class="reference internal" href="#layout.managers.box.BoxLM" title="layout.managers.box.BoxLM"><tt class="xref py py-class docutils literal"><span class="pre">BoxLM</span></tt></a>:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Top</td>
+</tr>
+<tr><td>Center</td>
+</tr>
+<tr><td>Bottom</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="managers_align.html"
+                        title="previous chapter">2.2.1. Aligning Elements in Larger Spaces (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.managers.align</span></tt>)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="managers_clip.html"
+                        title="next chapter">2.2.3. Clipping Portions of the Layout (<tt class="docutils literal"><span class="pre">layout.elements.clip</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/managers_box.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_clip.html" title="2.2.3. Clipping Portions of the Layout (layout.elements.clip)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="managers_align.html" title="2.2.1. Aligning Elements in Larger Spaces (layout.managers.align)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

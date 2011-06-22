@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Reference and API Documentation &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="next" title="2.1.1. Units (layout.datatypes.units)" href="datatypes_units.html" />
+    <link rel="prev" title="1. Using the Library" href="../userguide/index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="datatypes_units.html" title="2.1.1. Units (layout.datatypes.units)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../userguide/index.html" title="1. Using the Library"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="reference-and-api-documentation">
+<h1>2. Reference and API Documentation<a class="headerlink" href="#reference-and-api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fundamental-data-types-and-constants-layout-datatypes">
+<h2>2.1. Fundamental Data Types and Constants (<tt class="xref py py-mod docutils literal"><span class="pre">layout.datatypes</span></tt>)<a class="headerlink" href="#fundamental-data-types-and-constants-layout-datatypes" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datatypes_units.html">2.1.1. Units (<tt class="docutils literal"><span class="pre">layout.datatypes.units</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes_papersizes.html">2.1.2. Paper Sizes (<tt class="docutils literal"><span class="pre">layout.datatypes.papersizes</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes_position.html">2.1.3. Positions and Sizes (<tt class="docutils literal"><span class="pre">layout.datatypes.position</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes_parse_dimensions.html">2.1.4. Parsing Dimensions (<tt class="docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></tt>)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="managers-in-the-layout-tree-layout-managers">
+<h2>2.2. Managers in the Layout Tree (<tt class="xref py py-mod docutils literal"><span class="pre">layout.managers</span></tt>)<a class="headerlink" href="#managers-in-the-layout-tree-layout-managers" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers_align.html">2.2.1. Aligning Elements in Larger Spaces (<tt class="docutils literal"><span class="pre">layout.managers.align</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_box.html">2.2.2. Java-Style Box Layout (<tt class="docutils literal"><span class="pre">layout.managers.box</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_clip.html">2.2.3. Clipping Portions of the Layout (<tt class="docutils literal"><span class="pre">layout.elements.clip</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_directional.html">2.2.4. Vertical and Horizontal Alignment (<tt class="docutils literal"><span class="pre">layout.managers.directional</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_fixed.html">2.2.5. Fixed Elements in the Dynamic Layout (<tt class="docutils literal"><span class="pre">layout.managers.fixed</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_grid.html">2.2.6. Grid Layout (<tt class="docutils literal"><span class="pre">layout.managers.grid</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_jitter.html">2.2.7. Jittering an Existing Layout (<tt class="docutils literal"><span class="pre">layout.managers.jitter</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_margins.html">2.2.8. Add Margins to an Element (<tt class="docutils literal"><span class="pre">layout.managers.margins</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_overlay.html">2.2.9. Multiple Elements in the Same Space (<tt class="docutils literal"><span class="pre">layout.managers.overlay</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_transform.html">2.2.10. Rotation and Scaling of Elements (<tt class="docutils literal"><span class="pre">layout.managers.transform</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_recursion.html">2.2.11. Limiting Recursion in Trees with Loops (<tt class="docutils literal"><span class="pre">layout.managers.recursion</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_root.html">2.2.12. Superclasses for Elements in the Layout Tree (<tt class="docutils literal"><span class="pre">layout.managers.root</span></tt>)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="elements-that-output-somthing-layout-elements">
+<h2>2.3. Elements that Output Somthing (<tt class="xref py py-mod docutils literal"><span class="pre">layout.elements</span></tt>)<a class="headerlink" href="#elements-that-output-somthing-layout-elements" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="elements_lines.html">2.3.1. Lines and Borders (<tt class="docutils literal"><span class="pre">layout.elements.lines</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elements_image.html">2.3.2. Images (<tt class="docutils literal"><span class="pre">layout.elements.image</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elements_text.html">2.3.3. Text Output (<tt class="docutils literal"><span class="pre">layout.elements.text</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elements_mark.html">2.3.4. Signature Marks (<tt class="docutils literal"><span class="pre">layout.elements.mark</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elements_space.html">2.3.5. Spacing (<tt class="docutils literal"><span class="pre">layout.elements.space</span></tt>)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="batching-elements-into-pages-layout-pages">
+<h2>2.4. Batching Elements into Pages (<tt class="xref py py-mod docutils literal"><span class="pre">layout.pages</span></tt>)<a class="headerlink" href="#batching-elements-into-pages-layout-pages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages_imposition.html">2.4.1. Imposition Helpers (<tt class="docutils literal"><span class="pre">layout.pages.imposition</span></tt>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages_output.html">2.4.2. Page Output (<tt class="docutils literal"><span class="pre">layout.pages.output</span></tt>)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="utility-methods">
+<h2>2.5. Utility Methods<a class="headerlink" href="#utility-methods" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rl_utils.html">2.5.1. Reportlab Wrappers (<tt class="docutils literal"><span class="pre">layout.rl_utils</span></tt>)</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. Reference and API Documentation</a><ul>
+<li><a class="reference internal" href="#fundamental-data-types-and-constants-layout-datatypes">2.1. Fundamental Data Types and Constants (<tt class="docutils literal"><span class="pre">layout.datatypes</span></tt>)</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#managers-in-the-layout-tree-layout-managers">2.2. Managers in the Layout Tree (<tt class="docutils literal"><span class="pre">layout.managers</span></tt>)</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#elements-that-output-somthing-layout-elements">2.3. Elements that Output Somthing (<tt class="docutils literal"><span class="pre">layout.elements</span></tt>)</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#batching-elements-into-pages-layout-pages">2.4. Batching Elements into Pages (<tt class="docutils literal"><span class="pre">layout.pages</span></tt>)</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#utility-methods">2.5. Utility Methods</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../userguide/index.html"
+                        title="previous chapter">1. Using the Library</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="datatypes_units.html"
+                        title="next chapter">2.1.1. Units (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.datatypes.units</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="datatypes_units.html" title="2.1.1. Units (layout.datatypes.units)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../userguide/index.html" title="1. Using the Library"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

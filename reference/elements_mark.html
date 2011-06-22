@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.3.4. Signature Marks (layout.elements.mark) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="next" title="2.3.5. Spacing (layout.elements.space)" href="elements_space.html" />
+    <link rel="prev" title="2.3.3. Text Output (layout.elements.text)" href="elements_text.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="elements_space.html" title="2.3.5. Spacing (layout.elements.space)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="elements_text.html" title="2.3.3. Text Output (layout.elements.text)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.elements.mark">
+<span id="signature-marks-layout-elements-mark"></span><h1>2.3.4. Signature Marks (<a class="reference internal" href="#module-layout.elements.mark" title="layout.elements.mark"><tt class="xref py py-mod docutils literal"><span class="pre">layout.elements.mark</span></tt></a>)<a class="headerlink" href="#module-layout.elements.mark" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="layout.elements.mark.SignatureMark">
+<em class="property">class </em><tt class="descclassname">layout.elements.mark.</tt><tt class="descname">SignatureMark</tt><big>(</big><em>index</em>, <em>total</em>, <em>width=1</em>, <em>color=(0</em>, <em>0</em>, <em>0)</em>, <em>margin=0.1</em><big>)</big><a class="headerlink" href="#layout.elements.mark.SignatureMark" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutElement" title="layout.managers.root.LayoutElement"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutElement</span></tt></a></p>
+<p>A signature mark.</p>
+<p>Signature marks appear on the ouside of the fold of a set of pages
+gathered into a signature for bookbinding. The signature mark allows
+the binder to quickly collate the signatures and to quickly see if
+any are in the wrong position.</p>
+<p>This signature mark should be overlaid on the first page of each
+signature. It appears in the left-hand margin. Note that the signature
+mark is drawn outside of the rendering rectangle it is given, so that
+it can be seen across the eventual fold. This means that if you render
+the mark in a manager that crops its contents, the cropped part of the
+mark will be lost, and its functionality might be compromised.</p>
+<p>Normally you don&#8217;t deal with these marks manually, they are added for
+you by the page imposition system in <a class="reference internal" href="pages_imposition.html#module-layout.pages.imposition" title="layout.pages.imposition"><tt class="xref py py-mod docutils literal"><span class="pre">layout.pages.imposition</span></tt></a>.</p>
+<p>Historically signature marks were not placed in the spine, but in the
+foot of the first page of each signature and were numbered.</p>
+<p>Arguments:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">index</span></tt></dt>
+<dd>Which signature in the book is this?</dd>
+<dt><tt class="docutils literal"><span class="pre">total</span></tt></dt>
+<dd>How many signatures are there in total?</dd>
+<dt><tt class="docutils literal"><span class="pre">width</span></tt></dt>
+<dd>How wide should the mark be (the default, 1pt is usually fine).</dd>
+<dt><tt class="docutils literal"><span class="pre">color</span></tt></dt>
+<dd>What color should the mark be (default (0,0,0) black).</dd>
+<dt><tt class="docutils literal"><span class="pre">margin</span></tt></dt>
+<dd>How much of the spine at the top and bottm should be left
+unmarked (this figure is given as a proportion). This
+should be a fair size (0.1, by default), to stop the mark
+being visible when looking at the head or foot of the
+finished book.</dd>
+</dl>
+<dl class="method">
+<dt id="layout.elements.mark.SignatureMark.render">
+<tt class="descname">render</tt><big>(</big><em>rectangle</em>, <em>data</em><big>)</big><a class="headerlink" href="#layout.elements.mark.SignatureMark.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the signature mark.</p>
+<p>Note that this draws OUTSIDE the rectangle we&#8217;re given. If
+cropping is involved, then this obviously won&#8217;t work.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="elements_text.html"
+                        title="previous chapter">2.3.3. Text Output (<tt class="docutils literal docutils literal"><span class="pre">layout.elements.text</span></tt>)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="elements_space.html"
+                        title="next chapter">2.3.5. Spacing (<tt class="docutils literal"><span class="pre">layout.elements.space</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/elements_mark.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="elements_space.html" title="2.3.5. Spacing (layout.elements.space)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="elements_text.html" title="2.3.3. Text Output (layout.elements.text)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

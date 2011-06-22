@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.4. Vertical and Horizontal Alignment (layout.managers.directional) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="next" title="2.2.5. Fixed Elements in the Dynamic Layout (layout.managers.fixed)" href="managers_fixed.html" />
+    <link rel="prev" title="2.2.3. Clipping Portions of the Layout (layout.elements.clip)" href="managers_clip.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_fixed.html" title="2.2.5. Fixed Elements in the Dynamic Layout (layout.managers.fixed)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="managers_clip.html" title="2.2.3. Clipping Portions of the Layout (layout.elements.clip)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.managers.directional">
+<span id="vertical-and-horizontal-alignment-layout-managers-directional"></span><h1>2.2.4. Vertical and Horizontal Alignment (<a class="reference internal" href="#module-layout.managers.directional" title="layout.managers.directional"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.directional</span></tt></a>)<a class="headerlink" href="#module-layout.managers.directional" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="layout.managers.directional.EqualColumnsLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.directional.</tt><tt class="descname">EqualColumnsLM</tt><big>(</big><em>margin=0</em>, <em>elements=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#layout.managers.directional.EqualColumnsLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.GroupLayoutManager" title="layout.managers.root.GroupLayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.GroupLayoutManager</span></tt></a></p>
+<p>Arranges a set of elements into equally sized columns.</p>
+<dl class="method">
+<dt id="layout.managers.directional.EqualColumnsLM.get_minimum_size">
+<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.directional.EqualColumnsLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum width is the number of columns multiplied by
+the widest element.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.directional.EqualColumnsLM.render">
+<tt class="descname">render</tt><big>(</big><em>rect</em>, <em>data</em><big>)</big><a class="headerlink" href="#layout.managers.directional.EqualColumnsLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the columns.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.directional.EqualRowsLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.directional.</tt><tt class="descname">EqualRowsLM</tt><big>(</big><em>margin=0</em>, <em>elements=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#layout.managers.directional.EqualRowsLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.GroupLayoutManager" title="layout.managers.root.GroupLayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.GroupLayoutManager</span></tt></a></p>
+<p>Arranges a set of elements into equally sized rows.</p>
+<dl class="method">
+<dt id="layout.managers.directional.EqualRowsLM.get_minimum_size">
+<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.directional.EqualRowsLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum height is the number of rows multiplied by the
+tallest row.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.directional.HorizontalLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.directional.</tt><tt class="descname">HorizontalLM</tt><big>(</big><em>margin=0</em>, <em>vertical_align=3</em>, <em>horizontal_align=14</em>, <em>elements=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#layout.managers.directional.HorizontalLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.GroupLayoutManager" title="layout.managers.root.GroupLayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.GroupLayoutManager</span></tt></a></p>
+<p>Keeps a set of elements alongside one another. We can control
+how they are distributed horizontally, as well as their vertical
+alignment.</p>
+<p>Arguments:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">margin</span></tt></dt>
+<dd>The amount of space to place between elements.</dd>
+<dt><tt class="docutils literal"><span class="pre">vertical_align</span></tt></dt>
+<dd>How elements should be aligned vertically in the layout
+(default: <a class="reference internal" href="#layout.managers.directional.HorizontalLM.ALIGN_GROW" title="layout.managers.directional.HorizontalLM.ALIGN_GROW"><tt class="xref py py-data docutils literal"><span class="pre">ALIGN_GROW</span></tt></a>).</dd>
+<dt><tt class="docutils literal"><span class="pre">horizontal_align</span></tt></dt>
+<dd>How elements should be aligned horizontally within the
+layout, and how extra space should be distributed between
+them (default: <a class="reference internal" href="#layout.managers.directional.HorizontalLM.ALIGN_EQUAL_GROWTH" title="layout.managers.directional.HorizontalLM.ALIGN_EQUAL_GROWTH"><tt class="xref py py-data docutils literal"><span class="pre">ALIGN_EQUAL_GROWTH</span></tt></a>).</dd>
+</dl>
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_BOTTOM">
+<tt class="descname">ALIGN_BOTTOM</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element to the bottom of the layout.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_CENTER">
+<tt class="descname">ALIGN_CENTER</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_CENTER" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements so they are in the center of the available
+space.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_EQUAL_GROWTH">
+<tt class="descname">ALIGN_EQUAL_GROWTH</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_EQUAL_GROWTH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements horizontally so that each gets the same
+amount of extra space, if the layout is taller than the
+elements need it to be.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_EQUAL_SPACING">
+<tt class="descname">ALIGN_EQUAL_SPACING</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_EQUAL_SPACING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements horizontally so that any additional space is
+distributed equally between the elements.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_GROW">
+<tt class="descname">ALIGN_GROW</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_GROW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element so that it stretches vertically to fill
+the layout.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_LEFT">
+<tt class="descname">ALIGN_LEFT</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements so they are bunched at the left of the
+available space.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_MIDDLE">
+<tt class="descname">ALIGN_MIDDLE</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_MIDDLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element to the middle of the layout.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_RIGHT">
+<tt class="descname">ALIGN_RIGHT</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements so they sit at the right of the available
+space.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.HorizontalLM.ALIGN_TOP">
+<tt class="descname">ALIGN_TOP</tt><a class="headerlink" href="#layout.managers.directional.HorizontalLM.ALIGN_TOP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element to the top of the layout.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.directional.HorizontalLM.get_minimum_size">
+<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.directional.HorizontalLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum width is the total width + margins, minimum height
+is the largest height.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.directional.HorizontalLM.render">
+<tt class="descname">render</tt><big>(</big><em>rect</em>, <em>data</em><big>)</big><a class="headerlink" href="#layout.managers.directional.HorizontalLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the elements according to the align properties.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.directional.VerticalLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.directional.</tt><tt class="descname">VerticalLM</tt><big>(</big><em>margin=0</em>, <em>horizontal_align=13</em>, <em>vertical_align=4</em>, <em>elements=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#layout.managers.directional.VerticalLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.GroupLayoutManager" title="layout.managers.root.GroupLayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.GroupLayoutManager</span></tt></a></p>
+<p>Keeps a set of elements above one another. We can control
+how they are distributed vertically, as well as their horizontal
+alignment.</p>
+<p>Arguments:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">margin</span></tt></dt>
+<dd>The amount of space to place between elements.</dd>
+<dt><tt class="docutils literal"><span class="pre">horizontal_align</span></tt></dt>
+<dd>How elements should be aligned horizontally within the
+stack (default: <a class="reference internal" href="#layout.managers.directional.VerticalLM.ALIGN_GROW" title="layout.managers.directional.VerticalLM.ALIGN_GROW"><tt class="xref py py-data docutils literal"><span class="pre">ALIGN_GROW</span></tt></a>).</dd>
+<dt><tt class="docutils literal"><span class="pre">vertical_align</span></tt></dt>
+<dd>How elements should be aligned vertically in the stack,
+and how extra space should be distributed between them
+(default: <a class="reference internal" href="#layout.managers.directional.VerticalLM.ALIGN_EQUAL_GROWTH" title="layout.managers.directional.VerticalLM.ALIGN_EQUAL_GROWTH"><tt class="xref py py-data docutils literal"><span class="pre">ALIGN_EQUAL_GROWTH</span></tt></a>).</dd>
+</dl>
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_BOTTOM">
+<tt class="descname">ALIGN_BOTTOM</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements so they sit at the bottom of the available
+space.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_CENTER">
+<tt class="descname">ALIGN_CENTER</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_CENTER" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element to the center of the layout.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_EQUAL_GROWTH">
+<tt class="descname">ALIGN_EQUAL_GROWTH</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_EQUAL_GROWTH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements vertically so that each gets the same amount
+of extra space, if the layout is taller than the elements need it
+to be.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_EQUAL_SPACING">
+<tt class="descname">ALIGN_EQUAL_SPACING</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_EQUAL_SPACING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements vertcially so that any extra space is
+distributed equally between the elements.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_GROW">
+<tt class="descname">ALIGN_GROW</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_GROW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element so that it stretches horizontally to fill
+the layout.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_LEFT">
+<tt class="descname">ALIGN_LEFT</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element to the left of the layout.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_MIDDLE">
+<tt class="descname">ALIGN_MIDDLE</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_MIDDLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements so they are in the middle of the available
+space.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_RIGHT">
+<tt class="descname">ALIGN_RIGHT</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align each element to the right of the layout.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="layout.managers.directional.VerticalLM.ALIGN_TOP">
+<tt class="descname">ALIGN_TOP</tt><a class="headerlink" href="#layout.managers.directional.VerticalLM.ALIGN_TOP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align the elements so they are bunched at the top of the
+available space.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.directional.VerticalLM.get_minimum_size">
+<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.directional.VerticalLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum height is the total height + margins, minimum width
+is the largest width.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.directional.VerticalLM.render">
+<tt class="descname">render</tt><big>(</big><em>rect</em>, <em>data</em><big>)</big><a class="headerlink" href="#layout.managers.directional.VerticalLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the elements according to the align properties.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="managers_clip.html"
+                        title="previous chapter">2.2.3. Clipping Portions of the Layout (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.elements.clip</span></tt>)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="managers_fixed.html"
+                        title="next chapter">2.2.5. Fixed Elements in the Dynamic Layout (<tt class="docutils literal"><span class="pre">layout.managers.fixed</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/managers_directional.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_fixed.html" title="2.2.5. Fixed Elements in the Dynamic Layout (layout.managers.fixed)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="managers_clip.html" title="2.2.3. Clipping Portions of the Layout (layout.elements.clip)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

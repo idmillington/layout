@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.7. Jittering an Existing Layout (layout.managers.jitter) &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="next" title="2.2.8. Add Margins to an Element (layout.managers.margins)" href="managers_margins.html" />
+    <link rel="prev" title="2.2.6. Grid Layout (layout.managers.grid)" href="managers_grid.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_margins.html" title="2.2.8. Add Margins to an Element (layout.managers.margins)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="managers_grid.html" title="2.2.6. Grid Layout (layout.managers.grid)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-layout.managers.jitter">
+<span id="jittering-an-existing-layout-layout-managers-jitter"></span><h1>2.2.7. Jittering an Existing Layout (<a class="reference internal" href="#module-layout.managers.jitter" title="layout.managers.jitter"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.jitter</span></tt></a>)<a class="headerlink" href="#module-layout.managers.jitter" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="layout.managers.jitter.JitterLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.jitter.</tt><tt class="descname">JitterLM</tt><big>(</big><em>angle_jitter=0.1</em>, <em>x_jitter=5.0</em>, <em>y_jitter=5.0</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.jitter.JitterLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">layout.managers.jitter._JitterBase</span></tt></p>
+<p>Displays its managed element slightly offset from its reserved space.</p>
+<p>The layout manager reserves the minimum space needed for its child
+element, but when it comes to draw the element, it draws it offset
+from its natural position, and slightly at an angle. The jitter
+parameters are given to the layout manager when it is constructed.</p>
+<p>See <a class="reference internal" href="#layout.managers.jitter.RandomJitterLM" title="layout.managers.jitter.RandomJitterLM"><tt class="xref py py-class docutils literal"><span class="pre">RandomJitterLM</span></tt></a> for a manager that randomizes the
+jitter applied.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.jitter.RandomJitterLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.jitter.</tt><tt class="descname">RandomJitterLM</tt><big>(</big><em>max_angle_jitter=0.1</em>, <em>max_x_jitter=5.0</em>, <em>max_y_jitter=5.0</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.jitter.RandomJitterLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#layout.managers.jitter.JitterLM" title="layout.managers.jitter.JitterLM"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.jitter.JitterLM</span></tt></a></p>
+<p>A Jitter layout manager that chooses a random jitter binomially
+distributed around 0, and with half-size equal to the given
+parameters.</p>
+<p>Note this layout manager does not randomize
+its offset each time it is called on to draw its content, only when
+it is constructed. The jitter is therefore consistent for the lifetime
+of an instance of this class.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="layout.managers.jitter.UnstableRandomJitterLM">
+<em class="property">class </em><tt class="descclassname">layout.managers.jitter.</tt><tt class="descname">UnstableRandomJitterLM</tt><big>(</big><em>max_angle_jitter=0.1</em>, <em>max_x_jitter=5.0</em>, <em>max_y_jitter=5.0</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.jitter.UnstableRandomJitterLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">layout.managers.jitter._JitterBase</span></tt></p>
+<p>A random jitter layout manager that does rerandomize its offsets
+each time it is called to render. Rendering the tree twice, therefore,
+may lead to different results.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="managers_grid.html"
+                        title="previous chapter">2.2.6. Grid Layout (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.managers.grid</span></tt>)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="managers_margins.html"
+                        title="next chapter">2.2.8. Add Margins to an Element (<tt class="docutils literal"><span class="pre">layout.managers.margins</span></tt>)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/reference/managers_jitter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="managers_margins.html" title="2.2.8. Add Margins to an Element (layout.managers.margins)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="managers_grid.html" title="2.2.6. Grid Layout (layout.managers.grid)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

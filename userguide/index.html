@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. Using the Library &mdash; Layout v0.2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <link rel="next" title="2. Reference and API Documentation" href="../reference/index.html" />
+    <link rel="prev" title="Layout" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../reference/index.html" title="2. Reference and API Documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Layout"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="using-the-library">
+<h1>1. Using the Library<a class="headerlink" href="#using-the-library" title="Permalink to this headline">¶</a></h1>
+<p>Layout is designed for the flexible composition of document layouts,
+particularly complex charts, and multi-page documents of
+algorithmically calculated data. It isn&#8217;t designed to be used as a
+framework to flow in large amounts of body text, as the sizing
+algorithms used don&#8217;t take account of text flows.</p>
+<div class="section" id="overview">
+<h2>1.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>There are three stages in using the library:</p>
+<p>1. Define classes that will render the content you need to
+render. There are a selection of classes in the <tt class="xref py py-mod docutils literal"><span class="pre">layout.elements</span></tt>
+package that cover some basic needs, but often custom classes are
+needed.</p>
+<p>2. Compose your layout in a series of managers, subclasses of
+<a class="reference internal" href="../reference/managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a>, such as
+<a class="reference internal" href="../reference/managers_margins.html#layout.managers.margins.PaddedMarginsLM" title="layout.managers.margins.PaddedMarginsLM"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.margins.PaddedMarginsLM</span></tt></a>, which will position the
+correct piece of content in the correct position on the page.</p>
+<p>3. Render your layout by calling the
+<a class="reference internal" href="../reference/managers_root.html#layout.managers.root.LayoutElement.render" title="layout.managers.root.LayoutElement.render"><tt class="xref py py-meth docutils literal"><span class="pre">layout.managers.root.LayoutElement.render()</span></tt></a> method of the manager at the
+top level of your hierarchy. This will render all its children.</p>
+</div>
+<div class="section" id="step-by-step">
+<h2>1.2. Step By Step<a class="headerlink" href="#step-by-step" title="Permalink to this headline">¶</a></h2>
+<p>The above steps will now be considered in more detail.</p>
+<div class="section" id="define-classes">
+<h3>1.2.1. Define Classes<a class="headerlink" href="#define-classes" title="Permalink to this headline">¶</a></h3>
+<p>Classes should subclass <a class="reference internal" href="../reference/managers_root.html#layout.managers.root.LayoutElement" title="layout.managers.root.LayoutElement"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutElement</span></tt></a>,
+and override two methods: <tt class="xref py py-meth docutils literal"><span class="pre">get_minimum_size()</span></tt> should return a
+<a class="reference internal" href="../reference/datatypes_position.html#layout.datatypes.position.Point" title="layout.datatypes.position.Point"><tt class="xref py py-class docutils literal"><span class="pre">layout.datatypes.position.Point</span></tt></a> instance, which specifies the
+smallest size this item can be rendered at; and <tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt> which takes a
+<a class="reference internal" href="../reference/datatypes_position.html#layout.datatypes.position.Rectangle" title="layout.datatypes.position.Rectangle"><tt class="xref py py-class docutils literal"><span class="pre">layout.datatypes.position.Rectangle</span></tt></a> instance as the location for its
+rendering, and should perform the necessary drawing.</p>
+<p>Both of these methods additionally take a data dictionary, which can
+contain any additional information about the render that is required.</p>
+</div>
+<div class="section" id="note-use-with-reportlab">
+<h3>1.2.2. Note: Use with ReportLab<a class="headerlink" href="#note-use-with-reportlab" title="Permalink to this headline">¶</a></h3>
+<p>The library was designed to be used with the Report Lab PDF generation
+library. Most of the layout managers are renderer agnostic
+(<tt class="xref py py-class docutils literal"><span class="pre">layout.elements.clip.ClipLM</span></tt> being the exception), but the
+elements provided in <tt class="xref py py-mod docutils literal"><span class="pre">layout.elements</span></tt> render with ReportLab,
+and <tt class="xref py py-class docutils literal"><span class="pre">layout.pages.outputPagesLM</span></tt> outputs pages to ReportLab.</p>
+<p>Although the data dictionary passed to
+<a class="reference internal" href="../reference/managers_root.html#layout.managers.root.LayoutElement.get_minimum_size" title="layout.managers.root.LayoutElement.get_minimum_size"><tt class="xref py py-meth docutils literal"><span class="pre">layout.managers.root.LayoutElement.get_minimum_size()</span></tt></a> and
+<a class="reference internal" href="../reference/managers_root.html#layout.managers.root.LayoutElement.render" title="layout.managers.root.LayoutElement.render"><tt class="xref py py-meth docutils literal"><span class="pre">layout.managers.root.LayoutElement.render()</span></tt></a> can contain any data
+that your rendering classes require, by convention, when you are
+rendering with ReportLab, they will contain a <cite>output</cite> field
+containing a <tt class="xref py py-class docutils literal"><span class="pre">reportlab.pdfgen.canvas.Canvas</span></tt> instance, for
+rendering.</p>
+</div>
+<div class="section" id="compose-your-layout">
+<h3>1.2.3. Compose Your Layout<a class="headerlink" href="#compose-your-layout" title="Permalink to this headline">¶</a></h3>
+<p>To compose your layout, select appropriate managers and create a data
+structure from their instantiation. By convention, all managers take
+either a single child, or a list of their children (depending on
+whether the manager accepts one or more children) as the last element
+in their constructors. The most notable exception to this is the
+<a class="reference internal" href="../reference/managers_grid.html#layout.managers.grid.GridLM" title="layout.managers.grid.GridLM"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.grid.GridLM</span></tt></a> class, which needs extra data on
+each child, so expects you to call its
+<a class="reference internal" href="../reference/managers_grid.html#layout.managers.grid.GridLM.add_element" title="layout.managers.grid.GridLM.add_element"><tt class="xref py py-meth docutils literal"><span class="pre">layout.managers.grid.GridLM.add_element()</span></tt></a> method for each child
+you wish to add.</p>
+<p>A sample composition might be:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">layout.managers</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">top_level_manager</span> <span class="o">=</span> <span class="n">margins</span><span class="o">.</span><span class="n">MarginsLM</span><span class="p">(</span>
+    <span class="mi">10</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span>
+    <span class="n">element</span><span class="o">=</span><span class="n">transform</span><span class="o">.</span><span class="n">ScaleLM</span><span class="p">(</span>
+        <span class="n">element</span><span class="o">=</span><span class="n">directional</span><span class="o">.</span><span class="n">HorizontalLM</span><span class="p">(</span>
+            <span class="n">margin</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span>
+            <span class="n">vertical_align</span><span class="o">=</span><span class="n">directional</span><span class="o">.</span><span class="n">HorizontalLM</span><span class="o">.</span><span class="n">ALIGN_MIDDLE</span><span class="p">,</span>
+            <span class="n">elements</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">MyElement</span><span class="p">(</span><span class="n">a</span><span class="p">),</span>
+                <span class="n">MyElement</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Which is two <tt class="xref py py-class docutils literal"><span class="pre">MyElement</span></tt> instances (I assume these are defined
+by you) side by side
+(<a class="reference internal" href="../reference/managers_directional.html#layout.managers.directional.HorizontalLM" title="layout.managers.directional.HorizontalLM"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.directional.HorizontalLM</span></tt></a>) on a page with at
+least 10mm margins all around
+(<a class="reference internal" href="../reference/managers_margins.html#layout.managers.margins.MarginsLM" title="layout.managers.margins.MarginsLM"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.margins.MarginsLM</span></tt></a>). If the two elements are
+too large to fit in this space, then they will be scaled down, keeping
+their relative proportion, until they can fit
+(<a class="reference internal" href="../reference/managers_transform.html#layout.managers.transform.ScaleLM" title="layout.managers.transform.ScaleLM"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.transform.ScaleLM</span></tt></a>). Compositions can get
+much more complex, and may have to be assembled in stages.</p>
+</div>
+<div class="section" id="create-the-output">
+<h3>1.2.4. Create the Output<a class="headerlink" href="#create-the-output" title="Permalink to this headline">¶</a></h3>
+<p>With the top level manager created, we can build our PDF by calling
+its <tt class="xref py py-meth docutils literal"><span class="pre">render()</span></tt> method. Assuming we&#8217;re using Report Lab, we could
+do this manually:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">papersize</span><span class="p">)</span>
+<span class="n">top_level_manager</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">papersize</span><span class="p">),</span> <span class="nb">dict</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">canvas</span><span class="p">))</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">showPage</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Or we can rely on the utility functions in the <a class="reference internal" href="../reference/rl_utils.html#module-layout.rl_utils" title="layout.rl_utils"><tt class="xref py py-mod docutils literal"><span class="pre">layout.rl_utils</span></tt></a>
+module:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">papersize</span><span class="p">)</span>
+<span class="n">rl_utils</span><span class="o">.</span><span class="n">render_to_reportlab_canvas</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">papersize</span><span class="p">,</span> <span class="n">top_level_manager</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or even shorter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rl_utils</span><span class="o">.</span><span class="n">render_to_reportlab_document</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">papersize</span><span class="p">,</span> <span class="n">top_level_manager</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. Using the Library</a><ul>
+<li><a class="reference internal" href="#overview">1.1. Overview</a></li>
+<li><a class="reference internal" href="#step-by-step">1.2. Step By Step</a><ul>
+<li><a class="reference internal" href="#define-classes">1.2.1. Define Classes</a></li>
+<li><a class="reference internal" href="#note-use-with-reportlab">1.2.2. Note: Use with ReportLab</a></li>
+<li><a class="reference internal" href="#compose-your-layout">1.2.3. Compose Your Layout</a></li>
+<li><a class="reference internal" href="#create-the-output">1.2.4. Create the Output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Layout</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../reference/index.html"
+                        title="next chapter">2. Reference and API Documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/userguide/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../reference/index.html" title="2. Reference and API Documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Layout"
+             >previous</a> |</li>
+        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2011, Ian Millington.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
