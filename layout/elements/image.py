@@ -1,6 +1,15 @@
 import layout.managers.root as root
 import layout.datatypes as datatypes
-import Image as PIL
+
+try:
+    import Image as PIL
+except ImportError:
+    import warnings
+    warnings.warn(
+        "Python Imaging Library not found - you will not be able "
+        "to use image elements.",
+        ImportWarning
+        )
 
 class Image(root.LayoutElement):
     """Represents an image to be displayed at a fixed aspect ratio."""
