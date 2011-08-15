@@ -8,6 +8,7 @@ import datatypes
 try:
     from reportlab.pdfgen.canvas import Canvas
 except ImportError:
+    import warnings
     warnings.warn(
         "Reportlab not found - you will not be able to generate pdf documents.",
         ImportWarning
