@@ -198,10 +198,10 @@ class GridLM(root.LayoutManager):
             """Returns the value of the index in the given array, where
             the array (like col_xs and row_ys), consists of start-end pairs
             of values."""
-            if index == 0:
+            if index <= 0:
                 # Special case, it is the start of the first range
                 return array[0][0]-self.outside_margin*sign
-            elif index == len(array):
+            elif index >= len(array):
                 # Special case, it is the end of the last range
                 return array[-1][1]+self.outside_margin*sign
             else:

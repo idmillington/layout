@@ -91,3 +91,9 @@ class Border(LineBase):
 
         c.restoreState()
 
+class Fill(Border):
+    """
+    Draws a solid color fill with no outline.
+    """
+    def __init__(self, color=(0, 0, 0)):
+        super(Fill, self).__init__(None, color)
