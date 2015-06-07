@@ -3,3 +3,4 @@ Jinja2>=2.5.5
 Pygments>=1.4
 Sphinx>=1.0.7
 docutils>=0.7
+node>=1.3
