@@ -1,34 +1,35 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.1.4. Parsing Dimensions (layout.datatypes.parse_dimensions) &mdash; Layout v0.2.0 documentation</title>
-    <link rel="stylesheet" href="../static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <title>2.1.4. Parsing Dimensions (layout.datatypes.parse_dimensions) &mdash; Layout 0.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2.0',
+        VERSION:     '0.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout 0.2.4 documentation" href="../index.html" />
     <link rel="up" title="2. Reference and API Documentation" href="index.html" />
     <link rel="next" title="2.2.1. Aligning Elements in Larger Spaces (layout.managers.align)" href="managers_align.html" />
     <link rel="prev" title="2.1.3. Positions and Sizes (layout.datatypes.position)" href="datatypes_position.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,21 +44,21 @@
         <li class="right" >
           <a href="datatypes_position.html" title="2.1.3. Positions and Sizes (layout.datatypes.position)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="parsing-dimensions-layout-datatypes-parse-dimensions">
-<h1>2.1.4. Parsing Dimensions (<a class="reference internal" href="#module-layout.datatypes.parse_dimensions" title="layout.datatypes.parse_dimensions"><tt class="xref py py-mod docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></tt></a>)<a class="headerlink" href="#parsing-dimensions-layout-datatypes-parse-dimensions" title="Permalink to this headline">¶</a></h1>
+<h1>2.1.4. Parsing Dimensions (<a class="reference internal" href="#module-layout.datatypes.parse_dimensions" title="layout.datatypes.parse_dimensions"><code class="xref py py-mod docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></code></a>)<a class="headerlink" href="#parsing-dimensions-layout-datatypes-parse-dimensions" title="Permalink to this headline">¶</a></h1>
 <p>In many applications dimensions will be specified as input from the
 user. When coding, you can use the constants in
-<a class="reference internal" href="datatypes_units.html#module-layout.datatypes.units" title="layout.datatypes.units"><tt class="xref py py-mod docutils literal"><span class="pre">layout.datatypes.units</span></tt></a>, such as <tt class="docutils literal"><span class="pre">12*mm</span></tt>. When processing
+<a class="reference internal" href="datatypes_units.html#module-layout.datatypes.units" title="layout.datatypes.units"><code class="xref py py-mod docutils literal"><span class="pre">layout.datatypes.units</span></code></a>, such as <code class="docutils literal"><span class="pre">12*mm</span></code>. When processing
 input, this module converts textual representations of dimensions into
 the corresponding values in postscript points (the standard unit of
 size used throughout the package).</p>
@@ -67,7 +68,7 @@ size used throughout the package).</p>
 turning them into sizes in printer&#8217;s points (i.e. 72 per inch).</p>
 <dl class="function">
 <dt id="layout.datatypes.parse_dimensions.parse_dimension">
-<tt class="descclassname">layout.datatypes.parse_dimensions.</tt><tt class="descname">parse_dimension</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#layout.datatypes.parse_dimensions.parse_dimension" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">layout.datatypes.parse_dimensions.</code><code class="descname">parse_dimension</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.parse_dimensions.parse_dimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses the given text into one dimension and returns its
 equivalent size in points.</p>
 <p>The numbers provided can be integer or decimal, but exponents are
@@ -81,7 +82,7 @@ supported.</p>
 
 <dl class="function">
 <dt id="layout.datatypes.parse_dimensions.parse_dimensions">
-<tt class="descclassname">layout.datatypes.parse_dimensions.</tt><tt class="descname">parse_dimensions</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#layout.datatypes.parse_dimensions.parse_dimensions" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">layout.datatypes.parse_dimensions.</code><code class="descname">parse_dimensions</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.parse_dimensions.parse_dimensions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses a set of dimensions into tuple of values representing the
 sizes in points.</p>
 <p>The dimensions that this method supports are exactly as for
@@ -103,11 +104,11 @@ millimeters.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">2.1.4. Parsing Dimensions (<tt class="docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></tt>)</a><ul>
+<li><a class="reference internal" href="#">2.1.4. Parsing Dimensions (<code class="docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></code>)</a><ul>
 <li><a class="reference internal" href="#module-layout.datatypes.parse_dimensions">2.1.4.1. Reference</a></li>
 </ul>
 </li>
@@ -115,19 +116,21 @@ millimeters.</p>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="datatypes_position.html"
-                        title="previous chapter">2.1.3. Positions and Sizes (<tt class="docutils literal docutils literal"><span class="pre">layout.datatypes.position</span></tt>)</a></p>
+                        title="previous chapter">2.1.3. Positions and Sizes (<code class="docutils literal"><span class="pre">layout.datatypes.position</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="managers_align.html"
-                        title="next chapter">2.2.1. Aligning Elements in Larger Spaces (<tt class="docutils literal"><span class="pre">layout.managers.align</span></tt>)</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../sources/reference/datatypes_parse_dimensions.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+                        title="next chapter">2.2.1. Aligning Elements in Larger Spaces (<code class="docutils literal"><span class="pre">layout.managers.align</span></code>)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/datatypes_parse_dimensions.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -141,7 +144,7 @@ millimeters.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -156,13 +159,13 @@ millimeters.</p>
         <li class="right" >
           <a href="datatypes_position.html" title="2.1.3. Positions and Sizes (layout.datatypes.position)"
              >previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2006-2011, Ian Millington.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

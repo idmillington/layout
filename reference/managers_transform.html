@@ -1,34 +1,35 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.2.10. Rotation and Scaling of Elements (layout.managers.transform) &mdash; Layout v0.2.0 documentation</title>
-    <link rel="stylesheet" href="../static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <title>2.2.10. Rotation and Scaling of Elements (layout.managers.transform) &mdash; Layout 0.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2.0',
+        VERSION:     '0.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout 0.2.4 documentation" href="../index.html" />
     <link rel="up" title="2. Reference and API Documentation" href="index.html" />
     <link rel="next" title="2.2.11. Limiting Recursion in Trees with Loops (layout.managers.recursion)" href="managers_recursion.html" />
     <link rel="prev" title="2.2.9. Multiple Elements in the Same Space (layout.managers.overlay)" href="managers_overlay.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,40 +44,40 @@
         <li class="right" >
           <a href="managers_overlay.html" title="2.2.9. Multiple Elements in the Same Space (layout.managers.overlay)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-layout.managers.transform">
-<span id="rotation-and-scaling-of-elements-layout-managers-transform"></span><h1>2.2.10. Rotation and Scaling of Elements (<a class="reference internal" href="#module-layout.managers.transform" title="layout.managers.transform"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.transform</span></tt></a>)<a class="headerlink" href="#module-layout.managers.transform" title="Permalink to this headline">¶</a></h1>
+<span id="rotation-and-scaling-of-elements-layout-managers-transform"></span><h1>2.2.10. Rotation and Scaling of Elements (<a class="reference internal" href="#module-layout.managers.transform" title="layout.managers.transform"><code class="xref py py-mod docutils literal"><span class="pre">layout.managers.transform</span></code></a>)<a class="headerlink" href="#module-layout.managers.transform" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="layout.managers.transform.AnyRotationLM">
-<em class="property">class </em><tt class="descclassname">layout.managers.transform.</tt><tt class="descname">AnyRotationLM</tt><big>(</big><em>angle</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.transform.AnyRotationLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">layout.managers.transform.</code><code class="descname">AnyRotationLM</code><span class="sig-paren">(</span><em>angle</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.transform.AnyRotationLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that allows its child element to be rotated to
 any angle. The rotated element is always given space that is of
 the same aspect ratio as the minimum size it requested, even if
 extra space is available.</p>
 <p>This class implements a different algorithm that is much less
-efficient than <a class="reference internal" href="#layout.managers.transform.RotateLM" title="layout.managers.transform.RotateLM"><tt class="xref py py-class docutils literal"><span class="pre">RotateLM</span></tt></a> for right angles. Use
-<a class="reference internal" href="#layout.managers.transform.RotateLM" title="layout.managers.transform.RotateLM"><tt class="xref py py-class docutils literal"><span class="pre">RotateLM</span></tt></a> if you are rotating through a multiple of
+efficient than <a class="reference internal" href="#layout.managers.transform.RotateLM" title="layout.managers.transform.RotateLM"><code class="xref py py-class docutils literal"><span class="pre">RotateLM</span></code></a> for right angles. Use
+<a class="reference internal" href="#layout.managers.transform.RotateLM" title="layout.managers.transform.RotateLM"><code class="xref py py-class docutils literal"><span class="pre">RotateLM</span></code></a> if you are rotating through a multiple of
 PI/2. Because of the aspect ratio feature of this algorithm, the
 results of this class with a right-angle rotation will also differ
-from that of <a class="reference internal" href="#layout.managers.transform.RotateLM" title="layout.managers.transform.RotateLM"><tt class="xref py py-class docutils literal"><span class="pre">RotateLM</span></tt></a>.</p>
+from that of <a class="reference internal" href="#layout.managers.transform.RotateLM" title="layout.managers.transform.RotateLM"><code class="xref py py-class docutils literal"><span class="pre">RotateLM</span></code></a>.</p>
 <p>Arguments:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">angle</span></tt></dt>
+<dt><code class="docutils literal"><span class="pre">angle</span></code></dt>
 <dd>The angle to rotate, given in radians.</dd>
 </dl>
 <dl class="method">
 <dt id="layout.managers.transform.AnyRotationLM.get_minimum_size">
-<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.transform.AnyRotationLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.transform.AnyRotationLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds the minimum size of its child element as a
 rectangle. Then works out the minimum size needed to fit that
 rectangle when rotated. This can dramatically overstate the
@@ -88,26 +89,26 @@ element is not rectangular.</p>
 
 <dl class="class">
 <dt id="layout.managers.transform.FixedScaleLM">
-<em class="property">class </em><tt class="descclassname">layout.managers.transform.</tt><tt class="descname">FixedScaleLM</tt><big>(</big><em>scale=1.0</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.transform.FixedScaleLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">layout.managers.transform.</code><code class="descname">FixedScaleLM</code><span class="sig-paren">(</span><em>scale=1.0</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.transform.FixedScaleLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that scales its one element by a fixed amount.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="layout.managers.transform.FlexScaleLM">
-<em class="property">class </em><tt class="descclassname">layout.managers.transform.</tt><tt class="descname">FlexScaleLM</tt><big>(</big><em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.transform.FlexScaleLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">layout.managers.transform.</code><code class="descname">FlexScaleLM</code><span class="sig-paren">(</span><em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.transform.FlexScaleLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that holds one element, and scales it down with
 anisotropic scaling, if it is too large to fit. Unlike the regular
-<a class="reference internal" href="#layout.managers.transform.ScaleLM" title="layout.managers.transform.ScaleLM"><tt class="xref py py-class docutils literal"><span class="pre">ScaleLM</span></tt></a>, this class gives the scaled object any
+<a class="reference internal" href="#layout.managers.transform.ScaleLM" title="layout.managers.transform.ScaleLM"><code class="xref py py-class docutils literal"><span class="pre">ScaleLM</span></code></a>, this class gives the scaled object any
 additional room it has to fit, rather than preserving its aspect
 ratio.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="layout.managers.transform.RotateLM">
-<em class="property">class </em><tt class="descclassname">layout.managers.transform.</tt><tt class="descname">RotateLM</tt><big>(</big><em>angle</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.transform.RotateLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">layout.managers.transform.</code><code class="descname">RotateLM</code><span class="sig-paren">(</span><em>angle</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.transform.RotateLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that holds one element and rotates it by the
 given number of right angles.</p>
 <p>The right angle value given can&#8217;t be fractional, it must be an
@@ -115,55 +116,55 @@ integer. Convenience constants are provided in this class for code
 readability.</p>
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.ANGLE_0">
-<tt class="descname">ANGLE_0</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_0" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ANGLE_0</code><em class="property"> = 0</em><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_0" title="Permalink to this definition">¶</a></dt>
 <dd><p>No rotation</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.ANGLE_180">
-<tt class="descname">ANGLE_180</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_180" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ANGLE_180</code><em class="property"> = 2</em><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_180" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates 180 degrees.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.ANGLE_270">
-<tt class="descname">ANGLE_270</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_270" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ANGLE_270</code><em class="property"> = 3</em><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_270" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates 90 decrees clockwise, or 270 degrees clockwise.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.ANGLE_90">
-<tt class="descname">ANGLE_90</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_90" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ANGLE_90</code><em class="property"> = 1</em><a class="headerlink" href="#layout.managers.transform.RotateLM.ANGLE_90" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates 90 degrees counter-clockwise</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.NORMAL">
-<tt class="descname">NORMAL</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.NORMAL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#layout.managers.transform.RotateLM.NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>No rotation</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.UPSIDE_DOWN">
-<tt class="descname">UPSIDE_DOWN</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.UPSIDE_DOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UPSIDE_DOWN</code><em class="property"> = 2</em><a class="headerlink" href="#layout.managers.transform.RotateLM.UPSIDE_DOWN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates 180 degrees.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.X_DOWN">
-<tt class="descname">X_DOWN</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.X_DOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">X_DOWN</code><em class="property"> = 3</em><a class="headerlink" href="#layout.managers.transform.RotateLM.X_DOWN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates 90 degrees clockwise, so the X-axis points down.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.transform.RotateLM.X_UP">
-<tt class="descname">X_UP</tt><a class="headerlink" href="#layout.managers.transform.RotateLM.X_UP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">X_UP</code><em class="property"> = 1</em><a class="headerlink" href="#layout.managers.transform.RotateLM.X_UP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates 90 degrees counter-clockwise so the X-axis points up.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.managers.transform.RotateLM.get_minimum_size">
-<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.transform.RotateLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.transform.RotateLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the rotated minimum size.</p>
 </dd></dl>
 
@@ -171,8 +172,8 @@ readability.</p>
 
 <dl class="class">
 <dt id="layout.managers.transform.ScaleLM">
-<em class="property">class </em><tt class="descclassname">layout.managers.transform.</tt><tt class="descname">ScaleLM</tt><big>(</big><em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.transform.ScaleLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">layout.managers.transform.</code><code class="descname">ScaleLM</code><span class="sig-paren">(</span><em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.transform.ScaleLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that holds one element, and scales it down with
 isotropic scaling if it is too large to fit.</p>
 </dd></dl>
@@ -183,23 +184,25 @@ isotropic scaling if it is too large to fit.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="managers_overlay.html"
-                        title="previous chapter">2.2.9. Multiple Elements in the Same Space (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.managers.overlay</span></tt>)</a></p>
+                        title="previous chapter">2.2.9. Multiple Elements in the Same Space (<code class="docutils literal"><span class="pre">layout.managers.overlay</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="managers_recursion.html"
-                        title="next chapter">2.2.11. Limiting Recursion in Trees with Loops (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.managers.recursion</span></tt>)</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../sources/reference/managers_transform.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+                        title="next chapter">2.2.11. Limiting Recursion in Trees with Loops (<code class="docutils literal"><span class="pre">layout.managers.recursion</span></code>)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/managers_transform.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -213,7 +216,7 @@ isotropic scaling if it is too large to fit.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -228,13 +231,13 @@ isotropic scaling if it is too large to fit.</p>
         <li class="right" >
           <a href="managers_overlay.html" title="2.2.9. Multiple Elements in the Same Space (layout.managers.overlay)"
              >previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2006-2011, Ian Millington.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

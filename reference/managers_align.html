@@ -1,34 +1,35 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.2.1. Aligning Elements in Larger Spaces (layout.managers.align) &mdash; Layout v0.2.0 documentation</title>
-    <link rel="stylesheet" href="../static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <title>2.2.1. Aligning Elements in Larger Spaces (layout.managers.align) &mdash; Layout 0.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2.0',
+        VERSION:     '0.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout 0.2.4 documentation" href="../index.html" />
     <link rel="up" title="2. Reference and API Documentation" href="index.html" />
     <link rel="next" title="2.2.2. Java-Style Box Layout (layout.managers.box)" href="managers_box.html" />
     <link rel="prev" title="2.1.4. Parsing Dimensions (layout.datatypes.parse_dimensions)" href="datatypes_parse_dimensions.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,101 +44,101 @@
         <li class="right" >
           <a href="datatypes_parse_dimensions.html" title="2.1.4. Parsing Dimensions (layout.datatypes.parse_dimensions)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-layout.managers.align">
-<span id="aligning-elements-in-larger-spaces-layout-managers-align"></span><h1>2.2.1. Aligning Elements in Larger Spaces (<a class="reference internal" href="#module-layout.managers.align" title="layout.managers.align"><tt class="xref py py-mod docutils literal"><span class="pre">layout.managers.align</span></tt></a>)<a class="headerlink" href="#module-layout.managers.align" title="Permalink to this headline">¶</a></h1>
+<span id="aligning-elements-in-larger-spaces-layout-managers-align"></span><h1>2.2.1. Aligning Elements in Larger Spaces (<a class="reference internal" href="#module-layout.managers.align" title="layout.managers.align"><code class="xref py py-mod docutils literal"><span class="pre">layout.managers.align</span></code></a>)<a class="headerlink" href="#module-layout.managers.align" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="layout.managers.align.AlignLM">
-<em class="property">class </em><tt class="descclassname">layout.managers.align.</tt><tt class="descname">AlignLM</tt><big>(</big><em>min_width=0</em>, <em>min_height=0</em>, <em>horizontal_align=10</em>, <em>vertical_align=0</em>, <em>element=None</em><big>)</big><a class="headerlink" href="#layout.managers.align.AlignLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><tt class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">layout.managers.align.</code><code class="descname">AlignLM</code><span class="sig-paren">(</span><em>min_width=0</em>, <em>min_height=0</em>, <em>horizontal_align=10</em>, <em>vertical_align=0</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.align.AlignLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that takes one element and aligns it according to
 the given parameters, optionally within a box of at least a given
 size. Several of the other layout managers do some alignment as
 part of their normal behavior.</p>
 <p>Arguments:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">min_width</span></tt></dt>
+<dt><code class="docutils literal"><span class="pre">min_width</span></code></dt>
 <dd>The minimum width to reserve, even if the managed element
 is smaller.</dd>
-<dt><tt class="docutils literal"><span class="pre">min_height</span></tt></dt>
+<dt><code class="docutils literal"><span class="pre">min_height</span></code></dt>
 <dd>The minimum height to reserve, even if the managed element
 is smaller.</dd>
-<dt><tt class="docutils literal"><span class="pre">horizontal_align</span></tt></dt>
+<dt><code class="docutils literal"><span class="pre">horizontal_align</span></code></dt>
 <dd>One of the constants defined in this class for how the
 element should be aligned horizontally within its space
-(default: <a class="reference internal" href="#layout.managers.align.AlignLM.ALIGN_LEFT" title="layout.managers.align.AlignLM.ALIGN_LEFT"><tt class="xref py py-data docutils literal"><span class="pre">ALIGN_LEFT</span></tt></a>)</dd>
-<dt><tt class="docutils literal"><span class="pre">vertcal_align</span></tt></dt>
+(default: <a class="reference internal" href="#layout.managers.align.AlignLM.ALIGN_LEFT" title="layout.managers.align.AlignLM.ALIGN_LEFT"><code class="xref py py-data docutils literal"><span class="pre">ALIGN_LEFT</span></code></a>)</dd>
+<dt><code class="docutils literal"><span class="pre">vertcal_align</span></code></dt>
 <dd>One of the constants defined in this class for how the
 element should be aligned vertically within its space
-(default: <a class="reference internal" href="#layout.managers.align.AlignLM.ALIGN_TOP" title="layout.managers.align.AlignLM.ALIGN_TOP"><tt class="xref py py-data docutils literal"><span class="pre">ALIGN_TOP</span></tt></a>)</dd>
+(default: <a class="reference internal" href="#layout.managers.align.AlignLM.ALIGN_TOP" title="layout.managers.align.AlignLM.ALIGN_TOP"><code class="xref py py-data docutils literal"><span class="pre">ALIGN_TOP</span></code></a>)</dd>
 </dl>
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.ALIGN_BOTTOM">
-<tt class="descname">ALIGN_BOTTOM</tt><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ALIGN_BOTTOM</code><em class="property"> = 2</em><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_BOTTOM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to the bottom of the space.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.ALIGN_CENTER">
-<tt class="descname">ALIGN_CENTER</tt><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_CENTER" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ALIGN_CENTER</code><em class="property"> = 11</em><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_CENTER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to the horizontal center of the space.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.ALIGN_LEFT">
-<tt class="descname">ALIGN_LEFT</tt><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ALIGN_LEFT</code><em class="property"> = 10</em><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to the left of the space.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.ALIGN_MIDDLE">
-<tt class="descname">ALIGN_MIDDLE</tt><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_MIDDLE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ALIGN_MIDDLE</code><em class="property"> = 1</em><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_MIDDLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to the vertical middle of the space.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.ALIGN_RIGHT">
-<tt class="descname">ALIGN_RIGHT</tt><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ALIGN_RIGHT</code><em class="property"> = 12</em><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to the right of the space.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.ALIGN_TOP">
-<tt class="descname">ALIGN_TOP</tt><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_TOP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ALIGN_TOP</code><em class="property"> = 0</em><a class="headerlink" href="#layout.managers.align.AlignLM.ALIGN_TOP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to the top of the space.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.GROW_X">
-<tt class="descname">GROW_X</tt><a class="headerlink" href="#layout.managers.align.AlignLM.GROW_X" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GROW_X</code><em class="property"> = 13</em><a class="headerlink" href="#layout.managers.align.AlignLM.GROW_X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to left and right, making it grow horizontally.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="layout.managers.align.AlignLM.GROW_Y">
-<tt class="descname">GROW_Y</tt><a class="headerlink" href="#layout.managers.align.AlignLM.GROW_Y" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GROW_Y</code><em class="property"> = 3</em><a class="headerlink" href="#layout.managers.align.AlignLM.GROW_Y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Align the element to top and bottom, making it grow vertically.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.managers.align.AlignLM.get_minimum_size">
-<tt class="descname">get_minimum_size</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#layout.managers.align.AlignLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.align.AlignLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the minimum size of the managed element, as long as
 it is larger than any manually set minima.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.managers.align.AlignLM.render">
-<tt class="descname">render</tt><big>(</big><em>rect</em>, <em>data</em><big>)</big><a class="headerlink" href="#layout.managers.align.AlignLM.render" title="Permalink to this definition">¶</a></dt>
+<code class="descname">render</code><span class="sig-paren">(</span><em>rect</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.align.AlignLM.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws the managed element in the correct alignment.</p>
 </dd></dl>
 
@@ -149,23 +150,25 @@ it is larger than any manually set minima.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="datatypes_parse_dimensions.html"
-                        title="previous chapter">2.1.4. Parsing Dimensions (<tt class="docutils literal docutils literal docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></tt>)</a></p>
+                        title="previous chapter">2.1.4. Parsing Dimensions (<code class="docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="managers_box.html"
-                        title="next chapter">2.2.2. Java-Style Box Layout (<tt class="docutils literal"><span class="pre">layout.managers.box</span></tt>)</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../sources/reference/managers_align.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+                        title="next chapter">2.2.2. Java-Style Box Layout (<code class="docutils literal"><span class="pre">layout.managers.box</span></code>)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/managers_align.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -179,7 +182,7 @@ it is larger than any manually set minima.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -194,13 +197,13 @@ it is larger than any manually set minima.</p>
         <li class="right" >
           <a href="datatypes_parse_dimensions.html" title="2.1.4. Parsing Dimensions (layout.datatypes.parse_dimensions)"
              >previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2006-2011, Ian Millington.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

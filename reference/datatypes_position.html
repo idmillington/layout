@@ -1,34 +1,35 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.1.3. Positions and Sizes (layout.datatypes.position) &mdash; Layout v0.2.0 documentation</title>
-    <link rel="stylesheet" href="../static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <title>2.1.3. Positions and Sizes (layout.datatypes.position) &mdash; Layout 0.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2.0',
+        VERSION:     '0.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout v0.2.0 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Layout 0.2.4 documentation" href="../index.html" />
     <link rel="up" title="2. Reference and API Documentation" href="index.html" />
     <link rel="next" title="2.1.4. Parsing Dimensions (layout.datatypes.parse_dimensions)" href="datatypes_parse_dimensions.html" />
     <link rel="prev" title="2.1.2. Paper Sizes (layout.datatypes.papersizes)" href="datatypes_papersizes.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,59 +44,59 @@
         <li class="right" >
           <a href="datatypes_papersizes.html" title="2.1.2. Paper Sizes (layout.datatypes.papersizes)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-layout.datatypes.position">
-<span id="positions-and-sizes-layout-datatypes-position"></span><h1>2.1.3. Positions and Sizes (<a class="reference internal" href="#module-layout.datatypes.position" title="layout.datatypes.position"><tt class="xref py py-mod docutils literal"><span class="pre">layout.datatypes.position</span></tt></a>)<a class="headerlink" href="#module-layout.datatypes.position" title="Permalink to this headline">¶</a></h1>
+<span id="positions-and-sizes-layout-datatypes-position"></span><h1>2.1.3. Positions and Sizes (<a class="reference internal" href="#module-layout.datatypes.position" title="layout.datatypes.position"><code class="xref py py-mod docutils literal"><span class="pre">layout.datatypes.position</span></code></a>)<a class="headerlink" href="#module-layout.datatypes.position" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="layout.datatypes.position.Point">
-<em class="property">class </em><tt class="descclassname">layout.datatypes.position.</tt><tt class="descname">Point</tt><big>(</big><em>x=0</em>, <em>y=0</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<em class="property">class </em><code class="descclassname">layout.datatypes.position.</code><code class="descname">Point</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>A single point in space, or a vector in 2D.</p>
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_angle">
-<tt class="descname">get_angle</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_angle" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_angle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the CCW angle from the positive X-axis (i.e. that
 returned from atan2.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_angle_between">
-<tt class="descname">get_angle_between</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_angle_between" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_angle_between</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_angle_between" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the smallest angle between this vector and the
 given other vector.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_component_product">
-<tt class="descname">get_component_product</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_component_product" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_component_product</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_component_product" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the component product of this vector and the given
 other vector.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_copy">
-<tt class="descname">get_copy</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_copy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of this vector.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_data">
-<tt class="descname">get_data</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the x, y coordinates as a 2-tuple.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_left_normal">
-<tt class="descname">get_left_normal</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_left_normal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_left_normal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_left_normal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the left hand normal of this vector: the vector
 produced by rotating this vector about ninety degrees
 anti-clockwise.</p>
@@ -103,31 +104,31 @@ anti-clockwise.</p>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_magnitude">
-<tt class="descname">get_magnitude</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_magnitude" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_magnitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_magnitude" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the magnitude of this vector.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_magnitude_squared">
-<tt class="descname">get_magnitude_squared</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_magnitude_squared" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_magnitude_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_magnitude_squared" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the square of the magnitude of this vector.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_normalized">
-<tt class="descname">get_normalized</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_normalized" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_normalized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_normalized" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the unit vector in the same direction as this vector.</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="layout.datatypes.position.Point.get_random">
-<em class="property">static </em><tt class="descname">get_random</tt><big>(</big><em>min_pt</em>, <em>max_pt</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_random" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_random</code><span class="sig-paren">(</span><em>min_pt</em>, <em>max_pt</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_random" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a random vector in the given range.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_right_normal">
-<tt class="descname">get_right_normal</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_right_normal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_right_normal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_right_normal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the right hand normal of this vector: the vector
 produced by rotating this vector about ninety degrees
 clockwise.</p>
@@ -135,61 +136,61 @@ clockwise.</p>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_rotated">
-<tt class="descname">get_rotated</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_rotated" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_rotated</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_rotated" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the vector generated from this vector rotated by
 the given amount anti-clockwise.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_scalar_product">
-<tt class="descname">get_scalar_product</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_scalar_product" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_scalar_product</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_scalar_product" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the scalar product of this vector with the given
 other vector.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_x_mirror">
-<tt class="descname">get_x_mirror</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_x_mirror" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_x_mirror</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_x_mirror" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of this vector reflected in the x=0 axis.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.get_y_mirror">
-<tt class="descname">get_y_mirror</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.get_y_mirror" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_y_mirror</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.get_y_mirror" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of this vector reflected in the y=0 axis.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.normalize">
-<tt class="descname">normalize</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.normalize" title="Permalink to this definition">¶</a></dt>
+<code class="descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.normalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes this vector unit length, unless it is the zero
 vector, in which case it is left as is..</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.rotate">
-<tt class="descname">rotate</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.rotate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates this vector through the given anti-clockwise angle
 in radians.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.update_component_product">
-<tt class="descname">update_component_product</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.update_component_product" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_component_product</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.update_component_product" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates this vector so that it is the component product of
 itself with the given other vector.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.update_maximum">
-<tt class="descname">update_maximum</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.update_maximum" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_maximum</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.update_maximum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates this vector so its components are the higher of its
 current components and those of the given other value.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="layout.datatypes.position.Point.update_minimum">
-<tt class="descname">update_minimum</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Point.update_minimum" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_minimum</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Point.update_minimum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates this vector so its components are the lower of its
 current components and those of the given other value.</p>
 </dd></dl>
@@ -198,33 +199,33 @@ current components and those of the given other value.</p>
 
 <dl class="class">
 <dt id="layout.datatypes.position.Rectangle">
-<em class="property">class </em><tt class="descclassname">layout.datatypes.position.</tt><tt class="descname">Rectangle</tt><big>(</big><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><big>)</big><a class="headerlink" href="#layout.datatypes.position.Rectangle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<em class="property">class </em><code class="descclassname">layout.datatypes.position.</code><code class="descname">Rectangle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>A rectangle in two dimensional space.</p>
 <p>The data in this rectangle can be accessed in many different
-ways. It has data members of <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">w</span></tt>, and <tt class="docutils literal"><span class="pre">h</span></tt>, and
-properties corresponding to all combinations of <tt class="docutils literal"><span class="pre">left</span></tt> (which
-equals <tt class="docutils literal"><span class="pre">x</span></tt>), <tt class="docutils literal"><span class="pre">right</span></tt>, <tt class="docutils literal"><span class="pre">top</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span></tt> (which equals
-<tt class="docutils literal"><span class="pre">y</span></tt>), <tt class="docutils literal"><span class="pre">center</span></tt> (horizontal) and <tt class="docutils literal"><span class="pre">middle</span></tt> (vertical). Pair
-combinations (such as <tt class="docutils literal"><span class="pre">top_right</span></tt>) return a <a class="reference internal" href="#layout.datatypes.position.Point" title="layout.datatypes.position.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a>,
-while single values (such as <tt class="docutils literal"><span class="pre">center</span></tt>) return a number. You can
+ways. It has data members of <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code>, <code class="docutils literal"><span class="pre">w</span></code>, and <code class="docutils literal"><span class="pre">h</span></code>, and
+properties corresponding to all combinations of <code class="docutils literal"><span class="pre">left</span></code> (which
+equals <code class="docutils literal"><span class="pre">x</span></code>), <code class="docutils literal"><span class="pre">right</span></code>, <code class="docutils literal"><span class="pre">top</span></code>, <code class="docutils literal"><span class="pre">bottom</span></code> (which equals
+<code class="docutils literal"><span class="pre">y</span></code>), <code class="docutils literal"><span class="pre">center</span></code> (horizontal) and <code class="docutils literal"><span class="pre">middle</span></code> (vertical). Pair
+combinations (such as <code class="docutils literal"><span class="pre">top_right</span></code>) return a <a class="reference internal" href="#layout.datatypes.position.Point" title="layout.datatypes.position.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a>,
+while single values (such as <code class="docutils literal"><span class="pre">center</span></code>) return a number. You can
 also abbreviate each of the properties using its initial letter.</p>
 <p>So to access the center point of the rectangle, for example, you
 use any of the properties:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">Rectangle.cm</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">Rectangle.mc</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">Rectangle.center_middle</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">Rectangle.middle_center</span></tt></li>
+<li><code class="docutils literal"><span class="pre">Rectangle.cm</span></code></li>
+<li><code class="docutils literal"><span class="pre">Rectangle.mc</span></code></li>
+<li><code class="docutils literal"><span class="pre">Rectangle.center_middle</span></code></li>
+<li><code class="docutils literal"><span class="pre">Rectangle.middle_center</span></code></li>
 </ul>
 <p>And to access just the right-hand coordinate, you can use:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">Rectangle.right</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">Rectangle.r</span></tt></li>
+<li><code class="docutils literal"><span class="pre">Rectangle.right</span></code></li>
+<li><code class="docutils literal"><span class="pre">Rectangle.r</span></code></li>
 </ul>
 <dl class="method">
 <dt id="layout.datatypes.position.Rectangle.get_data">
-<tt class="descname">get_data</tt><big>(</big><big>)</big><a class="headerlink" href="#layout.datatypes.position.Rectangle.get_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.datatypes.position.Rectangle.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the x, y, w, h, data as a tuple.</p>
 </dd></dl>
 
@@ -236,23 +237,25 @@ use any of the properties:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="datatypes_papersizes.html"
-                        title="previous chapter">2.1.2. Paper Sizes (<tt class="docutils literal docutils literal"><span class="pre">layout.datatypes.papersizes</span></tt>)</a></p>
+                        title="previous chapter">2.1.2. Paper Sizes (<code class="docutils literal"><span class="pre">layout.datatypes.papersizes</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="datatypes_parse_dimensions.html"
-                        title="next chapter">2.1.4. Parsing Dimensions (<tt class="docutils literal docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></tt>)</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../sources/reference/datatypes_position.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+                        title="next chapter">2.1.4. Parsing Dimensions (<code class="docutils literal"><span class="pre">layout.datatypes.parse_dimensions</span></code>)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/datatypes_position.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -266,7 +269,7 @@ use any of the properties:</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -281,13 +284,13 @@ use any of the properties:</p>
         <li class="right" >
           <a href="datatypes_papersizes.html" title="2.1.2. Paper Sizes (layout.datatypes.papersizes)"
              >previous</a> |</li>
-        <li><a href="../index.html">Layout v0.2.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2006-2011, Ian Millington.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

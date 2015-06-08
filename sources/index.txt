@@ -6,12 +6,14 @@
 Layout
 ======
 
-This package lays out content using a hierarchy of fitting
-algorithms. It is used to construct pages or UI output with complex
-constraints and overlapping content.
+Layout is a high-level Python package for laying out content,
+primarily for print.
 
-It is largely output-agnostic, although there are a set of
-:mod:`layout.elements` that use reportlab's
+It uses a hierarchy of fitting algorithms to construct pages or UI output
+with complex constraints and overlapping content.
+
+It has two components, the layout managers are output-agnostic, and there
+are a set of :mod:`layout.elements` that use reportlab's
 :mod:`~reportlab.pdfgen` to do their output.
 
 
