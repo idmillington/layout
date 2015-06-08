@@ -41,6 +41,7 @@ Elements that Output Somthing (:mod:`layout.elements`)
 
    elements_lines
    elements_image
+   elements_pdf_image
    elements_text
    elements_mark
    elements_space
