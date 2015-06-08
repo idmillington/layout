@@ -8,3 +8,5 @@ rm -rf build/html/sources
 mv build/html/_sources build/html/sources
 find build/html -name '*.html' -exec sed -i 's/\<_sources\>/sources/g' {} \;
 find build/html -name '*.js' -exec sed -i 's/\<_sources\>/sources/g' {} \;
+
+echo "Now copy build/html into the gh-pages branch."

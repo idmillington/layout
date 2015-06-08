@@ -1,1 +1,6 @@
 *.pyc
+build/
+dist/
+layout.egg-info/
+*.sublime-*
+ve/
