@@ -2,11 +2,13 @@
 
 rm -rf build/html/static
 mv build/html/_static build/html/static
-find build/html -name '*.html' -exec sed -i '' 's/\<_static\>/static/g' {} \;
+find build/html -name '*.html' -exec sed -i '.bak' 's/_static/static/g' {} \;
 
 rm -rf build/html/sources
 mv build/html/_sources build/html/sources
-find build/html -name '*.html' -exec sed -i '' 's/\<_sources\>/sources/g' {} \;
-find build/html -name '*.js' -exec sed -i '' 's/\<_sources\>/sources/g' {} \;
+find build/html -name '*.html' -exec sed -i '.bak' 's/_sources/sources/g' {} \;
+find build/html -name '*.js' -exec sed -i '.bak' 's/_sources/sources/g' {} \;
+
+find build/html -name '*.bak' -exec rm {} \;
 
 echo "Now copy build/html into the gh-pages branch."
