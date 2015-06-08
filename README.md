@@ -66,7 +66,7 @@ in the `docs` directory. For example
     $ cd docs
     $ make html
     $ cd build/html
-    $ python -m SimpleHTTPServer 8080
+    $ python -m SimpleHTTPServer
 
 This will serve the documentation at http://localhost:8000
 
