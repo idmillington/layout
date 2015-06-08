@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.2.9. Multiple Elements in the Same Space (layout.managers.overlay) &mdash; Layout 0.2.5 documentation</title>
+    <title>2.3.3. PDF Images (layout.elements.pdf_image) &mdash; Layout 0.2.5 documentation</title>
     
     <link rel="stylesheet" href="../static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="../static/doctools.js"></script>
     <link rel="top" title="Layout 0.2.5 documentation" href="../index.html" />
     <link rel="up" title="2. Reference and API Documentation" href="index.html" />
-    <link rel="next" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)" href="managers_transform.html" />
-    <link rel="prev" title="2.2.8. Add Margins to an Element (layout.managers.margins)" href="managers_margins.html" /> 
+    <link rel="next" title="2.3.4. Text Output (layout.elements.text)" href="elements_text.html" />
+    <link rel="prev" title="2.3.2. Images (layout.elements.image)" href="elements_image.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -39,10 +39,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="managers_transform.html" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)"
+          <a href="elements_text.html" title="2.3.4. Text Output (layout.elements.text)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="managers_margins.html" title="2.2.8. Add Margins to an Element (layout.managers.margins)"
+          <a href="elements_image.html" title="2.3.2. Images (layout.elements.image)"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.5 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
@@ -54,21 +54,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-layout.managers.overlay">
-<span id="multiple-elements-in-the-same-space-layout-managers-overlay"></span><h1>2.2.9. Multiple Elements in the Same Space (<a class="reference internal" href="#module-layout.managers.overlay" title="layout.managers.overlay"><code class="xref py py-mod docutils literal"><span class="pre">layout.managers.overlay</span></code></a>)<a class="headerlink" href="#module-layout.managers.overlay" title="Permalink to this headline">¶</a></h1>
-<p>Overlaying is the process of having more than one element in the same
-space. In this module is a simple layout manager to achieve this, but
-other layout managers may also provide this facility.  The
-<a class="reference internal" href="managers_grid.html#layout.managers.grid.GridLM" title="layout.managers.grid.GridLM"><code class="xref py py-class docutils literal"><span class="pre">GridLM</span></code></a>, for example, allows you to
-overlay many elements in each grid cell.</p>
+  <div class="section" id="module-layout.elements.pdf_image">
+<span id="pdf-images-layout-elements-pdf-image"></span><h1>2.3.3. PDF Images (<a class="reference internal" href="#module-layout.elements.pdf_image" title="layout.elements.pdf_image"><code class="xref py py-mod docutils literal"><span class="pre">layout.elements.pdf_image</span></code></a>)<a class="headerlink" href="#module-layout.elements.pdf_image" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="layout.managers.overlay.OverlayLM">
-<em class="property">class </em><code class="descclassname">layout.managers.overlay.</code><code class="descname">OverlayLM</code><span class="sig-paren">(</span><em>elements=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.overlay.OverlayLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.GroupLayoutManager" title="layout.managers.root.GroupLayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.GroupLayoutManager</span></code></a></p>
-<p>A layout manager that has any number of elements, all occupying the
-same area. The elements are drawn in strictly the same order
-that they are added to the manager, so early items form a back
-ground for later items.</p>
+<dt id="layout.elements.pdf_image.PDFImage">
+<em class="property">class </em><code class="descclassname">layout.elements.pdf_image.</code><code class="descname">PDFImage</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.elements.pdf_image.PDFImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutElement" title="layout.managers.root.LayoutElement"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutElement</span></code></a></p>
+<p>A PDF file to be displayed at a fixed aspect ratio.</p>
 </dd></dl>
 
 </div>
@@ -80,15 +72,15 @@ ground for later items.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="managers_margins.html"
-                        title="previous chapter">2.2.8. Add Margins to an Element (<code class="docutils literal"><span class="pre">layout.managers.margins</span></code>)</a></p>
+  <p class="topless"><a href="elements_image.html"
+                        title="previous chapter">2.3.2. Images (<code class="docutils literal"><span class="pre">layout.elements.image</span></code>)</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="managers_transform.html"
-                        title="next chapter">2.2.10. Rotation and Scaling of Elements (<code class="docutils literal"><span class="pre">layout.managers.transform</span></code>)</a></p>
+  <p class="topless"><a href="elements_text.html"
+                        title="next chapter">2.3.4. Text Output (<code class="docutils literal"><span class="pre">layout.elements.text</span></code>)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../sources/reference/managers_overlay.txt"
+      <li><a href="../sources/reference/elements_pdf_image.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -119,10 +111,10 @@ ground for later items.</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="managers_transform.html" title="2.2.10. Rotation and Scaling of Elements (layout.managers.transform)"
+          <a href="elements_text.html" title="2.3.4. Text Output (layout.elements.text)"
              >next</a> |</li>
         <li class="right" >
-          <a href="managers_margins.html" title="2.2.8. Add Margins to an Element (layout.managers.margins)"
+          <a href="elements_image.html" title="2.3.2. Images (layout.elements.image)"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.2.5 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
