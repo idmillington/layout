@@ -3,7 +3,7 @@ more pages of a reportlab canvas. To create multi-page documents, use
 the :class:`layout.pages.output.PagesLM` class to wrap a series of
 single-page managers."""
 
-import datatypes
+from layout import datatypes
 
 try:
     from reportlab.pdfgen.canvas import Canvas

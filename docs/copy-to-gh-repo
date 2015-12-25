@@ -1,0 +1,2 @@
+rm -rf ../../layout-gh-pages/*
+cp -a build/html/* ../../layout-gh-pages
