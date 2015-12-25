@@ -1,13 +1,11 @@
 import random
 import math
+import collections
+import numbers
 
-class Point(object):
+class Point(collections.namedtuple('Point', ('x', 'y'))):
     """A single point in space, or a vector in 2D."""
-    __slots__ = ('x', 'y')
-
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
+    __slots__ = ()
 
     def get_data(self):
         """Returns the x, y coordinates as a 2-tuple."""
@@ -22,43 +20,20 @@ class Point(object):
     def __add__(self, other):
         return Point(self.x + other.x, self.y + other.y)
 
-    def __iadd__(self, other):
-        self.x += other.x
-        self.y += other.y
-        return self
-
     def __sub__(self, other):
         return Point(self.x - other.x, self.y - other.y)
 
-    def __isub__(self, other):
-        self.x -= other.x
-        self.y -= other.y
-        return self
-
     def __mul__(self, factor):
-        if type(factor) not in (int, float, long):
-            raise TypeError('unsupported operand for *')
+        if not isinstance(factor, numbers.Number):
+            raise TypeError("a number is required")
         return Point(self.x*factor, self.y*factor)
-
-    def __imul__(self, factor):
-        if type(factor) not in (int, float, long):
-            raise TypeError('unsupported operand for *')
-        self.x *= factor
-        self.y *= factor
-        return self
 
     def __rmul__(self, factor):
         return self * factor
 
-    def __div__(self, factor):
+    def __truediv__(self, factor):
         factor = 1.0 / factor
         return Point(self.x*factor, self.y*factor)
-
-    def __idiv__(self, factor):
-        factor = 1.0 / factor
-        self.x *= factor
-        self.y *= factor
-        return self
 
     def __neg__(self):
         return Point(-self.x, -self.y)
@@ -71,13 +46,6 @@ class Point(object):
         other vector."""
         return Point(self.x * other.x, self.y * other.y)
 
-    def update_component_product(self, other):
-        """Updates this vector so that it is the component product of
-        itself with the given other vector."""
-        self.x *= other.x
-        self.y *= other.y
-        return self
-
     def get_normalized(self):
         """Returns the unit vector in the same direction as this vector."""
         magnitude = self.get_magnitude()
@@ -87,14 +55,15 @@ class Point(object):
         else:
             return Point(0, 0)
 
-    def normalize(self):
-        """Makes this vector unit length, unless it is the zero
-        vector, in which case it is left as is.."""
+    def get_normalized(self):
+        """Returns a vector of unit length, unless it is the zero
+        vector, in which case it is left as is."""
         magnitude = self.get_magnitude()
         if magnitude > 0:
             magnitude = 1.0 / magnitude
-            self.x *= magnitude
-            self.y *= magnitude
+            return Point(self.x * magnitude, self.y * magnitude)
+        else:
+            return self
 
     def get_angle(self):
         """Returns the CCW angle from the positive X-axis (i.e. that
@@ -113,16 +82,9 @@ class Point(object):
         anti-clockwise."""
         return Point(-self.y, self.x)
 
-    def rotate(self, angle):
+    def get_rotated(self, angle):
         """Rotates this vector through the given anti-clockwise angle
         in radians."""
-        ca = math.cos(angle)
-        sa = math.sin(angle)
-        self.x, self.y = self.x*ca-self.y*sa, self.x*sa+self.y*ca
-
-    def get_rotated(self, angle):
-        """Returns the vector generated from this vector rotated by
-        the given amount anti-clockwise."""
         ca = math.cos(angle)
         sa = math.sin(angle)
         return Point(self.x*ca-self.y*sa, self.x*sa+self.y*ca)
@@ -164,28 +126,27 @@ class Point(object):
         sp = normself.get_scalar_product(normother)
         return math.acos(sp)
 
-    def update_minimum(self, other):
+    def get_minimum(self, other):
         """Updates this vector so its components are the lower of its
         current components and those of the given other value."""
-        self.x = min(self.x, other.x)
-        self.y = min(self.y, other.y)
+        return Point(min(self.x, other.x), min(self.y, other.y))
 
-    def update_maximum(self, other):
+    def get_maximum(self, other):
         """Updates this vector so its components are the higher of its
         current components and those of the given other value."""
-        self.x = max(self.x, other.x)
-        self.y = max(self.y, other.y)
+        return Point(max(self.x, other.x), max(self.y, other.y))
 
     @staticmethod
     def get_random(min_pt, max_pt):
         """Returns a random vector in the given range."""
         result = Point(random.random(), random.random())
-        result.update_component_product(max_pt - min_pt)
-        result += min_pt
-        return result
+        return result.get_component_product(max_pt - min_pt) + min_pt
 
     def __repr__(self):
         return "Point(%f, %f)" % (self.x, self.y)
+
+Point.__new__.__defaults__ = (0, 0)
+
 
 class _RectangleMetaclass(type):
     """Adds all combinations of directional properties to the rectangle, such
@@ -223,7 +184,7 @@ class _RectangleMetaclass(type):
             _make_method(x, 'x', 'w', i/2.0)
             _make_method(y, 'y', 'h', i/2.0)
 
-class Rectangle(object):
+class Rectangle(metaclass=_RectangleMetaclass):
     """A rectangle in two dimensional space.
 
     The data in this rectangle can be accessed in many different
@@ -249,7 +210,6 @@ class Rectangle(object):
     * ``Rectangle.r``
     """
     __slots__ = ('x', 'y', 'w', 'h')
-    __metaclass__ = _RectangleMetaclass
 
     def __init__(self, x, y, w, h):
         self.x = x

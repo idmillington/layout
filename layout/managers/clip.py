@@ -1,4 +1,4 @@
-import root
+from . import root
 
 class ClipLM(root.LayoutManager):
     """

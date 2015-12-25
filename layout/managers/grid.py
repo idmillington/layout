@@ -1,6 +1,6 @@
 import math
 from layout import datatypes
-import root
+from . import root
 
 class SimpleGridLM(root.GroupLayoutManager):
     """

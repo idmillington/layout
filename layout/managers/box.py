@@ -1,5 +1,5 @@
 from layout import datatypes
-import root
+from . import root
 
 class BoxLM(root.LayoutManager):
     """

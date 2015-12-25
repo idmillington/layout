@@ -1,6 +1,5 @@
-from __future__ import with_statement
 from layout import datatypes
-import root
+from . import root
 
 class RecursionStopperLM(root.LayoutManager):
     """

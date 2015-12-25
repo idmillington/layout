@@ -7,7 +7,7 @@ overlay many elements in each grid cell.
 """
 
 from layout import datatypes
-import root
+from . import root
 
 class OverlayLM(root.GroupLayoutManager):
     """

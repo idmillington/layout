@@ -30,5 +30,18 @@ setup(
         "Topic :: Multimedia :: Graphics",
         ],
 
-    zip_safe=False
+    zip_safe=False,
+
+    install_requires=[
+        # Optional modules
+        'pillow',
+        'reportlab>=2.0',
+        'pdfrw>=0.1',
+        # Documentation
+        'Jinja2>=2.5.5',
+        'Pygments>=1.4',
+        'Sphinx>=1.0.7',
+        'docutils>=0.7',
+        # Testing
+        'nose>=1.0']
     )

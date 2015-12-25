@@ -153,17 +153,8 @@ class TestPoint(unittest.TestCase):
             Point(4,0)
             )
 
-        p = Point(2,3)
-        p.update_component_product(Point(2,3))
-        self.assertEqual(p, Point(4,9))
-
-    def test_normalize(self):
+    def test_normalized(self):
         p = Point(3, 4).get_normalized()
-        self.assertAlmostEqual(p.x, 0.6)
-        self.assertAlmostEqual(p.y, 0.8)
-
-        p = Point(3, 4)
-        self.assertEqual(p.normalize(), None)
         self.assertAlmostEqual(p.x, 0.6)
         self.assertAlmostEqual(p.y, 0.8)
 
@@ -187,8 +178,7 @@ class TestPoint(unittest.TestCase):
         p = Point(2,3).get_rotated(math.pi * 0.5)
         self.assertAlmostEqual(p.x, -3)
         self.assertAlmostEqual(p.y, 2)
-        p = Point(2,3)
-        self.assertEqual(p.rotate(math.pi * 0.5), None)
+        p = Point(2,3).get_rotated(math.pi * 0.5)
         self.assertAlmostEqual(p.x, -3)
         self.assertAlmostEqual(p.y, 2)
 
@@ -217,21 +207,21 @@ class TestPoint(unittest.TestCase):
             )
         self.assertAlmostEqual(Point(2,3).get_angle_between(Point(2, 3)), 0)
 
-    def test_update_min(self):
+    def test_min(self):
         p = Point(2,3)
-        p.update_minimum(Point(3,2))
+        p = p.get_minimum(Point(3,2))
         self.assertEqual(p.x, 2)
         self.assertEqual(p.y, 2)
-        p.update_minimum(Point(1,6))
+        p = p.get_minimum(Point(1,6))
         self.assertEqual(p.x, 1)
         self.assertEqual(p.y, 2)
 
-    def test_update_max(self):
+    def test_max(self):
         p = Point(2,3)
-        p.update_maximum(Point(3,2))
+        p = p.get_maximum(Point(3,2))
         self.assertEqual(p.x, 3)
         self.assertEqual(p.y, 3)
-        p.update_maximum(Point(1,6))
+        p = p.get_maximum(Point(1,6))
         self.assertEqual(p.x, 3)
         self.assertEqual(p.y, 6)
 

@@ -1,7 +1,7 @@
 import random
 import math
 from layout import datatypes
-import root
+from . import root
 
 class _JitterBase(root.LayoutManager):
     def _render_jittered(
