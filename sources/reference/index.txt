@@ -7,8 +7,6 @@ Fundamental Data Types and Constants (:mod:`layout.datatypes`)
 .. toctree::
    :maxdepth: 1
 
-   datatypes_units
-   datatypes_papersizes
    datatypes_position
    datatypes_parse_dimensions
 
