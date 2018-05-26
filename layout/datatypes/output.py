@@ -76,6 +76,13 @@ class OutputTarget(metaclass=abc.ABCMeta):
         pass
 
     @abc.abstractmethod
+    def draw_image(
+            self, img_filename:str, x:float, y:float, w:float, h:float
+            ) -> None:
+        """Draws the given image."""
+        pass
+
+    @abc.abstractmethod
     def draw_polygon(
             self,
             *pts,

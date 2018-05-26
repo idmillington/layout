@@ -95,7 +95,8 @@ its :meth:`render` method. Assuming we're using Report Lab, we could
 do this manually::
 
     canvas = Canvas(filename, papersize)
-    top_level_manager.render(Rectangle(0, 0, *papersize), dict(output=canvas))
+    output = rl_utils.ReportlabOutput(canvas)
+    top_level_manager.render(Rectangle(0, 0, *papersize), dict(output=output))
     canvas.showPage()
     canvas.save()
 
@@ -109,3 +110,7 @@ module::
 or even shorter::
 
    rl_utils.render_to_reportlab_document(filename, papersize, top_level_manager)
+
+Similar methods exist for the Cairo renderer. Cairo uses a different
+coordinate system, however, so it is not usually practical to use the manual
+approach unless you reconfigure the coordinate system manually. See the implementation of :func:`cairo_utils.render_to_cairo_context` for details.

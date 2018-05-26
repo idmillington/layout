@@ -135,7 +135,8 @@ class VerticalLM(root.GroupLayoutManager):
             elif self.horizontal_align == VerticalLM.ALIGN_RIGHT:
                 x = rect.right - size.x
                 w = size.x
-            else: # self.horizontal_align == VerticalLM.ALIGN_GROW
+            else:
+                assert self.horizontal_align == VerticalLM.ALIGN_GROW
                 x = rect.x
                 w = rect.w
 
@@ -146,7 +147,8 @@ class VerticalLM(root.GroupLayoutManager):
             elif self.vertical_align == VerticalLM.ALIGN_EQUAL_SPACING:
                 h = size.y
                 next_y = y + size.y + self.margin + extra_height*per_margin
-            else: # self.vertical_align == VerticalLM.ALIGN_EQUAL_GROWTH
+            else:
+                assert self.vertical_align == VerticalLM.ALIGN_EQUAL_GROWTH
                 h = size.y + extra_height*per_element
                 next_y = y + h + self.margin
 
@@ -282,7 +284,8 @@ class HorizontalLM(root.GroupLayoutManager):
             elif self.vertical_align == HorizontalLM.ALIGN_BOTTOM:
                 y = rect.y
                 h = size.y
-            else: # self.vertical_align == HorizontalLM.ALIGN_GROW
+            else:
+                assert self.vertical_align == HorizontalLM.ALIGN_GROW
                 y = rect.y
                 h = rect.h
 
@@ -293,7 +296,8 @@ class HorizontalLM(root.GroupLayoutManager):
             elif self.horizontal_align == HorizontalLM.ALIGN_EQUAL_SPACING:
                 w = size.x
                 next_x = x + size.x + self.margin + extra_width*per_margin
-            else: # self.horizontal_align == HorizontalLM.ALIGN_EQUAL_GROWTH
+            else:
+                assert self.horizontal_align == HorizontalLM.ALIGN_EQUAL_GROWTH
                 w = size.x + extra_width*per_element
                 next_x = x + w + self.margin
 

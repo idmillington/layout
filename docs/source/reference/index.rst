@@ -60,3 +60,4 @@ Utility Methods
    :maxdepth: 1
 
    rl_utils
+   cairo_utils

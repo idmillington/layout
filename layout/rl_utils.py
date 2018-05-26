@@ -92,6 +92,9 @@ class ReportlabOutput(output.OutputTarget):
         c.rect(x,y, w,h, stroke=(stroke is not None), fill=(fill is not None))
         c.restoreState()
 
+    def draw_image(self, img_filename, x, y, w, h):
+        self.c.drawImage(img_filename, x, y, w, h)
+
     def draw_polygon(
             self,
             *pts,

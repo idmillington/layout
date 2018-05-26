@@ -14,9 +14,10 @@ with complex constraints and overlapping content.
 
 It has two components, the layout managers position and size content, and
 there are a set of :mod:`layout.elements` that can display common content
-types, such as images or text.
+types, such as images or text via an abstract rendering interface.
 
-A utility library targets reportlab's :mod:`~reportlab.pdfgen` for output.
+Utility libraries provide rendering implementations for reportlab's
+:mod:`~reportlab.pdfgen` or cairo.
 
 
 Contents:

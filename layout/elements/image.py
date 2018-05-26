@@ -71,5 +71,5 @@ class Image(root.LayoutElement):
             y += extra_height
 
         # Draw the image
-        data['output'].drawImage(self.filename, x, y, width, height)
+        data['output'].draw_image(self.filename, x, y, width, height)
 
