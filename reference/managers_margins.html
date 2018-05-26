@@ -1,34 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>2.2.8. Add Margins to an Element (layout.managers.margins) &mdash; Layout 0.3.0 documentation</title>
-    
+    <title>2.2.8. Add Margins to an Element (layout.managers.margins) &#8212; Layout 0.4.0 documentation</title>
     <link rel="stylesheet" href="../static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="../static/documentation_options.js"></script>
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout 0.3.0 documentation" href="../index.html" />
-    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.2.9. Multiple Elements in the Same Space (layout.managers.overlay)" href="managers_overlay.html" />
     <link rel="prev" title="2.2.7. Jittering an Existing Layout (layout.managers.jitter)" href="managers_jitter.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +33,8 @@
         <li class="right" >
           <a href="managers_jitter.html" title="2.2.7. Jittering an Existing Layout (layout.managers.jitter)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -55,32 +44,50 @@
           <div class="body" role="main">
             
   <div class="section" id="module-layout.managers.margins">
-<span id="add-margins-to-an-element-layout-managers-margins"></span><h1>2.2.8. Add Margins to an Element (<a class="reference internal" href="#module-layout.managers.margins" title="layout.managers.margins"><code class="xref py py-mod docutils literal"><span class="pre">layout.managers.margins</span></code></a>)<a class="headerlink" href="#module-layout.managers.margins" title="Permalink to this headline">¶</a></h1>
+<span id="add-margins-to-an-element-layout-managers-margins"></span><h1>2.2.8. Add Margins to an Element (<a class="reference internal" href="#module-layout.managers.margins" title="layout.managers.margins"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.managers.margins</span></code></a>)<a class="headerlink" href="#module-layout.managers.margins" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="layout.managers.margins.MarginsLM">
 <em class="property">class </em><code class="descclassname">layout.managers.margins.</code><code class="descname">MarginsLM</code><span class="sig-paren">(</span><em>top=0</em>, <em>right=0</em>, <em>bottom=0</em>, <em>left=0</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.MarginsLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that has only one element, surrounded by the given
 absolute margins.</p>
+<dl class="method">
+<dt id="layout.managers.margins.MarginsLM.get_minimum_size">
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.MarginsLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>How small can the element be? Should return a Point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.margins.MarginsLM.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>rect</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.MarginsLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the element to render itself.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="layout.managers.margins.PaddedMarginsLM">
 <em class="property">class </em><code class="descclassname">layout.managers.margins.</code><code class="descname">PaddedMarginsLM</code><span class="sig-paren">(</span><em>top=0.5</em>, <em>right=0.5</em>, <em>bottom=0.5</em>, <em>left=0.5</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.PaddedMarginsLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that surrounds its single element by margins
 that grow with the available space. The margins grow with the available
 space in the given proportions. If the proportions for a pair of margins
-don&#8217;t add up to 1.0, then any additional proportion will be given to the
+don’t add up to 1.0, then any additional proportion will be given to the
 element to make it grow.</p>
 <p>Using this layout manager with the correct proportions, you can
 duplicate the behavior of the
-<a class="reference internal" href="managers_align.html#layout.managers.align.AlignLM" title="layout.managers.align.AlignLM"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.align.AlignLM</span></code></a>. This class provides more
+<a class="reference internal" href="managers_align.html#layout.managers.align.AlignLM" title="layout.managers.align.AlignLM"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.align.AlignLM</span></code></a>. This class provides more
 flexibility, however.</p>
 <dl class="method">
 <dt id="layout.managers.margins.PaddedMarginsLM.get_minimum_size">
 <code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.PaddedMarginsLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Our minimum size is simply our element&#8217;s minimum size.</p>
+<dd><p>Our minimum size is simply our element’s minimum size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.margins.PaddedMarginsLM.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>rect</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.PaddedMarginsLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the element to render itself.</p>
 </dd></dl>
 
 </dd></dl>
@@ -88,7 +95,7 @@ flexibility, however.</p>
 <dl class="class">
 <dt id="layout.managers.margins.ProportionalMarginsLM">
 <em class="property">class </em><code class="descclassname">layout.managers.margins.</code><code class="descname">ProportionalMarginsLM</code><span class="sig-paren">(</span><em>top=0</em>, <em>right=0</em>, <em>bottom=0</em>, <em>left=0</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.ProportionalMarginsLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that has only one element, surrounded by the given
 margins that are proportional to total size of this manager.</p>
 <p>For example, if we specify that the left margin is at 0.2 and the right
@@ -96,19 +103,31 @@ margin is at 0.4, then the child element will be 0.4 times the width
 of this manager.</p>
 <p>Pairs of margins (left &amp; right or top &amp; bottom) must sum to at least zero,
 and strictly less than 1.</p>
+<dl class="method">
+<dt id="layout.managers.margins.ProportionalMarginsLM.get_minimum_size">
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.ProportionalMarginsLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>How small can the element be? Should return a Point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.margins.ProportionalMarginsLM.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>rect</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.ProportionalMarginsLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the element to render itself.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="layout.managers.margins.VanDeGraafCanonLM">
 <em class="property">class </em><code class="descclassname">layout.managers.margins.</code><code class="descname">VanDeGraafCanonLM</code><span class="sig-paren">(</span><em>recto=True</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.margins.VanDeGraafCanonLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#layout.managers.margins.ProportionalMarginsLM" title="layout.managers.margins.ProportionalMarginsLM"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.margins.ProportionalMarginsLM</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#layout.managers.margins.ProportionalMarginsLM" title="layout.managers.margins.ProportionalMarginsLM"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.margins.ProportionalMarginsLM</span></code></a></p>
 <p>Wraps its child element in margins calculated according to the
 Van de Graaf page construction canon.</p>
 <p>Using this canon the proportions of the child
 element are the same as the proportions of this manager. The standard
 de Graaf proportions are based on geometrical construction, here we
 perform the calculation, by dividing the page into ninths (the original
-canon would also do this, if drawn precisely, obviously we don&#8217;t allow
+canon would also do this, if drawn precisely, obviously we don’t allow
 for the innacuracies in drawing which would have been common in medieval
 manuscripts).</p>
 <p>Using this approach the child element gets two thirds of both the
@@ -125,28 +144,27 @@ height and the width of the parent element.</p>
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="managers_jitter.html"
-                        title="previous chapter">2.2.7. Jittering an Existing Layout (<code class="docutils literal"><span class="pre">layout.managers.jitter</span></code>)</a></p>
+                        title="previous chapter">2.2.7. Jittering an Existing Layout (<code class="docutils literal notranslate"><span class="pre">layout.managers.jitter</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="managers_overlay.html"
-                        title="next chapter">2.2.9. Multiple Elements in the Same Space (<code class="docutils literal"><span class="pre">layout.managers.overlay</span></code>)</a></p>
+                        title="next chapter">2.2.9. Multiple Elements in the Same Space (<code class="docutils literal notranslate"><span class="pre">layout.managers.overlay</span></code>)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../sources/reference/managers_margins.txt"
+      <li><a href="../sources/reference/managers_margins.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -168,13 +186,13 @@ height and the width of the parent element.</p>
         <li class="right" >
           <a href="managers_jitter.html" title="2.2.7. Jittering an Existing Layout (layout.managers.jitter)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2006-2015, Ian Millington.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+        &#169; Copyright 2006-2018, Ian Millington.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>

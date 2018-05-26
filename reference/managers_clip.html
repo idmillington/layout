@@ -1,34 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>2.2.3. Clipping Portions of the Layout (layout.elements.clip) &mdash; Layout 0.3.0 documentation</title>
-    
+    <title>2.2.3. Clipping Portions of the Layout (layout.elements.clip) &#8212; Layout 0.4.0 documentation</title>
     <link rel="stylesheet" href="../static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="../static/documentation_options.js"></script>
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout 0.3.0 documentation" href="../index.html" />
-    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.2.4. Vertical and Horizontal Alignment (layout.managers.directional)" href="managers_directional.html" />
     <link rel="prev" title="2.2.2. Java-Style Box Layout (layout.managers.box)" href="managers_box.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +33,8 @@
         <li class="right" >
           <a href="managers_box.html" title="2.2.2. Java-Style Box Layout (layout.managers.box)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -55,19 +44,31 @@
           <div class="body" role="main">
             
   <div class="section" id="module-layout.managers.clip">
-<span id="clipping-portions-of-the-layout-layout-elements-clip"></span><h1>2.2.3. Clipping Portions of the Layout (<code class="xref py py-mod docutils literal"><span class="pre">layout.elements.clip</span></code>)<a class="headerlink" href="#module-layout.managers.clip" title="Permalink to this headline">¶</a></h1>
+<span id="clipping-portions-of-the-layout-layout-elements-clip"></span><h1>2.2.3. Clipping Portions of the Layout (<code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.elements.clip</span></code>)<a class="headerlink" href="#module-layout.managers.clip" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="layout.managers.clip.ClipLM">
 <em class="property">class </em><code class="descclassname">layout.managers.clip.</code><code class="descname">ClipLM</code><span class="sig-paren">(</span><em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.clip.ClipLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A ReportLab-specific layout manager that establishes a clipping
-box around its child element&#8217;s content before rendering it.</p>
+box around its child element’s content before rendering it.</p>
 <p>Because most elements and managers reserve the minimum amount of
 space they need to draw, this manager would have no effect. In
 some cases, particularly with managers in the
-<a class="reference internal" href="managers_fixed.html#module-layout.managers.fixed" title="layout.managers.fixed"><code class="xref py py-mod docutils literal"><span class="pre">fixed</span></code></a> or <a class="reference internal" href="managers_jitter.html#module-layout.managers.jitter" title="layout.managers.jitter"><code class="xref py py-mod docutils literal"><span class="pre">jitter</span></code></a>
+<a class="reference internal" href="managers_fixed.html#module-layout.managers.fixed" title="layout.managers.fixed"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fixed</span></code></a> or <a class="reference internal" href="managers_jitter.html#module-layout.managers.jitter" title="layout.managers.jitter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jitter</span></code></a>
 modules, the drawing is outside the reserved space, this manager
 ensures any content that does overlap is trimmed.</p>
+<dl class="method">
+<dt id="layout.managers.clip.ClipLM.get_minimum_size">
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.clip.ClipLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>How small can the element be? Should return a Point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.clip.ClipLM.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>rect</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.clip.ClipLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the element to render itself.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -80,28 +81,27 @@ ensures any content that does overlap is trimmed.</p>
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="managers_box.html"
-                        title="previous chapter">2.2.2. Java-Style Box Layout (<code class="docutils literal"><span class="pre">layout.managers.box</span></code>)</a></p>
+                        title="previous chapter">2.2.2. Java-Style Box Layout (<code class="docutils literal notranslate"><span class="pre">layout.managers.box</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="managers_directional.html"
-                        title="next chapter">2.2.4. Vertical and Horizontal Alignment (<code class="docutils literal"><span class="pre">layout.managers.directional</span></code>)</a></p>
+                        title="next chapter">2.2.4. Vertical and Horizontal Alignment (<code class="docutils literal notranslate"><span class="pre">layout.managers.directional</span></code>)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../sources/reference/managers_clip.txt"
+      <li><a href="../sources/reference/managers_clip.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -123,13 +123,13 @@ ensures any content that does overlap is trimmed.</p>
         <li class="right" >
           <a href="managers_box.html" title="2.2.2. Java-Style Box Layout (layout.managers.box)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2006-2015, Ian Millington.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+        &#169; Copyright 2006-2018, Ian Millington.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>

@@ -1,34 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>2.4.1. Imposition Helpers (layout.pages.imposition) &mdash; Layout 0.3.0 documentation</title>
-    
+    <title>2.4.1. Imposition Helpers (layout.pages.imposition) &#8212; Layout 0.4.0 documentation</title>
     <link rel="stylesheet" href="../static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="../static/documentation_options.js"></script>
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout 0.3.0 documentation" href="../index.html" />
-    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.4.2. Page Output (layout.pages.output)" href="pages_output.html" />
-    <link rel="prev" title="2.3.6. Spacing (layout.elements.space)" href="elements_space.html" /> 
-  </head>
-  <body role="document">
+    <link rel="prev" title="2.3.5. Spacing (layout.elements.space)" href="elements_space.html" /> 
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,10 +31,10 @@
           <a href="pages_output.html" title="2.4.2. Page Output (layout.pages.output)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="elements_space.html" title="2.3.6. Spacing (layout.elements.space)"
+          <a href="elements_space.html" title="2.3.5. Spacing (layout.elements.space)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -55,9 +44,9 @@
           <div class="body" role="main">
             
   <div class="section" id="module-layout.pages.imposition">
-<span id="imposition-helpers-layout-pages-imposition"></span><h1>2.4.1. Imposition Helpers (<a class="reference internal" href="#module-layout.pages.imposition" title="layout.pages.imposition"><code class="xref py py-mod docutils literal"><span class="pre">layout.pages.imposition</span></code></a>)<a class="headerlink" href="#module-layout.pages.imposition" title="Permalink to this headline">¶</a></h1>
+<span id="imposition-helpers-layout-pages-imposition"></span><h1>2.4.1. Imposition Helpers (<a class="reference internal" href="#module-layout.pages.imposition" title="layout.pages.imposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.pages.imposition</span></code></a>)<a class="headerlink" href="#module-layout.pages.imposition" title="Permalink to this headline">¶</a></h1>
 <p>This module contains utility functions to arrange a set of pages for printing.</p>
-<p>The functions in this module aren&#8217;t layout managers in their own right: they
+<p>The functions in this module aren’t layout managers in their own right: they
 return lists of layout managers, one per page, given a list of elements to
 output.</p>
 <dl class="data">
@@ -123,43 +112,43 @@ large sheets can fold together as one. Larger books are made up of
 multiple signatures sewn together in a codex.</p>
 <p>Arguments:</p>
 <dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">imposition_type</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">imposition_type</span></code></dt>
 <dd>One of the FORMAT_* constants defined in this module: controls
 the kind of imposition to make.</dd>
-<dt><code class="docutils literal"><span class="pre">sheets_per_sig</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">sheets_per_sig</span></code></dt>
 <dd>How many sheets of paper will be folded, cut and bind
 together. This is often 1 for commercial presses, but DIY
 laser printouts often have all the pages in one signature (for
-stapling). If this value isn&#8217;t provided, the function will
+stapling). If this value isn’t provided, the function will
 assume the latter.</dd>
-<dt><code class="docutils literal"><span class="pre">fold_then_collate</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">fold_then_collate</span></code></dt>
 <dd>If this is true then each printed sheet will be folded and
 cut, then the bundle of resulting pages will be combined with
 the others from its signature. This kindof defeats the object
 of printing in signatures, but is needed when building
 multi-signature books using a laser printer. It only makes
 sense if you have more than one sheet per sig.</dd>
-<dt><code class="docutils literal"><span class="pre">thickness</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">thickness</span></code></dt>
 <dd>When many pages are folded together, the thickness of the
 sheets adds up. Giving a page thickness to this argument moves
 the printed pages around slightly to compensate.</dd>
-<dt><code class="docutils literal"><span class="pre">signature_mark</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">signature_mark</span></code></dt>
 <dd>When working with many signatures, it can be fiddly to sort
 the signatures into the correct order for binding. To help we
-can add &#8216;signature marks&#8217; - a triangle on the spine of each
+can add ‘signature marks’ - a triangle on the spine of each
 signature indicating up, and offset from signature to
 signature. When the signatures are correctly collated, the
 marks form a diagonal pattern: it is obvious when they are not
 correct. The value of this argument indicates the width of
 this pattern. Zero indicates that no mark should be added.</dd>
-<dt><code class="docutils literal"><span class="pre">elements</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">elements</span></code></dt>
 <dd>The list of individual page element to impose. There can be
 fewer pages to layout than spaces on the layout (i.e. in a 16
 page imposition, we could only have 13 pages), any additional
 space is left blank.</dd>
 </dl>
 <p>The returned page layouts can be given to a PageLM for rendering
-onto individual pages of output. This method isn&#8217;t a layout
+onto individual pages of output. This method isn’t a layout
 manager in its own right.</p>
 </dd></dl>
 
@@ -173,20 +162,20 @@ to work with portrait oriented content pages, laid out onto a
 landscape oriented page.</p>
 <p>Arguments:</p>
 <dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">elements</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">elements</span></code></dt>
 <dd>The elements to lay out. PocketMod uses sheets with 8 pages on
 them, but you can pass in fewer elements - additional space
 will be left blank. The number of pages output is just the
 ceiling of the number of pages passed in divided by 8.</dd>
-<dt><code class="docutils literal"><span class="pre">page_edge_bottom</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">page_edge_bottom</span></code></dt>
 <dd>If true the pages should be arranged so that, when folded, the
 bottom of each page touches the edge of the sheet of
 paper. This is normal, because the edge of the paper is where
 a normal printer blank-margin is located, and the bottom edge
 of a page usually has the largest margin.</dd>
-<dt><code class="docutils literal"><span class="pre">first_page_vertical</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">first_page_vertical</span></code></dt>
 <dd>If true then the fold on the first page will be vertical. Each
-&#8216;page&#8217; in the book has either a fold on the outside edge or on
+‘page’ in the book has either a fold on the outside edge or on
 one of the two horizontal edges (the top edge if
 page_edge_bottom is set, the bottom otherwise). The horizontal
 fold keeps the page together more strongly, so is normally
@@ -194,7 +183,7 @@ used for the first page. The original Pocket Mod software has
 the first page with a horizontal fold.</dd>
 </dl>
 <p>The returned page layouts can be given to a PageLM for rendering
-onto individual pages of output. This method isn&#8217;t a layout
+onto individual pages of output. This method isn’t a layout
 manager in its own right.</p>
 </dd></dl>
 
@@ -208,28 +197,27 @@ manager in its own right.</p>
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="elements_space.html"
-                        title="previous chapter">2.3.6. Spacing (<code class="docutils literal"><span class="pre">layout.elements.space</span></code>)</a></p>
+                        title="previous chapter">2.3.5. Spacing (<code class="docutils literal notranslate"><span class="pre">layout.elements.space</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="pages_output.html"
-                        title="next chapter">2.4.2. Page Output (<code class="docutils literal"><span class="pre">layout.pages.output</span></code>)</a></p>
+                        title="next chapter">2.4.2. Page Output (<code class="docutils literal notranslate"><span class="pre">layout.pages.output</span></code>)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../sources/reference/pages_imposition.txt"
+      <li><a href="../sources/reference/pages_imposition.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -249,15 +237,15 @@ manager in its own right.</p>
           <a href="pages_output.html" title="2.4.2. Page Output (layout.pages.output)"
              >next</a> |</li>
         <li class="right" >
-          <a href="elements_space.html" title="2.3.6. Spacing (layout.elements.space)"
+          <a href="elements_space.html" title="2.3.5. Spacing (layout.elements.space)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2006-2015, Ian Millington.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+        &#169; Copyright 2006-2018, Ian Millington.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>

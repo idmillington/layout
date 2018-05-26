@@ -1,34 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>2.3.5. Signature Marks (layout.elements.mark) &mdash; Layout 0.3.0 documentation</title>
-    
+    <title>2.3.4. Signature Marks (layout.elements.mark) &#8212; Layout 0.4.0 documentation</title>
     <link rel="stylesheet" href="../static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="../static/documentation_options.js"></script>
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout 0.3.0 documentation" href="../index.html" />
-    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
-    <link rel="next" title="2.3.6. Spacing (layout.elements.space)" href="elements_space.html" />
-    <link rel="prev" title="2.3.4. Text Output (layout.elements.text)" href="elements_text.html" /> 
-  </head>
-  <body role="document">
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3.5. Spacing (layout.elements.space)" href="elements_space.html" />
+    <link rel="prev" title="2.3.3. Text Output (layout.elements.text)" href="elements_text.html" /> 
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -39,13 +28,13 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="elements_space.html" title="2.3.6. Spacing (layout.elements.space)"
+          <a href="elements_space.html" title="2.3.5. Spacing (layout.elements.space)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="elements_text.html" title="2.3.4. Text Output (layout.elements.text)"
+          <a href="elements_text.html" title="2.3.3. Text Output (layout.elements.text)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -55,11 +44,11 @@
           <div class="body" role="main">
             
   <div class="section" id="module-layout.elements.mark">
-<span id="signature-marks-layout-elements-mark"></span><h1>2.3.5. Signature Marks (<a class="reference internal" href="#module-layout.elements.mark" title="layout.elements.mark"><code class="xref py py-mod docutils literal"><span class="pre">layout.elements.mark</span></code></a>)<a class="headerlink" href="#module-layout.elements.mark" title="Permalink to this headline">¶</a></h1>
+<span id="signature-marks-layout-elements-mark"></span><h1>2.3.4. Signature Marks (<a class="reference internal" href="#module-layout.elements.mark" title="layout.elements.mark"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.elements.mark</span></code></a>)<a class="headerlink" href="#module-layout.elements.mark" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="layout.elements.mark.SignatureMark">
 <em class="property">class </em><code class="descclassname">layout.elements.mark.</code><code class="descname">SignatureMark</code><span class="sig-paren">(</span><em>index</em>, <em>total</em>, <em>width=1</em>, <em>color=(0</em>, <em>0</em>, <em>0)</em>, <em>margin=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.elements.mark.SignatureMark" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutElement" title="layout.managers.root.LayoutElement"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutElement</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutElement" title="layout.managers.root.LayoutElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.root.LayoutElement</span></code></a></p>
 <p>A signature mark.</p>
 <p>Signature marks appear on the ouside of the fold of a set of pages
 gathered into a signature for bookbinding. The signature mark allows
@@ -71,21 +60,21 @@ mark is drawn outside of the rendering rectangle it is given, so that
 it can be seen across the eventual fold. This means that if you render
 the mark in a manager that crops its contents, the cropped part of the
 mark will be lost, and its functionality might be compromised.</p>
-<p>Normally you don&#8217;t deal with these marks manually, they are added for
-you by the page imposition system in <a class="reference internal" href="pages_imposition.html#module-layout.pages.imposition" title="layout.pages.imposition"><code class="xref py py-mod docutils literal"><span class="pre">layout.pages.imposition</span></code></a>.</p>
+<p>Normally you don’t deal with these marks manually, they are added for
+you by the page imposition system in <a class="reference internal" href="pages_imposition.html#module-layout.pages.imposition" title="layout.pages.imposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.pages.imposition</span></code></a>.</p>
 <p>Historically signature marks were not placed in the spine, but in the
 foot of the first page of each signature and were numbered.</p>
 <p>Arguments:</p>
 <dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">index</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">index</span></code></dt>
 <dd>Which signature in the book is this?</dd>
-<dt><code class="docutils literal"><span class="pre">total</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">total</span></code></dt>
 <dd>How many signatures are there in total?</dd>
-<dt><code class="docutils literal"><span class="pre">width</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">width</span></code></dt>
 <dd>How wide should the mark be (the default, 1pt is usually fine).</dd>
-<dt><code class="docutils literal"><span class="pre">color</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">color</span></code></dt>
 <dd>What color should the mark be (default (0,0,0) black).</dd>
-<dt><code class="docutils literal"><span class="pre">margin</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">margin</span></code></dt>
 <dd>How much of the spine at the top and bottm should be left
 unmarked (this figure is given as a proportion). This
 should be a fair size (0.1, by default), to stop the mark
@@ -93,11 +82,17 @@ being visible when looking at the head or foot of the
 finished book.</dd>
 </dl>
 <dl class="method">
+<dt id="layout.elements.mark.SignatureMark.get_minimum_size">
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.elements.mark.SignatureMark.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>How small can the element be? Should return a Point.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="layout.elements.mark.SignatureMark.render">
 <code class="descname">render</code><span class="sig-paren">(</span><em>rectangle</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.elements.mark.SignatureMark.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws the signature mark.</p>
-<p>Note that this draws OUTSIDE the rectangle we&#8217;re given. If
-cropping is involved, then this obviously won&#8217;t work.</p>
+<p>Note that this draws OUTSIDE the rectangle we’re given. If
+cropping is involved, then this obviously won’t work.</p>
 </dd></dl>
 
 </dd></dl>
@@ -112,28 +107,27 @@ cropping is involved, then this obviously won&#8217;t work.</p>
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="elements_text.html"
-                        title="previous chapter">2.3.4. Text Output (<code class="docutils literal"><span class="pre">layout.elements.text</span></code>)</a></p>
+                        title="previous chapter">2.3.3. Text Output (<code class="docutils literal notranslate"><span class="pre">layout.elements.text</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="elements_space.html"
-                        title="next chapter">2.3.6. Spacing (<code class="docutils literal"><span class="pre">layout.elements.space</span></code>)</a></p>
+                        title="next chapter">2.3.5. Spacing (<code class="docutils literal notranslate"><span class="pre">layout.elements.space</span></code>)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../sources/reference/elements_mark.txt"
+      <li><a href="../sources/reference/elements_mark.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -150,18 +144,18 @@ cropping is involved, then this obviously won&#8217;t work.</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="elements_space.html" title="2.3.6. Spacing (layout.elements.space)"
+          <a href="elements_space.html" title="2.3.5. Spacing (layout.elements.space)"
              >next</a> |</li>
         <li class="right" >
-          <a href="elements_text.html" title="2.3.4. Text Output (layout.elements.text)"
+          <a href="elements_text.html" title="2.3.3. Text Output (layout.elements.text)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2006-2015, Ian Millington.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+        &#169; Copyright 2006-2018, Ian Millington.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>

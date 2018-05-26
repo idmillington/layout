@@ -1,34 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>2.2.5. Fixed Elements in the Dynamic Layout (layout.managers.fixed) &mdash; Layout 0.3.0 documentation</title>
-    
+    <title>2.2.5. Fixed Elements in the Dynamic Layout (layout.managers.fixed) &#8212; Layout 0.4.0 documentation</title>
     <link rel="stylesheet" href="../static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="../static/documentation_options.js"></script>
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Layout 0.3.0 documentation" href="../index.html" />
-    <link rel="up" title="2. Reference and API Documentation" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.2.6. Grid Layout (layout.managers.grid)" href="managers_grid.html" />
     <link rel="prev" title="2.2.4. Vertical and Horizontal Alignment (layout.managers.directional)" href="managers_directional.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +33,8 @@
         <li class="right" >
           <a href="managers_directional.html" title="2.2.4. Vertical and Horizontal Alignment (layout.managers.directional)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -55,18 +44,18 @@
           <div class="body" role="main">
             
   <div class="section" id="module-layout.managers.fixed">
-<span id="fixed-elements-in-the-dynamic-layout-layout-managers-fixed"></span><h1>2.2.5. Fixed Elements in the Dynamic Layout (<a class="reference internal" href="#module-layout.managers.fixed" title="layout.managers.fixed"><code class="xref py py-mod docutils literal"><span class="pre">layout.managers.fixed</span></code></a>)<a class="headerlink" href="#module-layout.managers.fixed" title="Permalink to this headline">¶</a></h1>
+<span id="fixed-elements-in-the-dynamic-layout-layout-managers-fixed"></span><h1>2.2.5. Fixed Elements in the Dynamic Layout (<a class="reference internal" href="#module-layout.managers.fixed" title="layout.managers.fixed"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.managers.fixed</span></code></a>)<a class="headerlink" href="#module-layout.managers.fixed" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="layout.managers.fixed.AbsolutePositionLM">
 <em class="property">class </em><code class="descclassname">layout.managers.fixed.</code><code class="descname">AbsolutePositionLM</code><a class="headerlink" href="#layout.managers.fixed.AbsolutePositionLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that positions it children at specific
 positions.</p>
 <p>Because this layout manager basically ignores the size of the
 rectangle that it is given, it may draw content overlapping into
 surrounding content. It is common, therefore, to place this layout
 manager into one of the scaling layout managers in
-<a class="reference internal" href="managers_transform.html#module-layout.managers.transform" title="layout.managers.transform"><code class="xref py py-mod docutils literal"><span class="pre">layout.managers.transform</span></code></a>, to make sure it fits.</p>
+<a class="reference internal" href="managers_transform.html#module-layout.managers.transform" title="layout.managers.transform"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.managers.transform</span></code></a>, to make sure it fits.</p>
 <dl class="method">
 <dt id="layout.managers.fixed.AbsolutePositionLM.add_element">
 <code class="descname">add_element</code><span class="sig-paren">(</span><em>element</em>, <em>rect</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.fixed.AbsolutePositionLM.add_element" title="Permalink to this definition">¶</a></dt>
@@ -74,12 +63,24 @@ manager into one of the scaling layout managers in
 can be added multiple times in different positions.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="layout.managers.fixed.AbsolutePositionLM.get_minimum_size">
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.fixed.AbsolutePositionLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>How small can the element be? Should return a Point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.fixed.AbsolutePositionLM.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>rectangle</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.fixed.AbsolutePositionLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the element to render itself.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="layout.managers.fixed.FixedSizeLM">
 <em class="property">class </em><code class="descclassname">layout.managers.fixed.</code><code class="descname">FixedSizeLM</code><span class="sig-paren">(</span><em>size</em>, <em>element=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.fixed.FixedSizeLM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="managers_root.html#layout.managers.root.LayoutManager" title="layout.managers.root.LayoutManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.managers.root.LayoutManager</span></code></a></p>
 <p>A layout manager that always renders its children at a specific
 size, regardless of whether it is given enough room or not.</p>
 <p>This layout manager is useful for displaying illustrations of a page
@@ -88,7 +89,19 @@ within another page. It draws the inner page at a specific size.</p>
 rectangle that it is given, it may draw content overlapping into
 surrounding content. It is common, therefore, to place this layout
 manager into one of the scaling layout managers in
-<a class="reference internal" href="managers_transform.html#module-layout.managers.transform" title="layout.managers.transform"><code class="xref py py-mod docutils literal"><span class="pre">layout.managers.transform</span></code></a>, to make sure it fits.</p>
+<a class="reference internal" href="managers_transform.html#module-layout.managers.transform" title="layout.managers.transform"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.managers.transform</span></code></a>, to make sure it fits.</p>
+<dl class="method">
+<dt id="layout.managers.fixed.FixedSizeLM.get_minimum_size">
+<code class="descname">get_minimum_size</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.fixed.FixedSizeLM.get_minimum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>How small can the element be? Should return a Point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.managers.fixed.FixedSizeLM.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>rectangle</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.managers.fixed.FixedSizeLM.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the element to render itself.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -101,28 +114,27 @@ manager into one of the scaling layout managers in
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="managers_directional.html"
-                        title="previous chapter">2.2.4. Vertical and Horizontal Alignment (<code class="docutils literal"><span class="pre">layout.managers.directional</span></code>)</a></p>
+                        title="previous chapter">2.2.4. Vertical and Horizontal Alignment (<code class="docutils literal notranslate"><span class="pre">layout.managers.directional</span></code>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="managers_grid.html"
-                        title="next chapter">2.2.6. Grid Layout (<code class="docutils literal"><span class="pre">layout.managers.grid</span></code>)</a></p>
+                        title="next chapter">2.2.6. Grid Layout (<code class="docutils literal notranslate"><span class="pre">layout.managers.grid</span></code>)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../sources/reference/managers_fixed.txt"
+      <li><a href="../sources/reference/managers_fixed.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -144,13 +156,13 @@ manager into one of the scaling layout managers in
         <li class="right" >
           <a href="managers_directional.html" title="2.2.4. Vertical and Horizontal Alignment (layout.managers.directional)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.3.0 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2006-2015, Ian Millington.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
+        &#169; Copyright 2006-2018, Ian Millington.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
   </body>
 </html>
