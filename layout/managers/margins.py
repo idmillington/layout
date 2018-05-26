@@ -1,15 +1,12 @@
 from layout import datatypes
 from . import root
 
+@root.add_fields('_margins', ['top', 'right', 'bottom', 'left'])
 class MarginsLM(root.LayoutManager):
     """
     A layout manager that has only one element, surrounded by the given
     absolute margins.
     """
-    __metaclass__ = root.SpecificFieldsLMMetaclass
-    _fields = ['top', 'right', 'bottom', 'left']
-    _store_name = '_margins'
-
     def __init__(self, top=0, right=0, bottom=0, left=0, element=None):
         self._margins = [top, right, bottom, left]
         self.element = element
@@ -28,6 +25,7 @@ class MarginsLM(root.LayoutManager):
             rect.h - self.bottom - self.top
             ), data)
 
+@root.add_fields('_margins', ['top', 'right', 'bottom', 'left'])
 class ProportionalMarginsLM(root.LayoutManager):
     """
     A layout manager that has only one element, surrounded by the given
@@ -40,10 +38,6 @@ class ProportionalMarginsLM(root.LayoutManager):
     Pairs of margins (left & right or top & bottom) must sum to at least zero,
     and strictly less than 1.
     """
-    __metaclass__ = root.SpecificFieldsLMMetaclass
-    _fields = ['top', 'right', 'bottom', 'left']
-    _store_name = '_margins'
-
     def __init__(self, top=0, right=0, bottom=0, left=0, element=None):
         self._margins = [top, right, bottom, left]
         self.element = element
@@ -98,6 +92,7 @@ class VanDeGraafCanonLM(ProportionalMarginsLM):
                 _NINETH, 2.0*_NINETH, 2.0*_NINETH, _NINETH, element
                 )
 
+@root.add_fields('_margins', ['top', 'right', 'bottom', 'left', 'width', 'height'])
 class PaddedMarginsLM(root.LayoutManager):
     """
     A layout manager that surrounds its single element by margins
@@ -111,10 +106,6 @@ class PaddedMarginsLM(root.LayoutManager):
     :class:`layout.managers.align.AlignLM`. This class provides more
     flexibility, however.
     """
-    __metaclass__ = root.SpecificFieldsLMMetaclass
-    _fields = ['top', 'right', 'bottom', 'left', 'width', 'height']
-    _store_name = '_margins'
-
     def __init__(self, top=0.5, right=0.5, bottom=0.5, left=0.5, element=None):
         assert (top+bottom <= 1.0)
         assert (left+right <= 1.0)
@@ -136,8 +127,8 @@ class PaddedMarginsLM(root.LayoutManager):
         extra_height = max(0, rect.h - size.y)
 
         self.element.render(datatypes.Rectangle(
-                rect.x + self.left*extra_width,
-                rect.y + self.bottom*extra_height,
+                rect.x + self._margins[3]*extra_width,
+                rect.y + self._margins[2]*extra_height,
                 rect.w - extra_width,
                 rect.h - extra_height
                 ), data)

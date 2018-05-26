@@ -8,17 +8,16 @@ class _JitterBase(root.LayoutManager):
         self, rectangle, data, angle_jitter, x_jitter, y_jitter
         ):
         c = data['output']
-        c.saveState()
-        c.translate(rectangle.center, rectangle.middle)
-        c.translate(x_jitter, y_jitter)
-        c.rotate(angle_jitter * 180.0 / math.pi)
-        self.element.render(
-            datatypes.Rectangle(
-                -rectangle.w*0.5, -rectangle.h*0.5,
-                rectangle.w, rectangle.h
-                ), data
-            )
-        c.restoreState()
+        with c:
+            c.translate(rectangle.center, rectangle.middle)
+            c.translate(x_jitter, y_jitter)
+            c.rotate(angle_jitter * 180.0 / math.pi)
+            self.element.render(
+                datatypes.Rectangle(
+                    -rectangle.w*0.5, -rectangle.h*0.5,
+                    rectangle.w, rectangle.h
+                    ), data
+                )
 
 class JitterLM(_JitterBase):
     """

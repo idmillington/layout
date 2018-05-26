@@ -7,15 +7,8 @@ class Point(collections.namedtuple('Point', ('x', 'y'))):
     """A single point in space, or a vector in 2D."""
     __slots__ = ()
 
-    def get_data(self):
-        """Returns the x, y coordinates as a 2-tuple."""
-        return self.x, self.y
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
-    def __ne__(self, other):
-        return self.x != other.x or self.y != other.y
+    def __new__(cls, x: float = 0, y: float = 0) -> 'Point':
+        return super(Point, cls).__new__(cls, x, y)
 
     def __add__(self, other):
         return Point(self.x + other.x, self.y + other.y)
@@ -38,22 +31,10 @@ class Point(collections.namedtuple('Point', ('x', 'y'))):
     def __neg__(self):
         return Point(-self.x, -self.y)
 
-    def __iter__(self):
-        return iter([self.x, self.y])
-
     def get_component_product(self, other):
         """Returns the component product of this vector and the given
         other vector."""
         return Point(self.x * other.x, self.y * other.y)
-
-    def get_normalized(self):
-        """Returns the unit vector in the same direction as this vector."""
-        magnitude = self.get_magnitude()
-        if magnitude > 0:
-            magnitude = 1.0 / magnitude
-            return Point(self.x * magnitude, self.y * magnitude)
-        else:
-            return Point(0, 0)
 
     def get_normalized(self):
         """Returns a vector of unit length, unless it is the zero
@@ -144,8 +125,6 @@ class Point(collections.namedtuple('Point', ('x', 'y'))):
 
     def __repr__(self):
         return "Point(%f, %f)" % (self.x, self.y)
-
-Point.__new__.__defaults__ = (0, 0)
 
 
 class _RectangleMetaclass(type):

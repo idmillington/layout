@@ -12,4 +12,4 @@ class PagesLM(overlay.OverlayLM):
         not a portion of it."""
         for element in self.elements:
             if element: element.render(rect, data)
-            data['output'].showPage()
+            data['output'].end_page()

@@ -21,15 +21,6 @@ class ClipLM(root.LayoutManager):
     def render(self, rect, data):
         # Set the crop.
         c = data['output']
-        c.saveState()
-        p = c.beginPath()
-        p.moveTo(rect.x, rect.y)
-        p.lineTo(rect.x+rect.w, rect.y)
-        p.lineTo(rect.x+rect.w, rect.y+rect.h)
-        p.lineTo(rect.x, rect.y+rect.h)
-        p.close()
-        c.clipPath(p, stroke=False, fill=False)
-
-        # Draw the element
-        self.element.render(rect, data)
-        c.restoreState()
+        with c:
+            c.clip_rect(rect.x, rect.y, rect.w, rect.h)
+            self.element.render(rect, data)

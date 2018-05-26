@@ -73,10 +73,6 @@ class TestPoint(unittest.TestCase):
         self.assertEqual(p.x, 2)
         self.assertEqual(p.y, 3)
 
-    def test_get_data(self):
-        p = Point(2,3)
-        self.assertEqual(p.get_data(), (2,3))
-
     def test_equals(self):
         self.assertEqual(Point(2,3), Point(2.0, 3.0))
         self.assert_(Point(2,3) != Point(3,2))

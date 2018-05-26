@@ -12,9 +12,11 @@ primarily for print.
 It uses a hierarchy of fitting algorithms to construct pages or UI output
 with complex constraints and overlapping content.
 
-It has two components, the layout managers are output-agnostic, and there
-are a set of :mod:`layout.elements` that use reportlab's
-:mod:`~reportlab.pdfgen` to do their output.
+It has two components, the layout managers position and size content, and
+there are a set of :mod:`layout.elements` that can display common content
+types, such as images or text.
+
+A utility library targets reportlab's :mod:`~reportlab.pdfgen` for output.
 
 
 Contents:

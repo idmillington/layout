@@ -53,23 +53,22 @@ class RotateLM(root.LayoutManager):
         x, y, w, h = rect.get_data()
         c = data['output']
 
-        c.saveState()
-        if self.angle == RotateLM.NORMAL:
-            self.element.render(rect, data)
-        else:
-            c.translate(*rect.cm.get_data())
-            c.rotate(self.angle * 90)
-
-            if self.angle == RotateLM.ANGLE_180:
-                self.element.render(
-                    datatypes.Rectangle(-w*0.5, -h*0.5, w, h), data
-                    )
+        with c:
+            if self.angle == RotateLM.NORMAL:
+                self.element.render(rect, data)
             else:
-                assert (self.angle in (RotateLM.ANGLE_90, RotateLM.ANGLE_270))
-                self.element.render(
-                    datatypes.Rectangle(-h*0.5, -w*0.5, h, w), data
-                    )
-        c.restoreState()
+                c.translate(*rect.cm)
+                c.rotate(self.angle * 90)
+
+                if self.angle == RotateLM.ANGLE_180:
+                    self.element.render(
+                        datatypes.Rectangle(-w*0.5, -h*0.5, w, h), data
+                        )
+                else:
+                    assert (self.angle in (RotateLM.ANGLE_90, RotateLM.ANGLE_270))
+                    self.element.render(
+                        datatypes.Rectangle(-h*0.5, -w*0.5, h, w), data
+                        )
 
 class AnyRotationLM(root.LayoutManager):
     """
@@ -117,12 +116,8 @@ class AnyRotationLM(root.LayoutManager):
         c = datatypes.Point(hw, -hh).get_rotated(self.angle)
         d = datatypes.Point(-hw, -hh).get_rotated(self.angle)
 
-        minp = a.get_copy()
-        minp.update_minimum(b); minp.update_minimum(c); minp.update_minimum(d)
-
-        maxp = a.get_copy()
-        maxp.update_maximum(b); maxp.update_maximum(c); maxp.update_maximum(d)
-
+        minp = a.get_minimum(b).get_minimum(c).get_minimum(d)
+        maxp = a.get_maximum(b).get_maximum(c).get_maximum(d)
         return maxp - minp
 
     def render(self, rect, data):
@@ -146,11 +141,10 @@ class AnyRotationLM(root.LayoutManager):
         # Thats the space we give to our child element.
         center = rect.center_middle
         c = data['output']
-        c.saveState()
-        c.translate(center.x, center.y)
-        c.rotate(self.angle / math.pi * 180.0)
-        self.element.render(datatypes.Rectangle(-hw, -hh, hw*2.0, hh*2.0), data)
-        c.restoreState()
+        with c:
+            c.translate(center.x, center.y)
+            c.rotate(self.angle / math.pi * 180.0)
+            self.element.render(datatypes.Rectangle(-hw, -hh, hw*2.0, hh*2.0), data)
 
 class FixedScaleLM(root.LayoutManager):
     """
@@ -170,14 +164,13 @@ class FixedScaleLM(root.LayoutManager):
     def render(self, rect, data):
         scale = self.scale
         c = data['output']
-        c.saveState()
-        c.translate(rect.x, rect.y)
-        c.scale(scale, scale)
-        self.element.render(
-            datatypes.Rectangle(0, 0, rect.x/scale, rect.y/scale),
-            data
-            )
-        c.restoreState()
+        with c:
+            c.translate(rect.x, rect.y)
+            c.scale(scale, scale)
+            self.element.render(
+                datatypes.Rectangle(0, 0, rect.x/scale, rect.y/scale),
+                data
+                )
 
 class ScaleLM(root.LayoutManager):
     """
@@ -205,11 +198,11 @@ class ScaleLM(root.LayoutManager):
 
         # Apply the scaling and render the output.
         c = data['output']
-        c.saveState()
-        c.translate(rect.x+extra_width*0.5, rect.y+extra_height*0.5)
-        if scale < 1.0: c.scale(scale, scale)
-        self.element.render(datatypes.Rectangle(0, 0, size.x, size.y), data)
-        c.restoreState()
+        with c:
+            c.translate(rect.x+extra_width*0.5, rect.y+extra_height*0.5)
+            if scale < 1.0:
+                c.scale(scale, scale)
+            self.element.render(datatypes.Rectangle(0, 0, size.x, size.y), data)
 
 class FlexScaleLM(root.LayoutManager):
     """
@@ -237,12 +230,11 @@ class FlexScaleLM(root.LayoutManager):
 
             # Apply the scaling and render the output.
             c = data['output']
-            c.saveState()
-            c.translate(rect.x, rect.y)
-            c.scale(scale, scale)
-            self.element.render(datatypes.Rectangle(
-                    0, 0, rect.w / scale, rect.h / scale
-                    ), data)
-            c.restoreState()
+            with c:
+                c.translate(rect.x, rect.y)
+                c.scale(scale, scale)
+                self.element.render(datatypes.Rectangle(
+                        0, 0, rect.w / scale, rect.h / scale
+                        ), data)
         else:
             self.element.render(rect, data)

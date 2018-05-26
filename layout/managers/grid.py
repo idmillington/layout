@@ -99,9 +99,7 @@ class GridLM(root.LayoutManager):
                                 property, sized_elements):
         """Build one set of col widths or row heights."""
         sort_index = base_index + 2
-        sized_elements.sort(
-            lambda x, y: cmp(x[sort_index], y[sort_index])
-            )
+        sized_elements.sort(key=lambda x: x[sort_index])
         for element_data in sized_elements:
             start, end = element_data[base_index], element_data[sort_index]
             end += start
@@ -213,11 +211,8 @@ class GridLM(root.LayoutManager):
             y_start = _get_value(row_ys, start_row, -1)
             x_end = _get_value(col_xs, end_col, 1)
             y_end = _get_value(row_ys, end_row, -1)
-            c = data['output']
-            c.saveState()
-            c.setLineWidth(width)
-            c.setStrokeColorRGB(*color)
-            c.line(x_start, y_start, x_end, y_end)
-            c.restoreState()
-
-
+            data['output'].line(
+                x_start, y_start, x_end, y_end,
+                stroke=color,
+                stroke_width=width
+                )

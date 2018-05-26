@@ -4,3 +4,5 @@ dist/
 layout.egg-info/
 *.sublime-*
 ve/
+.mypy_cache
+*.pdf

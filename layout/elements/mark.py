@@ -1,4 +1,5 @@
 import layout.managers.root as root
+from layout.datatypes import Rectangle
 
 class SignatureMark(root.LayoutElement):
     """A signature mark.
@@ -50,6 +51,9 @@ class SignatureMark(root.LayoutElement):
         self.color = color
         self.margin = margin
 
+    def get_minimum_size(self, data):
+        return Rectangle()
+
     def render(self, rectangle, data):
         """Draws the signature mark.
 
@@ -63,13 +67,9 @@ class SignatureMark(root.LayoutElement):
         top = bottom + per_mark * size
 
         c = data['output']
-        c.saveState()
-        c.translate(rectangle.x, rectangle.y)
-        c.setFillColorRGB(*self.color)
-        p = c.beginPath()
-        p.moveTo(0, top)
-        p.lineTo(-self.width, bottom)
-        p.lineTo(self.width, bottom)
-        p.close()
-        c.drawPath(p, fill=True, stroke=False)
-        c.restoreState()
+        with c:
+            c.translate(rectangle.x, rectangle.y)
+            c.draw_polygon(
+                0, top, -self.width, bottom, self.width, bottom,
+                fill=self.color
+                )

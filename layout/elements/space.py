@@ -14,3 +14,6 @@ class Spacer(root.LayoutElement):
 
     def get_minimum_size(self, data):
         return datatypes.Point(self.width, self.height)
+
+    def render(self, rect, data):
+        pass

@@ -1,14 +1,18 @@
 from layout import datatypes
+import typing
+import abc
 
-class LayoutElement(object):
+class LayoutElement(abc.ABC):
     """
     A layout element has size data and can be asked to draw itself.
     """
-    def get_minimum_size(self, data):
+    @abc.abstractmethod
+    def get_minimum_size(self, data) -> datatypes.Point:
         """How small can the element be? Should return a Point."""
         return datatypes.Point(0, 0)
 
-    def render(self, rectangle, data):
+    @abc.abstractmethod
+    def render(self, rectangle:datatypes.Rectangle, data) -> None:
         """Asks the element to render itself."""
         pass
 
@@ -19,19 +23,12 @@ class LayoutManager(LayoutElement):
     clearer naming when used as a parent class.
     """
 
-class SpecificFieldsLMMetaclass(type):
+def add_fields(store_name, field_names):
     """
-    A meta-class that creates layout managers with a set of named
+    A class-decorator that creates layout managers with a set of named
     fields.
     """
-    def __init__(cls, name, bases, dict):
-        """Creates a new class with a set of fields defined by its
-        _fields and _store_name class properties."""
-        super(SpecificFieldsLMMetaclass, cls).__init__(name, bases, dict)
-
-        field_names = cls._fields
-        store_name = cls._store_name
-
+    def decorate(cls):
         def _add(index, name):
             def _set_dir(self, value): getattr(self, store_name)[index] = value
             def _get_dir(self): return getattr(self, store_name)[index]
@@ -40,12 +37,16 @@ class SpecificFieldsLMMetaclass(type):
         for index, field_name in enumerate(field_names):
             _add(index, field_name)
 
+        return cls
+
+    return decorate
+
 class GroupLayoutManager(LayoutManager):
     """
     A base class for layout managers that can have any number of
     elements.
     """
-    def __init__(self, elements=[]):
+    def __init__(self, elements:typing.Sequence[LayoutElement]=[]) -> None:
         self.elements = elements[:]
 
     def add_element(self, element):

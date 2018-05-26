@@ -1,16 +1,15 @@
 from layout import datatypes
 from . import root
 
+_box_fields = ['top', 'right', 'bottom', 'left', 'center']
+
+@root.add_fields('_elements', _box_fields)
 class BoxLM(root.LayoutManager):
     """
     A layout manager in the style of Java's BoxLayout, with a central
     space that gobbles up as much size as possible and surrounding
     spaces that are at minimum size.
     """
-    __metaclass__ = root.SpecificFieldsLMMetaclass
-    _fields = ['top', 'right', 'bottom', 'left', 'center']
-    _store_name = '_elements'
-
     def __init__(self, margin=0,
                  top=None, right=None, bottom=None, left=None, center=None
                  ):
@@ -92,7 +91,7 @@ class BoxLM(root.LayoutManager):
 
         """
         super(BoxLM, self).__init__()
-        self._elements = [None] * len(BoxLM._fields)
+        self._elements = [None] * len(_box_fields)
         self.margin = margin
         self.top = top
         self.right = right
@@ -107,7 +106,7 @@ class BoxLM(root.LayoutManager):
                 datatypes.Point(0, 0)
                 if getattr(self, direction) is None
                 else getattr(self, direction).get_minimum_size(data)
-            ) for direction in BoxLM._fields
+            ) for direction in _box_fields
         ]
 
         # Work out how many margins we'll be using

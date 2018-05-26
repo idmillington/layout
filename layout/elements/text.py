@@ -33,9 +33,14 @@ class Paragraph(TextBase):
         self.paragraph_indent = paragraph_indent
         self.leading = leading
 
-        # Calculated quantities
+    def _set_text(self, text):
+        self._text = text
+        # Clear calculated quantities
         self._layout = None
         self.height = 0
+    def _get_text(self):
+        return self._text
+    text = property(_get_text, _set_text)
 
     def _do_layout(self, data):
         """
@@ -43,13 +48,19 @@ class Paragraph(TextBase):
         total height.
         """
         c = data['output']
-        word_space = c.stringWidth(' ', self.font_name, self.font_size)
+        word_space = c.text_width(
+            ' ',
+            font_name=self.font_name,
+            font_size=self.font_size)
 
         # Arrange the text as words on lines
         self._layout = [[]]
         x = self.font_size if self.paragraph_indent else 0
         for word in self.text.split():
-            ww = c.stringWidth(word, self.font_name, self.font_size)
+            ww = c.text_width(
+                word,
+                font_name=self.font_name,
+                font_size=self.font_size)
             if x + ww > self.width:
                 # Newline
                 x = 0
@@ -73,18 +84,19 @@ class Paragraph(TextBase):
         if not self._layout:
             self._do_layout(data)
         c = data['output']
-        c.saveState()
-        c.setFont(self.font_name, self.font_size)
-        c.setFillColorRGB(*self.color)
+        with c:
+            y = rect.y + rect.h - self.font_size
+            x = rect.x + (self.font_size if self.paragraph_indent else 0)
+            for line in self._layout:
+                c.draw_text(
+                    ' '.join(line), x, y,
+                    font_name=self.font_name,
+                    font_size=self.font_size,
+                    fill=self.color
+                    )
 
-        y = rect.y + rect.h - self.font_size
-        x = rect.x + (self.font_size if self.paragraph_indent else 0)
-        for line in self._layout:
-            c.drawString(x, y, ' '.join(line))
-
-            x = rect.x
-            y -= self.font_size * self.leading
-        c.restoreState()
+                x = rect.x
+                y -= self.font_size * self.leading
 
 
 class TextLine(TextBase):
@@ -99,7 +111,11 @@ class TextLine(TextBase):
 
     def get_minimum_size(self, data):
         c = data['output']
-        width = c.stringWidth(self.text, self.font_name, self.font_size)
+        width = c.text_width(
+            self.text,
+            font_name=self.font_name,
+            font_size=self.font_size
+            )
         return datatypes.Point(width, self.font_size)
 
     def render(self, rect, data):
@@ -108,17 +124,18 @@ class TextLine(TextBase):
         y = rect.y + self.font_size*0.2
 
         # Draw the text at the appropriate alignment
-        c = data['output']
-        c.saveState()
-        c.setFont(self.font_name, self.font_size)
-        c.setFillColorRGB(*self.color)
         if self.align == TextLine.ALIGN_LEFT:
-            c.drawString(rect.left, y, self.text)
-        elif self.align == TextLine.ALIGN_RIGHT:
-            c.drawRightString(rect.right, y, self.text)
+            x = rect.left
         else:
-            c.drawCentredString(rect.center, y, self.text)
-        c.restoreState()
+            align = 1 if self.align == TextLine.ALIGN_RIGHT else 0.5
+            width = self.get_minimum_size(data).x
+            x = rect.left + (rect.w - width) * align
+        data['output'].draw_text(
+            self.text, x, y,
+            font_name=self.font_name,
+            font_size=self.font_size,
+            fill=self.color
+            )
 
 class TextBlock(TextBase):
     """

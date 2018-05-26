@@ -1,5 +1,5 @@
-Layout is a high-level Python package for laying out content,
-primarily for print. It is well documented, tested and commented and
+Layout is a high-level Python package for laying out content, primarily for
+print. It is well documented, partially tested and thoroughly commented and
 has been used in anger for several years.
 
 * Documentation is found in the "docs" directory.
@@ -9,7 +9,9 @@ has been used in anger for several years.
 
 # Dependencies
 
-The system requires [ReportLab](http://www.reportlab.com/) >= 2.0 to use the
+The system has no required dependencies.
+
+You requires [ReportLab](http://www.reportlab.com/) >= 2.0 to use the
 ReportLab specific functionality (although the layout parts of the library
 can be used without it).
 
@@ -66,7 +68,7 @@ in the `docs` directory. For example
     $ cd docs
     $ make html
     $ cd build/html
-    $ python -m SimpleHTTPServer
+    $ python -m http.server
 
 This will serve the documentation at http://localhost:8000
 
