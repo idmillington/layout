@@ -1,0 +1,195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2.5.2. Cairo Wrappers (layout.cairo_utils) &#8212; Layout 0.4.0 documentation</title>
+    <link rel="stylesheet" href="../static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../static/documentation_options.js"></script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2.5.1. Reportlab Wrappers (layout.rl_utils)" href="rl_utils.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rl_utils.html" title="2.5.1. Reportlab Wrappers (layout.rl_utils)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Reference and API Documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-layout.cairo_utils">
+<span id="cairo-wrappers-layout-cairo-utils"></span><h1>2.5.2. Cairo Wrappers (<a class="reference internal" href="#module-layout.cairo_utils" title="layout.cairo_utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layout.cairo_utils</span></code></a>)<a class="headerlink" href="#module-layout.cairo_utils" title="Permalink to this headline">¶</a></h1>
+<p>Cairo support.</p>
+<p>Cairo uses a coordinate system where y increases from the bottom     of the
+page upwards. Layout assumes the opposite coordinate system. So     the
+context will be reversed in the y direction, and then text will     need to
+be reversed back.</p>
+<dl class="class">
+<dt id="layout.cairo_utils.CairoOutput">
+<em class="property">class </em><code class="descclassname">layout.cairo_utils.</code><code class="descname">CairoOutput</code><span class="sig-paren">(</span><em>cairo_context</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datatypes_output.html#layout.datatypes.output.OutputTarget" title="layout.datatypes.output.OutputTarget"><code class="xref py py-class docutils literal notranslate"><span class="pre">layout.datatypes.output.OutputTarget</span></code></a></p>
+<p>An output adapter for Cairo.</p>
+<p>Assumes the Cairo context has already been reversed in the y-direction
+(i.e. so y increases downwards from the top of the page).</p>
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.clip_rect">
+<code class="descname">clip_rect</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.clip_rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clip further output to this rect.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.draw_image">
+<code class="descname">draw_image</code><span class="sig-paren">(</span><em>img_filename</em>, <em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.draw_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the given image.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.draw_line">
+<code class="descname">draw_line</code><span class="sig-paren">(</span><em>x0</em>, <em>y0</em>, <em>x1</em>, <em>y1</em>, <em>*</em>, <em>stroke</em>, <em>stroke_width=1</em>, <em>stroke_dash=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.draw_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the given line.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.draw_polygon">
+<code class="descname">draw_polygon</code><span class="sig-paren">(</span><em>*pts</em>, <em>close_path=True</em>, <em>stroke=None</em>, <em>stroke_width=1</em>, <em>stroke_dash=None</em>, <em>fill=None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#layout.cairo_utils.CairoOutput.draw_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the given polygon.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.draw_rect">
+<code class="descname">draw_rect</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em>, <em>*</em>, <em>stroke=None</em>, <em>stroke_width=1</em>, <em>stroke_dash=None</em>, <em>fill=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.draw_rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the given rectangle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.draw_text">
+<code class="descname">draw_text</code><span class="sig-paren">(</span><em>text</em>, <em>x</em>, <em>y</em>, <em>*</em>, <em>font_name</em>, <em>font_size</em>, <em>fill</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.draw_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the given text at x,y.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.end_page">
+<code class="descname">end_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.end_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Complete the previous page and prepare to begin a new page.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>degrees</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate the current rendering context.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale the current rendering context.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.text_width">
+<code class="descname">text_width</code><span class="sig-paren">(</span><em>text</em>, <em>*</em>, <em>font_name</em>, <em>font_size</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.text_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the given text string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="layout.cairo_utils.CairoOutput.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.CairoOutput.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate the current rendering context.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="layout.cairo_utils.render_to_cairo_context">
+<code class="descclassname">layout.cairo_utils.</code><code class="descname">render_to_cairo_context</code><span class="sig-paren">(</span><em>cairo_context</em>, <em>papersize_tuple</em>, <em>layout</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.render_to_cairo_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the given layout manager on a page of the given context.</p>
+<p>Assumes the given context has not yet been reversed in the y-direction
+(i.e. it is still the default for Cairo, where y increases up
+from the bottom of the page). This method performs the reversal and
+resets it before it returns.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="layout.cairo_utils.render_to_cairo_document">
+<code class="descclassname">layout.cairo_utils.</code><code class="descname">render_to_cairo_document</code><span class="sig-paren">(</span><em>output_filename</em>, <em>papersize_tuple</em>, <em>layout</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.cairo_utils.render_to_cairo_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and save a document with contents of the given layout manager.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rl_utils.html"
+                        title="previous chapter">2.5.1. Reportlab Wrappers (<code class="docutils literal notranslate"><span class="pre">layout.rl_utils</span></code>)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../sources/reference/cairo_utils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rl_utils.html" title="2.5.1. Reportlab Wrappers (layout.rl_utils)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Layout 0.4.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >2. Reference and API Documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2018, Ian Millington.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+    </div>
+  </body>
+</html>

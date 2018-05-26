@@ -123,7 +123,8 @@ much more complex, and may have to be assembled in stages.</p>
 its <code class="xref py py-meth docutils literal notranslate"><span class="pre">render()</span></code> method. Assuming we’re using Report Lab, we could
 do this manually:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">papersize</span><span class="p">)</span>
-<span class="n">top_level_manager</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">papersize</span><span class="p">),</span> <span class="nb">dict</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">canvas</span><span class="p">))</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">rl_utils</span><span class="o">.</span><span class="n">ReportlabOutput</span><span class="p">(</span><span class="n">canvas</span><span class="p">)</span>
+<span class="n">top_level_manager</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">papersize</span><span class="p">),</span> <span class="nb">dict</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">output</span><span class="p">))</span>
 <span class="n">canvas</span><span class="o">.</span><span class="n">showPage</span><span class="p">()</span>
 <span class="n">canvas</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 </pre></div>
@@ -139,6 +140,9 @@ module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rl_utils</span><span class="o">.</span><span class="n">render_to_reportlab_document</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">papersize</span><span class="p">,</span> <span class="n">top_level_manager</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Similar methods exist for the Cairo renderer. Cairo uses a different
+coordinate system, however, so it is not usually practical to use the manual
+approach unless you reconfigure the coordinate system manually. See the implementation of <code class="xref py py-func docutils literal notranslate"><span class="pre">cairo_utils.render_to_cairo_context()</span></code> for details.</p>
 </div>
 </div>
 </div>
